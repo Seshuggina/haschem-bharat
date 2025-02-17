@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useGlobalStore from "./../../../store/globals";
-import { TypeaheadSearch } from "../../../features/TypeaheadSearch/TypeaheadSearch";
+import useGlobalStore from "../../../../store/globals";
+import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import "./Header.scss";
 
 const HeaderNavbar = () => {

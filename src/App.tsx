@@ -1,6 +1,6 @@
 import AppRoutes from "./routes";
-import HeaderNavbar from "./components/common/layout/Header";
-import Footer from "./components/common/layout/Footer";
+import HeaderNavbar from "./components/common/layout/Header/Header";
+import Footer from "./components/common/layout/Footer/Footer";
 
 function App() {
   return (

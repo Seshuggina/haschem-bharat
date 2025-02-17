@@ -4,6 +4,9 @@ import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import "./Header.scss";
 
+import logo from "./../../../../assets/img/brand/logo.png";
+
+
 const HeaderNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -178,7 +181,7 @@ const HeaderNavbar = () => {
               <div className="flex shrink-0 items-center">
                 <Link to="/" className="text-lg font-bold">
                   <img
-                    src="/assets/img/brand/logo2.png"
+                    src={logo}
                     alt="Logo"
                     className="h-10"
                   />

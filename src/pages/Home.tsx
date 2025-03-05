@@ -31,7 +31,8 @@ const Home = () => {
                 <h2 className="text-3xl font-bold text-white">Top Products</h2>
                 <p className="text-white">
                   The Arctic Ocean freezes every winter, and much of the sea-ice
-                  then thaws every summer. That process will continue regardless.
+                  then thaws every summer. That process will continue
+                  regardless.
                 </p>
               </div>
             </div>
@@ -58,7 +59,9 @@ const Home = () => {
                 <i className="ni ni-building text-gray-600 text-2xl" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-800">Our Partners</h2>
+                <h2 className="text-3xl font-bold text-gray-800">
+                  Our Partners
+                </h2>
                 <p className="text-gray-600">
                   At <strong>HASCHEM BHARAT</strong>, we believe in the power of
                   collaboration and partnership to drive innovation in the
@@ -69,9 +72,7 @@ const Home = () => {
             </div>
 
             {/* Partners Component */}
-            <div className="mt-8">
-              {/* <Partners /> */}
-            </div>
+            <div className="mt-8">{/* <Partners /> */}</div>
           </div>
         </section>
       </main>

@@ -4,6 +4,7 @@ import "./TypeaheadSearch.scss";
 import { useNavigate } from "react-router-dom";
 import products from "./../../assets/data/products.json";
 import { ProductModel } from "../../types/ProductModel";
+import "react-bootstrap-typeahead/css/Typeahead.css";
 
 interface TypeaheadSearchProps {
   onSubmit: (text: string) => void;
@@ -16,6 +17,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
   const [options, setOptions] = useState<ProductModel[]>(
     products as Array<ProductModel>
   );
+  console.log("options", options);
+
   const inputRef = useRef<any>(null);
   const [inputText, setInputText] = useState("");
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
     }
   };
 
-  const handleInputChange = (text: string) => {
+  const handleInputChange = (text: any) => {
     setInputText(text);
     onInputChange(text);
   };
@@ -57,7 +60,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
       <Typeahead
         className="typeaheadSearch"
         onChange={(selected) => onProductChange(selected as ProductModel[])}
-        onInputChange={handleInputChange}
+        onInputChange={(text) => handleInputChange(text)}
         options={options}
         placeholder="Enter #CAS No, Name, Category, Molecular Formula"
         selected={selected}
@@ -67,6 +70,12 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         labelKey={(option: any) =>
           `${option.impurityName} ${option.parentAPI} ${option.casNo} ${option.category} ${option.molecularFormula} ${option.synonym}`
         }
+        onMenuToggle={(isOpen) => {
+          if (isOpen) {
+            debugger; // This will trigger the breakpoint in dev tools
+            console.log("Dropdown opened");
+          }
+        }}
         renderMenu={(results, menuProps) => (
           <Menu {...menuProps}>
             {results.map((result: any, index: number) => (
@@ -75,12 +84,15 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
                 className="dropdown-item cursor-pointer"
                 onClick={() => handleProductSelectionChange(result)}
               >
-                <strong>{result.impurityName}</strong>,{" "}
+                <strong>{result.impurityName}</strong>
+                {", "}
                 <span>{result.parentAPI}</span>{" "}
                 <small>{`(${result.category})`}</small>
                 <br />
-                <span>{result.casNo}</span>,{" "}
-                <span>{result.productDetails?.molecularFormula}</span>,{" "}
+                <span>{result.casNo}</span>
+                {", "}
+                <span>{result.productDetails?.molecularFormula}</span>
+                {", "}
                 <span>{result.productDetails?.synonym}</span>
               </li>
             ))}
@@ -90,7 +102,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
       />
 
       <button
-        onClick={() => clearFilter()}
+        // onClick={() => clearFilter()}
         className="bg-orange-500 px-4 py-2 rounded-md text-white hover:bg-orange-600 link"
       >
         &times;

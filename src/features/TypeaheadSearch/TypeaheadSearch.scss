@@ -4,7 +4,7 @@
       background-color: white;
       border-color: white;
     }
-  } 
+  }
   @media (max-width: 991.98px) {
     .dropdown-menu.show {
       position: absolute !important;
@@ -23,4 +23,41 @@
   border: none;
   padding-left: 5px;
   padding-right: 8px;
+}
+
+.rbt-menu {
+  &.dropdown-menu {
+    z-index: 9;
+    background: white;
+    width: 100%;
+    padding: 5px 8px 6px;
+    border-radius: 4px;
+    .dropdown-item {
+      list-style: none;
+      white-space: break-spaces;
+    }
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.dropdown-menu::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+.dropdown-menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgb(224, 165, 47);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: rgb(195, 131, 3);
 }

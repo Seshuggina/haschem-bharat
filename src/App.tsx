@@ -1,6 +1,7 @@
 import AppRoutes from "./routes";
 import HeaderNavbar from "./components/common/layout/Header/Header";
 import Footer from "./components/common/layout/Footer/Footer";
+import SocialNavbar from "./components/common/layout/socialNav/SocialNavbar";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           Tailwind is Working! 🎉
         </h1>
       </div> */}
+      <SocialNavbar />
       <HeaderNavbar />
       <AppRoutes />
       <Footer />

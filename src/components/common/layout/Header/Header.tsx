@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import "./Header.scss";
 
 import logo from "./../../../../assets/img/brand/logo.png";
-
 
 const HeaderNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +55,7 @@ const HeaderNavbar = () => {
               alt="Logo"
               className="h-10"
             />
-          </Link>
+          </NavLink>
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-blue-600">
               Home
@@ -73,7 +72,7 @@ const HeaderNavbar = () => {
                   "Nitrosamines",
                   "Building blocks",
                 ].map((item) => (
-                  <Link
+                  <NavLink
                     key={item}
                     to="/products"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -135,7 +134,7 @@ const HeaderNavbar = () => {
 
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
+          <div className="fixed w-full relative flex items-center justify-between whitespace-nowrap">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button
                 type="button"
@@ -177,29 +176,25 @@ const HeaderNavbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex shrink-0 items-center">
-                <Link to="/" className="text-lg font-bold">
-                  <img
-                    src={logo}
-                    alt="Logo"
-                    className="h-10"
-                  />
-                </Link>
-              </div>
+            <div className="flex items-center">
+              <Link to="/" className="text-lg font-bold h-16 flex items-center">
+                <img src={logo} alt="Logo" className="h-10" />
+              </Link>
+            </div>
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <Link
                     to="/"
                     aria-current="page"
-                    className="text-gray-700 hover:text-blue-600 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
                   >
                     Home
                   </Link>
                   <div className="relative group">
                     <button
                       type="button"
-                      className="relative inline-flex w-full justify-center gap-x-1.5 text-gray-700 hover:text-blue-600 rounded-md px-3 py-2 text-sm font-medium text-white"
+                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium text-white"
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true"
@@ -220,7 +215,7 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 w-40">
+                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-40 z-10">
                       {[
                         "APIs",
                         "Impurities",
@@ -242,7 +237,7 @@ const HeaderNavbar = () => {
                   <div className="relative group">
                     <button
                       type="button"
-                      className="relative inline-flex w-full justify-center gap-x-1.5 text-gray-700 hover:text-blue-600 rounded-md px-3 py-2 text-sm font-medium text-white"
+                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium text-white"
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true"
@@ -263,7 +258,7 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-2 py-2 w-56">
+                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
                       {[
                         "APIImpurities",
                         "CustomSynthesis",
@@ -282,13 +277,13 @@ const HeaderNavbar = () => {
                   </div>
                   <Link
                     to="/about-us"
-                    className="text-gray-700 hover:text-blue-600 rounded-md px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
                   >
                     About Us
                   </Link>
                   <Link
                     to="/contact-us"
-                    className="text-gray-700 hover:text-blue-600 rounded-md px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
                   >
                     Contact Us
                   </Link>
@@ -320,7 +315,7 @@ const HeaderNavbar = () => {
               </button>
 
               <form
-                className="flex items-center bg-gray-800 rounded-md overflow-hidden"
+                className="flex items-center bg-gray-800 rounded-md"
                 onSubmit={handleSubmit}
               >
                 <TypeaheadSearch

@@ -2,7 +2,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-const CarouselComponent = () => {
+const Partners = () => {
   return (
     <OwlCarousel
       className="owl-theme"
@@ -12,7 +12,7 @@ const CarouselComponent = () => {
       autoplayTimeout={3000}
       autoplayHoverPause
       responsiveClass
-      items={1}
+      items={4}
     >
       <div className="item">
         <h4>1</h4>
@@ -54,4 +54,4 @@ const CarouselComponent = () => {
   );
 };
 
-export default CarouselComponent;
+export default Partners;

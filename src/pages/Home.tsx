@@ -1,22 +1,21 @@
-import React from "react";
-// import HeaderNavbar from "components/Navbars/Header";
-// import CustomCarousel from "components/Carousel/Carousel";
-// import { Product } from "components/product/product";
-// import { Partners } from "components/Partners/Partners";
-// import products from "assets/data/products.json";
+import CarouselComponent from "../features/BannerCarousel/BannerCarousel";
+import Partners from "../features/Partners/Partners";
+import Product from "../components/common/Product/Product";
+import products from "./../assets/data/products.json";
+import { ProductModel } from "../types/ProductModel";
 
 const Home = () => {
   const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
-//   const newProducts = products.filter(
-//     (product) => product.productStatus?.toLowerCase() === "new"
-//   );
+    const newProducts:any[] = products.filter(
+      (product) => product.productStatus?.toLowerCase() === "new"
+    );
 
   return (
     <>
       <main>
         {/* Hero Section */}
         <section className="relative w-full pt-24 pb-0 bg-gray-100">
-          {/* <CustomCarousel /> */}
+          <CarouselComponent />
         </section>
 
         {/* Top Products Section */}
@@ -39,13 +38,12 @@ const Home = () => {
 
             {/* Products Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-              {/* {newProducts.map((topProduct, index) => (
+              {newProducts.map((topProduct:ProductModel) => (
                 <Product
-                  key={topProduct.id || index}
+                  key={topProduct.Sno}
                   product={topProduct}
-                  thumbnailColor={thumbnailsColors[index % thumbnailsColors.length]}
                 />
-              ))} */}
+              ))}
             </div>
           </div>
         </section>
@@ -72,7 +70,15 @@ const Home = () => {
             </div>
 
             {/* Partners Component */}
-            <div className="mt-8">{/* <Partners /> */}</div>
+            <div className="mt-8">
+              <Partners />
+            </div>
+            <button className="relative px-6 py-2 text-sm font-medium text-black bg-white border-2 border-orange-500 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:border-orange-600">
+              <span className="absolute left-0 right-0 bottom-0 top-0 transition-transform duration-300 ease-in-out transform hover:translate-x-0 translate-x-full">
+                Hover me
+              </span>
+              Button
+            </button>
           </div>
         </section>
       </main>

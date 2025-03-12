@@ -1,10 +1,86 @@
 .featured-icon-box {
-    .fa {
-        width: 34px;
-        text-align: center;
-    }
+  .fa {
+    width: 34px;
+    text-align: center;
+  }
 }
 
 .contactus-banner {
-    background: url("./../../assets/img/contact/banner.jpeg") no-repeat center center/100%;
+  background: url("./../../assets/img/contact/banner.jpeg") no-repeat center
+    center/100%;
+}
+
+// .hexagon {
+//   width: 100px;
+//   height: 100px;
+//   background-color: #3498db;
+//   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+// }
+
+.hb-contact-tile {
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: translateY(-10px);
+    .hexagon {
+      background-color: #f79903;
+
+      &::before {
+        border-bottom: 29px solid #f79903;
+      }
+      &::after {
+        border-top: 29px solid #f79903;
+      }
+      i {
+        transform: rotateY(180deg);
+        transition: transform 0.9s;
+      }
+    }
+  }
+}
+.hexagon {
+  width: 100px;
+  height: 58px;
+  background-color: #2c7da0;
+  position: relative;
+  top: -50px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 35px;
+}
+
+.hexagon::before,
+.hexagon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-radius: 2px;
+}
+
+.hexagon::before {
+  bottom: 100%;
+  border-bottom: 29px solid #2c7da0;
+}
+
+.hexagon::after {
+  top: 100%;
+  border-top: 29px solid #2c7da0;
+}
+
+.contact-final-notes-wrapper {
+    margin-bottom: -55px;
+    position: relative;
+}
+
+.contact-final-notes {
+  background: transparent
+    linear-gradient(98deg, var(--unnamed-color-f79901) 0%, #2b7da0 100%) 0% 0%
+    no-repeat padding-box;
+  background: transparent linear-gradient(98deg, #f79901 0%, #2b7da0 100%) 0% 0%
+    no-repeat padding-box;
 }

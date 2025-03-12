@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white pt-20 pb-4">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo and Description */}
@@ -81,44 +81,45 @@ const Footer = () => {
             >
               Get Directions →
             </a>
-
-            {/* Social Media Icons */}
-            <div className="flex space-x-4 mt-4">
-              <a
-                href="https://twitter.com/creativetim"
-                target="_blank"
-                className="text-gray-400 hover:text-white"
-              >
-                <i className="fab fa-twitter text-xl"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/creativetim"
-                target="_blank"
-                className="text-gray-400 hover:text-white"
-              >
-                <i className="fab fa-facebook text-xl"></i>
-              </a>
-              <a
-                href="https://dribbble.com/creativetim"
-                target="_blank"
-                className="text-gray-400 hover:text-white"
-              >
-                <i className="fab fa-instagram text-xl"></i>
-              </a>
-            </div>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()}{" "}
-          <a
-            href="https://haschembharat.com/"
-            className="text-primary hover:underline"
-          >
-            HASCHEM BHARAT
-          </a>
-          . All rights reserved.
+        <div className="flex flex-wrap sm:flex-nowrap justify-between gap-8 border-t border-gray-700 mt-8 pt-6 text-sm text-gray-500">
+          <div className="text-left sm:text-center sm:flex-1">
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://haschembharat.com/"
+              className="text-primary hover:underline"
+            >
+              HASCHEM BHARAT
+            </a>
+            . All rights reserved.
+          </div>
+
+          <div className="flex flex-wrap sm:flex-nowrap space-x-4 sm:mt-4 sm:w-auto">
+            <a
+              href="https://twitter.com/creativetim"
+              target="_blank"
+              className="text-gray-400 hover:text-white"
+            >
+              <i className="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/creativetim"
+              target="_blank"
+              className="text-gray-400 hover:text-white"
+            >
+              <i className="fab fa-facebook text-xl"></i>
+            </a>
+            <a
+              href="https://dribbble.com/creativetim"
+              target="_blank"
+              className="text-gray-400 hover:text-white"
+            >
+              <i className="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

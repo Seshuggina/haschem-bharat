@@ -28,6 +28,23 @@ const HeaderNavbar = () => {
       navigate(`/products`);
     }
   };
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setVisible(false); // Hide on scroll up
+      } else {
+        setVisible(true); // Show on scroll down
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   //   const handleNavigation = (section) => {
   //     navigate("/services");
@@ -132,8 +149,12 @@ const HeaderNavbar = () => {
         </nav>
       </header> */}
 
-      <nav className="bg-gray-800">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <nav
+        className={`fixed left-0 w-full text-white z-50 transition-transform duration-100 ${
+          visible ? "translate-y-8" : "translate-y-0"
+        }`}
+      >
+        <div className="haschem-navbar mx-auto container px-2 sm:px-6 lg:px-8">
           <div className="fixed w-full relative flex items-center justify-between whitespace-nowrap">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button
@@ -187,14 +208,14 @@ const HeaderNavbar = () => {
                   <Link
                     to="/"
                     aria-current="page"
-                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 h-16 flex items-center px-3 py-2 text-sm font-medium hover:text-orange"
                   >
                     Home
                   </Link>
                   <div className="relative group">
                     <button
                       type="button"
-                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium text-white"
+                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true"
@@ -215,7 +236,7 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-40 z-10">
+                    <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-40 z-10">
                       {[
                         "APIs",
                         "Impurities",
@@ -226,7 +247,7 @@ const HeaderNavbar = () => {
                         <Link
                           key={item}
                           to="/products"
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-gray-700 hover:text-orange"
                         >
                           {item}
                         </Link>
@@ -237,7 +258,7 @@ const HeaderNavbar = () => {
                   <div className="relative group">
                     <button
                       type="button"
-                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium text-white"
+                      className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true"
@@ -258,7 +279,7 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
+                    <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
                       {[
                         "APIImpurities",
                         "CustomSynthesis",
@@ -268,7 +289,7 @@ const HeaderNavbar = () => {
                         <Link
                           key={item}
                           to="/services"
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-gray-700 hover:text-orange"
                         >
                           {item.replace(/([A-Z])/g, " $1").trim()}
                         </Link>
@@ -277,13 +298,13 @@ const HeaderNavbar = () => {
                   </div>
                   <Link
                     to="/about-us"
-                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
                   >
                     About Us
                   </Link>
                   <Link
                     to="/contact-us"
-                    className="text-gray-700 hover:text-blue-600 h-16 flex items-center px-3 py-2 text-sm font-medium text-white"
+                    className="text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
                   >
                     Contact Us
                   </Link>

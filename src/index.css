@@ -4,4 +4,20 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
+.hb-h-350 {
+    height: 350px;
+}
+.hb-bg-brand {
+    background-color: #F79A06;
+}
+.hb-bg-brand:hover {
+    background-color: #2D7DA0;
+}
+.hb-contact-form {
+    input, textarea {
+        &::focus-visible {
+           outline: 1px solid #2D7DA0;
+           border-color: #2D7DA0; 
+        }
+    }
+}

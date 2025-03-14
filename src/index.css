@@ -6,12 +6,26 @@ body {
 
 .hb-h-350 {
     height: 350px;
+    @media screen and (max-width: 500px) {
+        height: 250px;
+      }
 }
 .hb-bg-brand {
     background-color: #F79A06;
 }
 .hb-bg-brand:hover {
     background-color: #2D7DA0;
+}
+
+.hb-bg-primary {
+    background-color: #2D7DA0;
+}
+.hb-bg-primary:hover {
+    background-color: rgba(50, 103, 125, 1);
+}
+.hover\:bg-primary-500:hover {
+    background-color: #59A4B0;
+    color: #fff;
 }
 .hb-contact-form {
     input, textarea {

@@ -1,6 +1,10 @@
 .services-banner {
-  background: url("./../../assets/img/services/banner.jpeg") no-repeat center
+  background: url("./../../assets/img/services/banner.png") no-repeat bottom
     center/100%;
+    @media screen and (max-width: 500px) {
+      background-position: center;
+      background-size: cover;
+    }
 }
 
 .featured-icon-box {

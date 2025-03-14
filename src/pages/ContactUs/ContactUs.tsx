@@ -4,22 +4,21 @@ const ContactUs = () => {
   return (
     <>
       <section className="flex contactus-banner relative py-16 hb-h-350 items-center text-white">
-        <div className="absolute inset-0 bg-cover bg-center contactus-banner"></div>
         <div className="relative container mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold">Contact Us</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold mt-16">Contact Us</h1>
         </div>
       </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <p className="pb-8">
               <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
                 CONTACT INFO
               </span>
             </p>
             <h2 className="text-2xl font-bold pb-8">Reach Us Immediately</h2>
-            <div className="flex justify-center items-stretch mt-16 gap-x-8">
+            <div className="flex justify-center items-stretch mt-16 gap-x-8 hb-contact-tile-wrapper">
               {[
                 {
                   title: "Our Location",
@@ -87,30 +86,30 @@ const ContactUs = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="border p-3 w-full rounded-full"
+                    className="border border-gray-500  p-3 w-full rounded-full"
                   />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="border p-3 w-full rounded-full"
+                    className="border border-gray-500 p-3 w-full rounded-full"
                   />
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <input
                     type="text"
                     placeholder="Phone Number"
-                    className="border p-3 w-full rounded-full"
+                    className="border border-gray-500 p-3 w-full rounded-full"
                   />
                   <input
                     type="text"
                     placeholder="Subject"
-                    className="border p-3 w-full rounded-full"
+                    className="border border-gray-500 p-3 w-full rounded-full"
                   />
                 </div>
                 <textarea
                   placeholder="Write a message here..."
                   rows={5}
-                  className="border p-3 w-full rounded-lg	 mb-4"
+                  className="border border-gray-500 p-3 w-full rounded-lg	 mb-4"
                 ></textarea>
                 <div className="flex justify-center items-center">
                   <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">

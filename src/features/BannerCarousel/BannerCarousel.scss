@@ -1,0 +1,109 @@
+.home-carousel {
+  position: relative;
+  .owl-item {
+    padding-top: 125px;
+    padding-bottom: 50px;
+    min-height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    @media (max-width: 768px) {
+      height: 40vh;
+    }
+    &:nth-of-type(3) {
+      background-image: url("./../../assets/img/banner/banner_1.jpg");
+    }
+    &:nth-of-type(4) {
+      background-image: url("./../../assets/img/banner/banner_2.jpg");
+    }
+    &:nth-of-type(5) {
+      background-image: url("./../../assets/img/banner/banner_3.jpg");
+    }
+    &:nth-of-type(6) {
+      background-image: url("./../../assets/img/banner/banner_1_1.jpg");
+    }
+    &:nth-of-type(7) {
+      background-image: url("./../../assets/img/banner/banner_2_2.jpg");
+    }
+    h3 {
+      font-size: 2.8rem;
+      color: white;
+      font-weight: 600;
+      transform: translateY(-20px);
+      padding-bottom: 5px;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.4rem;
+      color: white;
+      font-weight: 500;
+      transform: translateY(-60px);
+      opacity: 0;
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .carousel-caption {
+        display: block !important;
+      }
+      h3 {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 600;
+        transform: translateY(-20px);
+      }
+      p {
+        font-size: 0.9rem;
+        color: white;
+        font-weight: 500;
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+    }
+    @media (max-width: 400px) {
+      h3 {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 600;
+        transform: translateY(-20px);
+      }
+    }
+    &.active {
+      h3 {
+        transform: translateY(0);
+        transition: all linear 100ms;
+      }
+      p {
+        transform: translateY(0);
+        transition: all linear 250ms;
+        opacity: 1;
+      }
+    }
+  }
+  .owl-dots {
+    position: relative;
+    top: -47px;
+    .owl-dot {
+      span {
+        background-color: transparent;
+        border: 1px solid white;
+        width: 15px;
+        height: 15px;
+        &:hover {
+          background-color: #f79a06;
+        }
+      }
+      &.active {
+        span {
+          background-color: #f79a06;
+          border-color: #ab6a02;
+          outline: 1px solid #f79a06;
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+}

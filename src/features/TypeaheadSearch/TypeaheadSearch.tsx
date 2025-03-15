@@ -14,10 +14,10 @@ interface TypeaheadSearchProps {
 export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
   const { onSubmit, onInputChange } = props;
   const [selected, setSelected] = useState<ProductModel[]>([]);
-  const [options, setOptions] = useState<ProductModel[]>(
-    products as Array<ProductModel>
-  );
-  console.log("options", options);
+  // const [options, setOptions] = useState<ProductModel[]>(
+  //   products as Array<ProductModel>
+  // );
+  // console.log("options", options);
 
   const inputRef = useRef<any>(null);
   const [inputText, setInputText] = useState("");
@@ -49,11 +49,11 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
     }
   };
 
-  const clearFilter = () => {
-    if (inputRef.current) {
-      inputRef.current.clear();
-    }
-  };
+  // const clearFilter = () => {
+  //   if (inputRef.current) {
+  //     inputRef.current.clear();
+  //   }
+  // };
 
   return (
     <>
@@ -61,7 +61,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         className="typeaheadSearch"
         onChange={(selected) => onProductChange(selected as ProductModel[])}
         onInputChange={(text) => handleInputChange(text)}
-        options={options}
+        options={products}
         placeholder="Enter #CAS No, Name, Category, Molecular Formula"
         selected={selected}
         ref={inputRef}

@@ -4,7 +4,7 @@ import "./Product.scss";
 
 const Product = ({ product }: { product: ProductModel }) => {
   return (
-    <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300">
+    <div className="border-t-4 border-blue-500 max-w-xs rounded-lg overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300">
       <p className="flex justify-end p-2">
         <button type="button" className="cursor-pointer">
           <i className="fa fa-cart-plus text-xl"></i>

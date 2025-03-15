@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import products from "./../../assets/data/products.json";
+// import React, { useState } from "react";
+// import products from "./../../assets/data/products.json";
 import impurities from "./../../assets/img/services/impurities.jpg";
 import croservices from "./../../assets/img/services/cro-services.jpg";
 import customsynthesys from "./../../assets/img/services/custom-synthesys-new.jpg";

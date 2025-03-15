@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import "./Header.scss";
@@ -7,12 +7,12 @@ import "./Header.scss";
 import logo from "./../../../../assets/img/brand/logo.png";
 
 const HeaderNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const updateProductsCategory = useGlobalStore(
-    (state: any) => state.updateProductsCategory
-  );
+  // const updateProductsCategory = useGlobalStore(
+  //   (state: any) => state.updateProductsCategory
+  // );
   const updateSearchText = useGlobalStore(
     (state: any) => state.updateSearchText
   );

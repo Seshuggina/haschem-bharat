@@ -63,8 +63,11 @@ export const AboutUs = () => {
                 alt="About Us"
                 className="rounded-lg w-full h-auto mb-4 block lg:hidden"
               />
-              <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
-                SEND
+              <button
+                data-content="See Services"
+                className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+              >
+                <span className="hb-btn-text">Services</span>
               </button>
             </div>
             <div className="flex-1 text-white text-center lg:block hidden">
@@ -132,8 +135,11 @@ export const AboutUs = () => {
                     alt="Mission"
                     className="rounded-lg w-full h-auto mb-4 block lg:hidden"
                   />
-                  <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
-                    Get In Touch
+                  <button
+                    data-content="Contact"
+                    className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+                  >
+                    <span className="hb-btn-text">Get In Touch</span>
                   </button>
                 </div>
                 <div className="flex-1 text-center lg:block hidden">

@@ -6,7 +6,7 @@ import { ProductModel } from "../types/ProductModel";
 // import AutoComplete from "../components/common/AutoComplete/AutoComplete";
 
 const Home = () => {
-  const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
+  // const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
   const newProducts: any[] = products.filter(
     (product) => product.productStatus?.toLowerCase() === "new"
   );
@@ -15,31 +15,26 @@ const Home = () => {
     <>
       <main>
         {/* Hero Section */}
-        <section className="relative w-full pt-24 pb-0">
+        <section className="relative w-full pb-0 home-carousel">
           {/* <div className="container mx-auto px-6 lg:px-8"> */}
-            <CarouselComponent />
+          <CarouselComponent />
           {/* </div> */}
         </section>
 
         {/* <AutoComplete /> */}
 
         {/* Top Products Section */}
-        <section id="topProductsSection" className="bg-green-500 py-12">
+        <section id="topProductsSection" className="py-12">
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center justify-center w-16 h-16 bg-white shadow-lg rounded-full">
-                <i className="ni ni-building text-green-500 text-2xl" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-white">Top Products</h2>
-                <p className="text-white">
-                  The Arctic Ocean freezes every winter, and much of the sea-ice
-                  then thaws every summer. That process will continue
-                  regardless.
-                </p>
-              </div>
-            </div>
+            <p className="pb-8 text-center">
+              <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
+                OUR PRODUCTS
+              </span>
+            </p>
+            <h2 className="text-3xl font-bold text-center">
+              We Provide Reliable Products
+            </h2>
 
             {/* Products Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
@@ -75,11 +70,9 @@ const Home = () => {
             <div className="mt-8">
               <Partners />
             </div>
-            <button className="relative px-6 py-2 text-sm font-medium text-black bg-white border-2 border-orange-500 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:border-orange-600">
-              <span className="absolute left-0 right-0 bottom-0 top-0 transition-transform duration-300 ease-in-out transform hover:translate-x-0 translate-x-full">
-                Hover me
-              </span>
-              Button
+
+            <button className="hb-btn" data-content="Hover me :D">
+              <span className="hb-btn-text">Hover me</span>
             </button>
           </div>
         </section>

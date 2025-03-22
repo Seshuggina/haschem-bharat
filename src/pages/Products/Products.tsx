@@ -32,9 +32,12 @@ export const Products: React.FC = () => {
   }, [selectedLetters, productsCategory, selectedLetter]);
 
   useEffect(() => {
-    // if (productsCategory.length > 0 && !productsCategory.includes("All")) {
-    //   selectedCategoriesList.current = productsCategory;
-    // }
+    if (
+      productsCategory.length > 0 &&
+      !productsCategory.some((category) => category.name === "All")
+    ) {
+      selectedCategoriesList.current = productsCategory.map((c) => c.name);
+    }
     const unsubscribe = useGlobalStore.subscribe((state) => {
       searchTextRef.current = state.searchedText;
       filterProducts();
@@ -45,6 +48,7 @@ export const Products: React.FC = () => {
       unsubscribe();
       updateProductsCategory([]);
       selectedCategoriesList.current = [];
+      updateSelectedProductsCategory([]);
     };
   }, []);
 
@@ -147,8 +151,6 @@ export const Products: React.FC = () => {
     const selectedCat = updatedCategories.filter((c) => c.isSelected);
     selectedCategoriesList.current = [...selectedCat.map((c) => c.name)];
     setCategories(updatedCategories);
-    updateProductsCategory([...updatedCategories]);
-    updateSelectedProductsCategory([...selectedCat]);
     filterProducts();
   };
 
@@ -159,7 +161,6 @@ export const Products: React.FC = () => {
     });
     setCategories(cat);
     updateProductsCategory([...cat]);
-    updateSelectedProductsCategory([]);
     filterProducts();
     selectedCategoriesList.current = [];
   };
@@ -218,17 +219,6 @@ export const Products: React.FC = () => {
                 onChange={(e) => searchProducts(e.target.value)}
                 value={searchTextRef.current}
               />
-              <button
-                className={`px-4 py-2 rounded-sm h-[42px] ${
-                  searchTextRef.current
-                    ? "bg-red-500 text-white"
-                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                }`}
-                disabled={!searchTextRef.current}
-                onClick={() => searchProducts("")}
-              >
-                Search
-              </button>
 
               <button
                 className={`px-4 py-2 rounded-sm h-[42px] ${

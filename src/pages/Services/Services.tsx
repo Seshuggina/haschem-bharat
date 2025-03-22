@@ -19,7 +19,7 @@ export const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid gap-12">
             {/* API Impurities/Reference Standards */}
-            <div className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
+            <div id="apiimpurities" className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
               <div className="flex-1">
                 <h4 className="text-xl font-semibold mb-4">
                   API Impurities/Reference Standards
@@ -54,7 +54,7 @@ export const Services = () => {
               </div>
             </div>
             {/* Custom Synthesis */}
-            <div className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
+            <div id="customsynthesis" className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
               <div className="flex-1">
                 <h4 className="text-xl font-semibold mb-4">Custom Synthesis</h4>
                 <img
@@ -78,7 +78,7 @@ export const Services = () => {
               </div>
             </div>
             {/* CRO/CDMO Services */}
-            <div className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
+            <div id="crocmoservices" className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
               <div className="flex-1">
                 <h4 className="text-xl font-semibold mb-4">
                   CRO/CDMO Services
@@ -114,9 +114,9 @@ export const Services = () => {
             </div>
 
             {/* Chemical Sourcing */}
-            <div className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
+            <div id="chemicalsourcing" className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4">
               <div className="flex-1">
-                <h4 className="text-xl font-semibold mb-4">Custom Synthesis</h4>
+                <h4 className="text-xl font-semibold mb-4">Chemical Sourcing</h4>
                 <img
                   className="w-full h-auto rounded mb-4 block lg:hidden"
                   src={sourcing}

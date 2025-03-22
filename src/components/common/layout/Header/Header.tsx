@@ -295,7 +295,7 @@ const HeaderNavbar = () => {
                       ].map((item) => (
                         <Link
                           key={item}
-                          to="/services"
+                          to={`/services#${item.toLowerCase()}`}
                           className="block px-4 py-2 text-gray-700 hover:text-orange"
                         >
                           {item.replace(/([A-Z])/g, " $1").trim()}

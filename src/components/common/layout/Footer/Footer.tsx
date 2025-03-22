@@ -85,8 +85,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="flex flex-wrap sm:flex-nowrap justify-between gap-8 border-t border-gray-700 mt-8 pt-6 text-sm text-gray-500">
-          <div className="text-left sm:text-center sm:flex-1">
+        <div className="flex flex-col md:flex-row lg:justify-between gap-8 border-t border-gray-700 mt-8 pt-3 text-sm text-gray-500">
+          <div className="text-center md:text-left flex-1 justify-center md:justify-end">
             © {new Date().getFullYear()}{" "}
             <a
               href="https://haschembharat.com/"
@@ -97,7 +97,7 @@ const Footer = () => {
             . All rights reserved.
           </div>
 
-          <div className="flex flex-wrap sm:flex-nowrap space-x-4 sm:mt-4 sm:w-auto">
+          <div className="flex flex-1 flex-wrap justify-center md:justify-end sm:flex-nowrap space-x-4 sm:w-auto">
             <a
               href="https://twitter.com/creativetim"
               target="_blank"

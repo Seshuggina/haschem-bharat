@@ -16,7 +16,8 @@ const Product = ({ product }: { product: ProductModel }) => {
           altTxt={product.impurityName}
         />
       </div>
-      <div className="p-4 bg-orange-500">
+      {/*  */}
+      <div className="p-4 bg-orange-500 h-full">
         <h2 className="relative hb-m-t--35 text-l font-semibold text-white bg-gray-900 p-2 rounded-md text-center">
           {product.impurityName}
         </h2>
@@ -34,8 +35,8 @@ const Product = ({ product }: { product: ProductModel }) => {
             {product.readyStock}
           </span>
         </div>
-        <div className="mt-4 text-center">
-          <button className="cursor-pointer px-4 py-2 text-white bg-orange-500 hover:bg-orange-600 rounded-full w-full flex items-center justify-center transition-all duration-300">
+        <div className="mt-4 flex justify-center">
+          <button className="cursor-pointer px-4 py-2 text-white bg-orange-500 hover:bg-orange-600 rounded-full border flex items-center justify-center transition-all duration-300">
             Discover More &nbsp;
             <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
           </button>

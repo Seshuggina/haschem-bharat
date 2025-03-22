@@ -4,6 +4,7 @@ import { AboutUs } from "../pages/AboutUs/AboutUs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import { Services } from "../pages/Services/Services";
 import { PageNotFound } from "../pages/PageNotFound/PageNotFound";
+import { Products } from "../pages/Products/Products";
 // import other pages as needed
 
 const AppRoutes = () => {
@@ -13,12 +14,12 @@ const AppRoutes = () => {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/services" element={<Services />} />
-      {/* 
+      
       <Route path="/products" element={<Products />} />
-      <Route path="/products/:id" element={<ProductDetails />} />
-      <Route path="/career" element={<Career />} />
-       */}
-      <Route path="*" element={<PageNotFound />} />
+      {/* <Route path="/products/:id" element={<ProductDetails />} />
+      <Route path="/career" element={<Career />} /> */}
+      
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 };

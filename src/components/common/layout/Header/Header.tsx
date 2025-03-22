@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
+import products from "./../../../../assets/data/products.json";
 import "./Header.scss";
 
 import logo from "./../../../../assets/img/brand/logo.png";
@@ -10,12 +11,24 @@ const HeaderNavbar = () => {
   // const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  // const updateProductsCategory = useGlobalStore(
-  //   (state: any) => state.updateProductsCategory
-  // );
+
+  const updateProductsCategory = useGlobalStore(
+    (state: any) => state.updateProductsCategory
+  );
+  const uniqueCategories = [
+    ...new Set(products.flatMap((item) => item.category)),
+  ];
+  const uniqueCategoriesObj = uniqueCategories.map((item, index) => ({
+      id: index + 1,
+      name: item,
+      isSelected: false,
+  }));
+  updateProductsCategory(uniqueCategoriesObj);
   const updateSearchText = useGlobalStore(
     (state: any) => state.updateSearchText
   );
+
+
 
   const handleChange = (inputText: string) => {
     setSearchQuery(inputText);
@@ -236,14 +249,8 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-40 z-10">
-                      {[
-                        "APIs",
-                        "Impurities",
-                        "Metabolites",
-                        "Nitrosamines",
-                        "Building blocks",
-                      ].map((item) => (
+                    <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 z-10">
+                      {uniqueCategories.map((item) => (
                         <Link
                           key={item}
                           to="/products"

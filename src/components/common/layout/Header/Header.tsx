@@ -18,6 +18,8 @@ const HeaderNavbar = () => {
   const uniqueCategories = [
     ...new Set(products.flatMap((item) => item.category)),
   ];
+  // Push 'All' category to the beginning of the
+  uniqueCategories.unshift("All");
   const uniqueCategoriesObj = uniqueCategories.map((item, index) => ({
       id: index + 1,
       name: item,

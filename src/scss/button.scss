@@ -8,7 +8,6 @@
   cursor: pointer;
   z-index: 1;
   overflow: hidden;
-  border: none;
   &-text {
     display: block;
     transition: all var(--animation-style) var(--buton-text-transition-delay);

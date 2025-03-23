@@ -2,8 +2,15 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./BannerCarousel.scss";
+import { useNavigate } from "react-router-dom";
 
 const CarouselComponent = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (section: string) => {
+    navigate(`/services#${section}`);
+  };
+
   return (
     <OwlCarousel
       className="owl-theme"
@@ -17,49 +24,88 @@ const CarouselComponent = () => {
     >
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center justify-between">
         <div className="flex-1">
-          <h3>
-            API Impurities/Reference Standards
-          </h3>
-          <p>
+          <h3>API Impurities/Reference Standards</h3>
+          <p className="pb-4">
             Our mission is to deliver premium-grade API impurities and Reference
             standards, setting the benchmark for quality and reliability in the
             industry.
           </p>
+
+          <button
+            onClick={() => handleNavigation("apiimpurities")}
+            data-content="Read More"
+            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+          >
+            <span className="hb-btn-text">
+              Know More &nbsp;
+              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
+            </span>
+          </button>
         </div>
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
         <div className="flex-1">
           <h3>CUSTOM SYNTHESIS</h3>
-          <p>
+          <p className="pb-4">
             Our experienced team of Ph.D. chemists specializes in meticulously
             crafting optimal synthetic pathways for both novel and established
             compounds
           </p>
+          <button
+            onClick={() => handleNavigation("customsynthesis")}
+            data-content="Read More"
+            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+          >
+            <span className="hb-btn-text">
+              Know More &nbsp;
+              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
+            </span>
+          </button>
         </div>
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
         <div className="flex-1">
           <h3>CRO/CDMO services</h3>
-          <p>
+          <p className="pb-4">
             We offer an extensive array of services encompassing drug discovery,
             development, and manufacturing. Our commitment is to deliver
             innovative solutions tailored to meet the diverse needs of our
             clients
           </p>
+          <button
+            onClick={() => handleNavigation("crocmoservices")}
+            data-content="Read More"
+            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+          >
+            <span className="hb-btn-text">
+              Know More &nbsp;
+              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
+            </span>
+          </button>
         </div>
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
         <div className="flex-1">
           <h3>Chemical Sourcing</h3>
-          <p>
+          <p className="pb-4">
             The HASCHEM sourcing team has diligently cultivated relationships
             over several years with numerous partner organizations renowned for
             their specialized skills and technical prowess across India and
             China
           </p>
+          <button
+            onClick={() => handleNavigation("chemicalsourcing")}
+            data-content="Read More"
+            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+          >
+            <span className="hb-btn-text">
+              Know More &nbsp;
+              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
+            </span>
+          </button>
         </div>
         <div className="flex-1">&nbsp;</div>
       </div>

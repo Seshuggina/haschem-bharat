@@ -12,7 +12,7 @@ export const Products: React.FC = () => {
   const [categories, setCategories] = useState<CategoryModel[]>(categoriesList);
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  const productsCategory = useGlobalStore((state) => state.productsCategory);
+  let productsCategory = useGlobalStore((state) => state.productsCategory);
   const selectedLetter = useGlobalStore((state) => state.selectedLetter);
   const searchedTxt = useGlobalStore((state) => state.searchedText);
   const updateProductsCategory = useGlobalStore(
@@ -250,6 +250,7 @@ export const Products: React.FC = () => {
           <div className="flex flex-wrap gap-2">
             {categories.map((category, index) => (
               <button
+                hidden={category.name === "All"}
                 key={index}
                 className={`inline-flex items-center rounded-full px-5 py-1 text-sm font-medium text-black ring-1 text-gray-700 ring-inset ${
                   category.isSelected ? " bg-orange text-orange" : ""

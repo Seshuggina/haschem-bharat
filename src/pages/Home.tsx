@@ -37,7 +37,7 @@ const Home = () => {
             </h2>
 
             {/* Products Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+            <div className="flex flex-wrap gap-8 justify-start mt-8">
               {newProducts.map((topProduct: ProductModel) => (
                 <Product key={topProduct.Sno} product={topProduct} />
               ))}
@@ -49,12 +49,12 @@ const Home = () => {
         <section id="ourPartners" className="py-12">
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-start gap-4">
               <div className="flex items-center justify-center w-16 h-16 bg-gray-200 shadow-lg rounded-full">
-                <i className="ni ni-building text-gray-600 text-2xl" />
+                <i className="fa-solid fa-handshake text-secondary text-3xl"></i>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-800">
+                <h2 className="text-3xl font-bold">
                   Our Partners
                 </h2>
                 <p className="text-gray-600">
@@ -70,10 +70,6 @@ const Home = () => {
             <div className="mt-8">
               <Partners />
             </div>
-
-            <button className="hb-btn" data-content="Hover me :D">
-              <span className="hb-btn-text">Hover me</span>
-            </button>
           </div>
         </section>
       </main>

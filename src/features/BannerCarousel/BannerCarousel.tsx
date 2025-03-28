@@ -33,12 +33,11 @@ const CarouselComponent = () => {
 
           <button
             onClick={() => handleNavigation("apiimpurities")}
-            data-content="Read More"
-            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+            data-content="Know More &#10095;"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
-              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
             </span>
           </button>
         </div>
@@ -54,12 +53,11 @@ const CarouselComponent = () => {
           </p>
           <button
             onClick={() => handleNavigation("customsynthesis")}
-            data-content="Read More"
-            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+            data-content="Know More &#10095;"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
-              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
             </span>
           </button>
         </div>
@@ -76,12 +74,11 @@ const CarouselComponent = () => {
           </p>
           <button
             onClick={() => handleNavigation("crocmoservices")}
-            data-content="Read More"
-            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+            data-content="Know More &#10095;"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
-              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
             </span>
           </button>
         </div>
@@ -98,12 +95,11 @@ const CarouselComponent = () => {
           </p>
           <button
             onClick={() => handleNavigation("chemicalsourcing")}
-            data-content="Read More"
-            className="hb-btn text-white py-3 px-8 rounded hb-border-white border border-white text-orange hover:bg-orange hover:border-orange hover:text-white"
+            data-content="Know More &#10095;"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
-              <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
             </span>
           </button>
         </div>

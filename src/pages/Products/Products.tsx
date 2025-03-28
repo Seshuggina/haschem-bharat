@@ -4,32 +4,30 @@ import useGlobalStore from "./../../store/globals";
 import Product from "../../components/common/Product/Product";
 import { ProductModel } from "../../types/ProductModel";
 import { CategoryModel } from "../../types/models";
+import { getCategoriesObject } from "../../services/utilities";
 
 export const Products: React.FC = () => {
-  const categoriesList = useGlobalStore((state) => state.productsCategory);
+  const categoriesList = getCategoriesObject();
+  const [searchText, setSearchText] = useState<string>("");
   const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]);
   const [selectedLetters, setSelectedLetters] = useState<string[]>([]);
   const [categories, setCategories] = useState<CategoryModel[]>(categoriesList);
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   let productsCategory = useGlobalStore((state) => state.productsCategory);
-  const selectedLetter = useGlobalStore((state) => state.selectedLetter);
   const searchedTxt = useGlobalStore((state) => state.searchedText);
-  const updateProductsCategory = useGlobalStore(
-    (state) => state.updateProductsCategory
-  );
+
   const updateSelectedProductsCategory = useGlobalStore(
     (state) => state.updateSelectedProductsCategory
   );
-  const searchTextRef = useRef<string>(""); // Ref for search text
   const selectedCategoriesList = useRef<string[]>([]);
 
   useEffect(() => {
     if (searchedTxt) {
-      searchTextRef.current = searchedTxt;
+      setSearchText(searchedTxt);
     }
     filterProducts();
-  }, [selectedLetters, productsCategory, selectedLetter]);
+  }, [selectedLetters, productsCategory]);
 
   useEffect(() => {
     if (
@@ -39,24 +37,17 @@ export const Products: React.FC = () => {
       selectedCategoriesList.current = productsCategory.map((c) => c.name);
     }
     const unsubscribe = useGlobalStore.subscribe((state) => {
-      searchTextRef.current = state.searchedText;
+      setSearchText(state.searchedText);
       filterProducts();
     });
 
     // Cleanup subscription on unmount
     return () => {
       unsubscribe();
-      updateProductsCategory([]);
       selectedCategoriesList.current = [];
       updateSelectedProductsCategory([]);
     };
   }, []);
-
-  useEffect(() => {
-    if (selectedLetter) {
-      setSelectedLetters([selectedLetter]);
-    }
-  }, [selectedLetter]);
 
   const handleLetterClick = (letter: string) => {
     setSelectedLetters((prevSelectedLetters) => {
@@ -96,10 +87,10 @@ export const Products: React.FC = () => {
     }
 
     // Filter by search text
-    if (searchTextRef.current) {
+    if (searchText) {
       filteredProductsList = filteredProductsList.filter((obj) => {
         const allProperties = JSON.stringify(obj).toLowerCase();
-        return allProperties.includes(searchTextRef.current.toLowerCase());
+        return allProperties.includes(searchText.toLowerCase());
       });
     }
 
@@ -139,7 +130,7 @@ export const Products: React.FC = () => {
   };
 
   const searchProducts = (value: string) => {
-    searchTextRef.current = value;
+    setSearchText(value);
     filterProducts();
   };
 
@@ -160,7 +151,6 @@ export const Products: React.FC = () => {
       return category;
     });
     setCategories(cat);
-    updateProductsCategory([...cat]);
     filterProducts();
     selectedCategoriesList.current = [];
   };
@@ -217,16 +207,16 @@ export const Products: React.FC = () => {
                 className="border py-2 px-3 rounded-sm min-w-[200px] h-[42px] flex-2"
                 placeholder="Search Products"
                 onChange={(e) => searchProducts(e.target.value)}
-                value={searchTextRef.current}
+                value={searchText}
               />
 
               <button
                 className={`px-4 py-2 rounded-sm h-[42px] ${
-                  searchTextRef.current
+                  searchText
                     ? "bg-red-500 text-white"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
-                disabled={!searchTextRef.current}
+                disabled={!searchText}
                 onClick={() => searchProducts("")}
               >
                 Clear
@@ -239,14 +229,6 @@ export const Products: React.FC = () => {
       <section className="py-16 hb-products-section-2 shadow-lg">
         <div className="container mx-auto px-4">
           <h5 className="mb-2">Filter By Category: </h5>
-          {/* <Multiselect
-              options={categoriesList} // Options to display in the dropdown
-              selectedValues={selectedCategoriesList.current} // Preselected value to persist in dropdown
-              onSelect={handleCategoriesSelect} // Function will trigger on select event
-              onRemove={handleCategoriesSelect} // Function will trigger on remove event
-              displayValue="name" // Property name to display in the dropdown options
-              isObject={false}
-            /> */}
           <div className="flex flex-wrap gap-2">
             {categories.map((category, index) => (
               <button
@@ -295,7 +277,7 @@ export const Products: React.FC = () => {
         </div>
       </section>
       <div className="mx-auto p-4">
-        <div className="flex flex-wrap gap-8 justify-center">
+        <div className="flex flex-wrap gap-8 justify-start">
           {filteredProducts.map((product, index) => (
             <Product product={product} key={index} />
           ))}

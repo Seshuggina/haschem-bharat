@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import mission from "./assets/images/mission.jpg";
-// import vision from "../../assets/images/vision.jpg";
 import "./AboutUs.scss";
 import OwlCarousel from "react-owl-carousel";
 

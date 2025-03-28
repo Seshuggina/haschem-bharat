@@ -49,11 +49,11 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
     }
   };
 
-  // const clearFilter = () => {
-  //   if (inputRef.current) {
-  //     inputRef.current.clear();
-  //   }
-  // };
+  const clearFilter = () => {
+    if (inputRef.current) {
+      inputRef.current.clear();
+    }
+  };
 
   return (
     <>
@@ -102,8 +102,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
       />
 
       <button
-        // onClick={() => clearFilter()}
-        className="bg-orange-500 px-4 py-2 rounded-md text-white hover:bg-orange-600 link"
+        onClick={() => clearFilter()}
+        className="w-8 rounded-full text-black hover:bg-gray-200 link text-2xl"
       >
         &times;
       </button>

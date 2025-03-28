@@ -3,6 +3,11 @@
     max-width: 100%;
   }
 }
+.hb-logo {
+  img {
+    width: 90%;
+  }
+}
 .navbar-main {
   background-color: #172b4d !important;
   .input-group {
@@ -23,10 +28,6 @@
       padding-left: 0;
     }
   }
-}
-
-.navbar-main {
-  // background: linear-gradient(150deg, #7795f8 15%, #6772e5 70%, #555abf 94%);
 }
 
 .pt-88 {
@@ -87,4 +88,26 @@
   border-bottom-left-radius: 4px;
   height: 200px;
   overflow-y: auto;
+}
+
+.nav-items a {
+  &::after {
+    width: 0;
+    transition: width 1s linear;
+  }
+  &.nav-active {
+    position: relative;
+    &::after {
+      width: 100%;
+      height: 3px;
+      background-color: #f79903;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+.hb-border-primary-focus:focus {
+    box-shadow: 0 0 1px 1px inset #2d7da0;
 }

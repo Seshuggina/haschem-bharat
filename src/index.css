@@ -4,7 +4,9 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-
+.text-secondary {
+  color: #2d7da0;
+}
 .hb-h-350 {
   height: 350px;
   @media screen and (max-width: 500px) {
@@ -31,6 +33,13 @@ body {
   background-color: #59a4b0;
   color: #fff;
 }
+.hb-border-primary {
+  border-color: #2d7da0;
+}
+.hb-border-primary-focus:focus {
+  box-shadow: 1px 1px 1px 1px rgba(50, 103, 125, 1);
+  outline: 1px solid rgba(50, 103, 125, 1);
+}
 .hb-contact-form {
   input,
   textarea {
@@ -40,9 +49,12 @@ body {
     }
   }
 }
-.hover\:border-orange {
-    border-color: #f79a06;
+.hover\:bg-orange:hover {
+  background-color: #f79a06;
 }
-.hover\:text-white {
-    color: #fff;
+.hover\:border-orange:hover {
+  border-color: #f79a06;
+}
+.hover\:text-white:hover {
+  color: #fff;
 }

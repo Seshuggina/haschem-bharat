@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
-import "./Header.scss";
-
 import logo from "./../../../../assets/img/brand/haschem_bharat_logo.svg";
 import { getCategories } from "../../../../services/utilities";
+import "./Header.scss";
 
 const HeaderNavbar = () => {
-  // const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
@@ -19,8 +18,15 @@ const HeaderNavbar = () => {
   const updateSearchText = useGlobalStore(
     (state: any) => state.updateSearchText
   );
+  const updateSelectedProductsCategory = useGlobalStore(
+    (state: any) => state.updateSelectedProductsCategory
+  );
 
   const handleChange = (inputText: string) => {
+    setSearchQuery(inputText);
+  };
+
+  const productSelectionChange = (inputText: string) => {
     setSearchQuery(inputText);
   };
 
@@ -31,11 +37,20 @@ const HeaderNavbar = () => {
       navigate(`/products`);
     }
   };
-  const [visible, setVisible] = useState(true);
+
+  const getLinkClass = (path: string, classes: string) => {
+    return location.pathname === path
+      ? `${classes} nav-active text-orange`
+      : classes;
+  };
+
+  const navigateToProducts = (section: string) => {
+    updateSelectedProductsCategory([section]);
+    navigate("/products");
+  };
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setVisible(false); // Hide on scroll up
@@ -44,19 +59,9 @@ const HeaderNavbar = () => {
       }
       lastScrollY = window.scrollY;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const getLinkClass = (path: string, classes:string) => {
-    // console.log("pathpath", path);
-    
-    return location.pathname === path
-      ? `${classes} nav-active text-orange`
-      : classes;
-  }
-    
 
   return (
     <>
@@ -119,14 +124,20 @@ const HeaderNavbar = () => {
                   <Link
                     to="/"
                     aria-current="page"
-                    className={getLinkClass("/", 'text-gray-700 h-16 flex items-center px-3 py-2 text-sm font-medium hover:text-orange')}
+                    className={getLinkClass(
+                      "/",
+                      "text-gray-700 h-16 flex items-center px-3 py-2 text-sm font-medium hover:text-orange"
+                    )}
                   >
                     Home
                   </Link>
                   <div className="relative group">
                     <button
                       type="button"
-                      className={getLinkClass("/products", 'relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium')}
+                      className={getLinkClass(
+                        "/products",
+                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
+                      )}
                       // className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
                       id="menu-button"
                       aria-expanded="true"
@@ -149,13 +160,14 @@ const HeaderNavbar = () => {
                     </button>
 
                     <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 z-10">
-                      {uniqueCategories.map((item) => (
+                      {uniqueCategories.map((category) => (
                         <Link
-                          key={item}
+                          key={category}
                           to="/products"
                           className="block px-4 py-2 text-gray-700 hover:text-orange"
+                          onClick={() => navigateToProducts(category)}
                         >
-                          {item}
+                          {category}
                         </Link>
                       ))}
                     </div>
@@ -164,7 +176,10 @@ const HeaderNavbar = () => {
                   <div className="relative group">
                     <button
                       type="button"
-                      className={getLinkClass("/services", 'relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium')}
+                      className={getLinkClass(
+                        "/services",
+                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
+                      )}
                       id="menu-button"
                       aria-expanded="true"
                       aria-haspopup="true"
@@ -185,7 +200,7 @@ const HeaderNavbar = () => {
                       </svg>
                     </button>
 
-                    <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
+                    <div className="small hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
                       {[
                         "APIImpurities",
                         "CustomSynthesis",
@@ -204,13 +219,19 @@ const HeaderNavbar = () => {
                   </div>
                   <Link
                     to="/about-us"
-                    className={getLinkClass("/about-us", 'text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium')}
+                    className={getLinkClass(
+                      "/about-us",
+                      "text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
+                    )}
                   >
                     About Us
                   </Link>
                   <Link
                     to="/contact-us"
-                    className={getLinkClass("/contact-us", 'text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium')}
+                    className={getLinkClass(
+                      "/contact-us",
+                      "text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
+                    )}
                   >
                     Contact Us
                   </Link>
@@ -224,8 +245,7 @@ const HeaderNavbar = () => {
               >
                 <TypeaheadSearch
                   onSubmit={(text: string) => {
-                    handleChange(text);
-                    navigate(`/products`);
+                    productSelectionChange(text);
                   }}
                   onInputChange={handleChange}
                 />

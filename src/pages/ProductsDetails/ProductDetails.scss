@@ -1,0 +1,14 @@
+.product-list {
+  width: 300px;
+  ul {
+    max-height: 415px;
+    overflow-y: auto;
+  }
+  a {
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+  }
+}

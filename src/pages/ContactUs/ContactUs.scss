@@ -77,19 +77,6 @@
   border-top: 29px solid #2c7da0;
 }
 
-.contact-final-notes-wrapper {
-  margin-bottom: -55px;
-  position: relative;
-}
-
-.contact-final-notes {
-  background: transparent
-    linear-gradient(98deg, var(--unnamed-color-f79901) 0%, #2b7da0 100%) 0% 0%
-    no-repeat padding-box;
-  background: transparent linear-gradient(98deg, #f79901 0%, #2b7da0 100%) 0% 0%
-    no-repeat padding-box;
-}
-
 .hb-contact-tile-wrapper {
   @media screen and (max-width: 1024px) {
     display: flex;

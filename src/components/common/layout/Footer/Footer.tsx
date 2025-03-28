@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import FooterBand from "../../FooterBand/FooterBand";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-20 pb-4">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <FooterBand></FooterBand>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
           {/* Logo and Description */}
           <div>
             <div className="mb-4">

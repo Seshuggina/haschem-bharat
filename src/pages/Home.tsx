@@ -46,7 +46,7 @@ const Home = () => {
         </section>
 
         {/* Our Partners Section */}
-        <section id="ourPartners" className="py-12">
+        <section id="ourPartners" className="pt-16 pb-25">
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
             <div className="flex items-start gap-4">

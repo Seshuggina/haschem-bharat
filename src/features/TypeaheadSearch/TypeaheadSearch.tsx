@@ -72,7 +72,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         }
         onMenuToggle={(isOpen) => {
           if (isOpen) {
-            debugger; // This will trigger the breakpoint in dev tools
+            // debugger; // This will trigger the breakpoint in dev tools
             console.log("Dropdown opened");
           }
         }}
@@ -102,6 +102,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
       />
 
       <button
+        type="button"
         onClick={() => clearFilter()}
         className="w-8 rounded-full text-black hover:bg-gray-200 link text-2xl"
       >

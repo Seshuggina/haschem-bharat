@@ -4,6 +4,9 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.bg-gray {
+  background-color: #f4f5f7 !important;
+}
 .text-secondary {
   color: #2d7da0;
 }

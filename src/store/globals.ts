@@ -1,19 +1,16 @@
 import { create } from "zustand";
-import { CategoryModel } from "../types/models";
 
 interface GlobalState {
-  productsCategory: CategoryModel[];
-  selectedProductsCategory: CategoryModel[];
+  selectedProductsCategory: string[];
   searchedText: string;
-  updateSelectedProductsCategory: (productsCategory: CategoryModel[]) => void;
+  updateSelectedProductsCategory: (productsCategory: string[]) => void;
   updateSearchText: (searchedText: string) => void;
 }
 
 const useGlobalStore = create<GlobalState>((set: any) => ({
-  productsCategory: [],
   selectedProductsCategory: [],
   searchedText: "",
-  updateSelectedProductsCategory: (selectedProductsCategory: CategoryModel[]) =>
+  updateSelectedProductsCategory: (selectedProductsCategory: string[]) =>
     set(() => ({ selectedProductsCategory })),
   updateSearchText: (searchedText: string) => set(() => ({ searchedText })),
 }));

@@ -34,6 +34,18 @@
   }
 }
 
+.rbt-menu.dropdown-menu {
+  width: calc(100% + 80px) !important;
+  .dropdown-item {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #A0A0A0;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
 .rbt-menu {
   &.dropdown-menu {
     z-index: 9;
@@ -70,3 +82,4 @@
 .dropdown-menu::-webkit-scrollbar-thumb:hover {
   background: rgb(195, 131, 3);
 }
+

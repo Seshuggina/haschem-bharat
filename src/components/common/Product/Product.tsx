@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { ProductModel } from "../../../types/ProductModel";
 import ImageLoad from "../Image/Image";
 import "./Product.scss";
 
 const Product = ({ product }: { product: ProductModel }) => {
+  const navigate = useNavigate();
+  const showProductDetails = () => {
+    navigate(`/products-details/${product.Sno}`);
+  };
+
   return (
     <div className="border-t-4 border-blue-500 max-w-xs rounded-lg overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300">
       <p className="flex justify-end p-2">
@@ -36,7 +42,10 @@ const Product = ({ product }: { product: ProductModel }) => {
           </span>
         </div>
         <div className="mt-4 flex justify-center">
-          <button className="cursor-pointer px-4 py-2 text-white bg-orange-500 hover:bg-orange-600 rounded-full border flex items-center justify-center transition-all duration-300">
+          <button
+            onClick={showProductDetails}
+            className="cursor-pointer px-4 py-2 text-white bg-orange-500 hover:bg-orange-600 rounded-full border flex items-center justify-center transition-all duration-300"
+          >
             Discover More &nbsp;
             <i className="fa-solid fa-chevron-right transform transition-all duration-300 group-hover:translate-x-2"></i>
           </button>

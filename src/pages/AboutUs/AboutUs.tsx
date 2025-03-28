@@ -244,7 +244,7 @@ export const AboutUs = () => {
         </div>
       </section>
 
-      <section className="py-16 hb-aboutus-section-3">
+      <section className="pt-16 pb-30 hb-aboutus-section-3">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold pb-4 sm:text-left text-center">
             Why Work With Us

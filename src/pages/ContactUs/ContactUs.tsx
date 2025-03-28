@@ -122,7 +122,7 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pt-16 pb-25">
         {/* <div className="container mx-auto px-4"> */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.881254474824!2d78.38439269999999!3d17.513181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91ff87d2ff8b%3A0x5d24e1360d47efff!2sRamesh%20Towers!5e0!3m2!1sen!2sin!4v1741797893002!5m2!1sen!2sin"
@@ -132,29 +132,6 @@ const ContactUs = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         {/* </div> */}
-      </section>
-
-      <section className="py-1 contact-final-notes-wrapper">
-        <div className="container mx-auto px-4 contact-final-notes rounded-lg">
-          <div className="flex flex-col md:flex-row items-center p-8 gap-8">
-            {/* Left Section */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl font-semibold text-white">
-                Expert Scientists Conducting Precise Product Testing
-              </h2>
-            </div>
-
-            {/* Right Section - Buttons */}
-            <div className="flex-1 flex justify-center md:justify-end gap-4">
-              <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
-                View Services
-              </button>
-              <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );

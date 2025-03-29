@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import logo from "./../../../../assets/img/brand/haschem_bharat_logo.svg";
+import logo_white from "./../../../../assets/img/brand/logo_white.svg";
 import { getCategories } from "../../../../services/utilities";
 import "./Header.scss";
 
@@ -63,6 +64,12 @@ const HeaderNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <nav
@@ -70,14 +77,15 @@ const HeaderNavbar = () => {
           visible ? "translate-y-8" : "translate-y-0"
         }`}
       >
-        <div className="haschem-navbar mx-auto container px-2 sm:px-6 lg:px-8">
+        <div className="haschem-navbar mx-auto lg:container px-2 sm:px-6 lg:px-8">
           <div className="fixed w-full relative flex items-center justify-between whitespace-nowrap">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="absolute inset-y-0 right-0 z-1 flex items-center sm:hidden toggle-menu">
               <button
                 type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-500 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
+                onClick={toggleMenu}
               >
                 <span className="absolute -inset-0.5"></span>
                 <span className="sr-only">Open main menu</span>
@@ -118,7 +126,7 @@ const HeaderNavbar = () => {
                 <img src={logo} alt="Logo" />
               </Link>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end navbar-wrapper">
               <div className="hidden sm:ml-6 sm:block nav-items">
                 <div className="flex space-x-4">
                   <Link
@@ -238,7 +246,7 @@ const HeaderNavbar = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hb-gbl-search">
               <form
                 className="flex items-center border hb-border-primary rounded-md hb-border-primary-focus"
                 onSubmit={handleSubmit}
@@ -260,35 +268,132 @@ const HeaderNavbar = () => {
           </div>
         </div>
 
-        <div className="sm:hidden" id="mobile-menu">
+        {/* Mobile Menu */}
+        <div
+          className={`sm:hidden ${isOpen ? "block" : "hidden"}`}
+          id="mobile-menu"
+        >
+          <div className="flex items-center justify-between hb-logo pl-5">
+            <Link to="/" className="text-lg font-bold h-16 flex items-center">
+              <img src={logo_white} alt="Logo" />
+            </Link>
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className="rounded-full text-white hover:bg-gray-200 text-5xl cursor-pointer close"
+            >
+              &times;
+            </button>
+          </div>
+
           <div className="space-y-1 px-2 pt-2 pb-3">
             <a
-              href="#"
-              className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-              aria-current="page"
+              href="#home"
+              className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white hover:text-orange"
             >
-              Dashboard
+              Home
+            </a>
+            {/* Dropdown for Products */}
+            <div className="relative group">
+              <button
+                type="button"
+                className={getLinkClass(
+                  "/products",
+                  "relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700"
+                )}
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                Products
+                <svg
+                  className="-mr-1 size-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              <div className="hb-dropdown relative hidden group-hover:block bg-white shadow-md mt-0 py-2 z-10">
+                {uniqueCategories.map((category) => (
+                  <Link
+                    key={category}
+                    to="/products"
+                    className="block px-4 py-2 text-gray-700 hover:text-orange"
+                    onClick={() => navigateToProducts(category)}
+                  >
+                    {category}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="relative group">
+              <button
+                type="button"
+                className={getLinkClass(
+                  "/services",
+                  "relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700"
+                )}
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                Services
+                <svg
+                  className="-mr-1 size-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              <div className="small hb-dropdown hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
+                {[
+                  "APIImpurities",
+                  "CustomSynthesis",
+                  "CROCDMOservices",
+                  "ChemicalSourcing",
+                ].map((item) => (
+                  <Link
+                    key={item}
+                    to={`/services#${item.toLowerCase()}`}
+                    className="block px-4 py-2 text-gray-700 hover:text-orange"
+                  >
+                    {item.replace(/([A-Z])/g, " $1").trim()}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <a
+              href="#about-us"
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
+            >
+              About Us
             </a>
             <a
-              href="#"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              href="#contact-us"
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
             >
-              Team
-            </a>
-            <a
-              href="#"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Projects
-            </a>
-            <a
-              href="#"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Calendar
+              Contact Us
             </a>
           </div>
         </div>
+        {/* End of Mobile Menu */}
       </nav>
     </>
   );

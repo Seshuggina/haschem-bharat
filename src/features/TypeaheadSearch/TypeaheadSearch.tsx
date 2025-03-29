@@ -25,7 +25,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
 
   const handleProductSelectionChange = (selectedOption: ProductModel) => {
     if (selectedOption) {
-      navigate(`productDetails/${selectedOption.Sno}`);
+      navigate(`products-details/${selectedOption.Sno}`);
     }
   };
 

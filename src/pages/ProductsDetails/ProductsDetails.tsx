@@ -19,8 +19,6 @@ export const ProductDetails: React.FC = () => {
       )
   );
 
-
-
   return (
     <>
       <div className="bg-gray">
@@ -32,8 +30,6 @@ export const ProductDetails: React.FC = () => {
           </div>
         </section>
 
-      
-
         <div className="container mx-auto py-8 pb-16 pb-25">
           <div className="flex flex-wrap gap-8">
             <div className="hidden lg:flex rounded-md flex-col py-8 p-4 bg-white product-list relative">
@@ -43,7 +39,8 @@ export const ProductDetails: React.FC = () => {
               <ul className="pr-2">
                 {relatedProducts.map((product, index) => (
                   <li key={index} className="mb-2">
-                    <Link title={product.impurityName}
+                    <Link
+                      title={product.impurityName}
                       to={`/products-details/${product.Sno}`}
                       className="text-gray-700 hover:text-orange flex items-center px-3 py-2 pr-2 text-sm font-medium"
                     >
@@ -64,6 +61,7 @@ export const ProductDetails: React.FC = () => {
               <div className="flex items-start mb-6 gap-16">
                 <div className="flex-1 items-center">
                   <ImageLoad
+                    key={selectedProduct?.productImage}
                     imageName={selectedProduct?.productImage || ""}
                     altTxt={selectedProduct?.impurityName}
                   />

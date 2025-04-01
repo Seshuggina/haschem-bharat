@@ -14,6 +14,12 @@ export const Products: React.FC = () => {
   const [categories, setCategories] = useState<CategoryModel[]>(categoriesList); // Categories state
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+  const [isAccOpen, setIsAccOpen] = useState(true);
+
+  const toggleAccordion = () => {
+    setIsAccOpen((prev) => !prev);
+  };
+
   const searchedTxt = useGlobalStore((state) => state.searchedText); // Get search text from global store
   const selectedCategory = useGlobalStore(
     (state) => state.selectedProductsCategory
@@ -158,17 +164,17 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      <section className="flex services-banner products-banner relative py-16 hb-h-350 items-center text-white">
+      <section className="flex services-banner products-banner relative py-16 h-[250px] items-center text-white">
         <div className="relative container mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mt-16">Products</h1>
         </div>
       </section>
 
-      <section className="py-16 hb-products-section-1 shadow-lg">
+      <section className="pt-8 pb-8 hb-products-section-1 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2">
             <button
-              className={`px-4 py-2 border border-primary rounded-sm ${
+              className={`px-3 py-1 border border-primary rounded-sm ${
                 selectedLetters.length === 0 ? "hb-bg-brand text-white" : ""
               }`}
               onClick={clearSelection}
@@ -179,7 +185,7 @@ export const Products: React.FC = () => {
             {alphabet.map((letter) => (
               <button
                 key={letter}
-                className={`w-12 py-2 border border-primary rounded-sm text-center ${
+                className={`w-10 py-1 border border-primary rounded-sm text-center ${
                   selectedLetters.includes(letter)
                     ? "hb-bg-brand text-white"
                     : ""
@@ -199,14 +205,14 @@ export const Products: React.FC = () => {
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <input
                 type="text"
-                className="border py-2 px-3 rounded-sm min-w-[200px] h-[42px] flex-2"
+                className="border py-2 px-3 rounded-sm min-w-[200px] h-[34px] flex-2"
                 placeholder="Search Products"
                 value={searchText}
                 onChange={(e) => handleSearchChange(e.target.value)}
               />
 
               <button
-                className={`px-4 py-2 rounded-sm h-[42px] ${
+                className={`px-4 py-1 rounded-sm h-[34px] ${
                   searchText
                     ? "bg-red-500 text-white"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
@@ -219,61 +225,77 @@ export const Products: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+        {/* Filter by Category */}
 
-      <section className="pt-16 pb-8 hb-products-section-1 shadow-lg">
-        <div className="container mx-auto px-4">
-          <h5 className="mb-2">Filter By Category: </h5>
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
+        <div className="container mx-auto pt-2 px-4">
+          <h4
+            onClick={toggleAccordion}
+            className="text-l font-semibold mb-1 cursor-pointer flex justify-between items-center bg-gray-100 px-3 py-2 rounded-md"
+          >
+            Filter By Category:
+            <span className="text-gray-600">
+              {isAccOpen ? (
+                <i className="fa fa-chevron-up"></i>
+              ) : (
+                <i className="fa fa-chevron-down"></i>
+              )}
+            </span>
+          </h4>
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              isAccOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  hidden={category.name === "All"}
+                  className={`inline-flex items-center rounded-full px-2 lg:px-3 py-1 text-xs font-medium text-black ring-1 text-gray-700 ring-inset ${
+                    category.isSelected ? "bg-orange text-orange" : ""
+                  }`}
+                  onClick={() => handleCategoriesSelect(category)}
+                >
+                  {category.isSelected && (
+                    <span className="mr-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                  )}
+                  {category.name}
+                </button>
+              ))}
+            </div>
+            <div className="mt-2">
               <button
-                key={category.id}
-                hidden={category.name === "All"}
-                className={`inline-flex items-center rounded-full px-5 py-1 text-sm font-medium text-black ring-1 text-gray-700 ring-inset ${
-                  category.isSelected ? "bg-orange text-orange" : ""
+                title="Clear Selection"
+                className={`px-4 text-xs py-1 text-white rounded-full ${
+                  selectedCategoriesList.current.length === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "bg-red-500"
                 }`}
-                onClick={() => handleCategoriesSelect(category)}
+                disabled={selectedCategoriesList.current.length === 0}
+                onClick={clearCategory}
               >
-                {category.isSelected && (
-                  <span className="mr-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </span>
-                )}
-                {category.name}
+                Clear Selection
               </button>
-            ))}
-          </div>
-
-          <div className="mt-4">
-            <button
-              title="Clear Selection"
-              className={`px-4 text-sm py-1 text-white rounded-full ${
-                selectedCategoriesList.current.length === 0
-                  ? "opacity-50 cursor-not-allowed"
-                  : "bg-red-500"
-              }`}
-              disabled={selectedCategoriesList.current.length === 0}
-              onClick={clearCategory}
-            >
-              Clear Selection
-            </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 pt-16 pb-30">
+      <div className="container mx-auto px-4 pt-8 pb-30">
         <div className="flex flex-wrap gap-8 justify-start">
           {filteredProducts.map((product, index) => (
             <Product product={product} key={index} />

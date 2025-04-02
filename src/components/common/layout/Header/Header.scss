@@ -140,11 +140,32 @@
     width: 100%;
   }
 }
-// @media (min-width: 1024px) {
-//   .toggle-menu {
-//     display: none;
-//   }
-// }
+@media (min-width: 640px) and (max-width: 900px) {
+  .navbar-wrapper {
+    display: none;
+    a {
+      font-size: 0.8rem;
+    }
+    + div {
+      margin-left: 5px;
+      position: relative;
+      width: 100%;
+      right: inherit;
+    }
+  }
+  .toggle-menu {
+    display: flex;
+  }
+  .hb-gbl-search {
+    width: 100%;
+    form {
+      width: 90%;
+      .typeaheadSearch {
+        width: 88%;
+      }
+    }
+  }
+}
 // @media (max-width: 1024px) {
 //   .toggle-menu {
 //     display: flex;

@@ -77,12 +77,12 @@ const HeaderNavbar = () => {
           visible ? "translate-y-8" : "translate-y-0"
         }`}
       >
-        <div className="haschem-navbar mx-auto lg:container px-2 sm:px-6 lg:px-8">
+        <div className="haschem-navbar mx-auto lg:container px-2 sm:px-3 lg:px-8">
           <div className="fixed w-full relative flex items-center justify-between whitespace-nowrap">
             <div className="absolute inset-y-0 right-0 z-1 flex items-center sm:hidden toggle-menu">
               <button
                 type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-500 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-500 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset toggle-menu"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
                 onClick={toggleMenu}
@@ -122,13 +122,16 @@ const HeaderNavbar = () => {
               </button>
             </div>
             <div className="flex items-center hb-logo">
-              <Link to="/" className="text-lg font-bold h-16 flex items-center">
-                <img src={logo} alt="Logo" />
+              <Link
+                to="/"
+                className="text-lg font-bold h-16 flex items-center min-w-[100px]"
+              >
+                <img src={logo} alt="Logo" width="113px" />
               </Link>
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end navbar-wrapper">
-              <div className="hidden sm:ml-6 sm:block nav-items">
-                <div className="flex space-x-4">
+              <div className="hidden sm:ml-2 sm:block nav-items">
+                <div className="flex sm:space-x-0 space-x-4">
                   <Link
                     to="/"
                     aria-current="page"
@@ -246,7 +249,8 @@ const HeaderNavbar = () => {
                 </div>
               </div>
             </div>
-            <div className="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hb-gbl-search">
+            {/* Search Bar */}
+            <div className="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-3 sm:pr-0 hb-gbl-search">
               <form
                 className="flex items-center border hb-border-primary rounded-md hb-border-primary-focus"
                 onSubmit={handleSubmit}
@@ -257,6 +261,7 @@ const HeaderNavbar = () => {
                   }}
                   onInputChange={handleChange}
                 />
+                {/* TODO */}
                 <button
                   type="submit"
                   className="hb-bg-primary text-white px-4 py-2"

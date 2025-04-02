@@ -78,7 +78,8 @@ const Footer = () => {
               #Ameerpet, Hyderabad, TS - 5000032
             </p>
             <a
-              href="#"
+              target="_blank"
+              href="https://www.google.com/maps/dir//Ramesh+Towers+3-82,+Nizampet+Rd+near+Karur+Vysya+Bank+Hyderabad-Nizampet,+Nizampet+Hyderabad,+Telangana+500090/@17.513181,78.3843927,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb91ff87d2ff8b:0x5d24e1360d47efff!2m2!1d78.3843927!2d17.513181?entry=ttu&g_ep=EgoyMDI1MDMzMC4wIKXMDSoASAFQAw%3D%3D"
               className="inline-block mt-4 text-primary font-semibold hover:underline"
             >
               Get Directions →

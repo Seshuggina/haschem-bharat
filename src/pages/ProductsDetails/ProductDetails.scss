@@ -12,3 +12,18 @@
     display: block;
   }
 }
+
+
+@media (max-width: 640px) {
+  .product-details {
+    > div {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+  .hb-details {
+    display: flex;
+    flex-direction: column;
+  }
+}

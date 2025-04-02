@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./FooterBand.scss";
 
 const FooterBand = () => {
+  const navigate = useNavigate();
+
+  const navigateToServices = () => {
+    navigate("/services");
+    window.scrollTo(0, 0);
+  };
+  const navigateToContactUs = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
     <section className="py-1 contact-final-notes-wrapper">
       <div className="container mx-auto px-4 md:px-1 contact-final-notes rounded-lg">
@@ -13,14 +24,17 @@ const FooterBand = () => {
           </div>
 
           {/* Right Section - Buttons */}
+          {/* Todo - Add Links to below buttons */}
           <div className="flex-1 flex justify-center md:justify-end gap-4">
             <button
+              onClick={navigateToServices}
               data-content="View Services"
               className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
             >
               <span className="hb-btn-text">View Services</span>
             </button>
             <button
+              onClick={navigateToContactUs}
               data-content="Get in Touch"
               className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
             >

@@ -1,11 +1,12 @@
 import React from "react";
 import products from "./../../assets/data/products.json";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.scss";
 import ImageLoad from "../../components/common/Image/Image";
 
 export const ProductDetails: React.FC = () => {
   let { id } = useParams();
+  const navigate = useNavigate();
   const selectedProduct = products?.find(
     (product) => product.Sno?.toString() === id
   );
@@ -18,9 +19,15 @@ export const ProductDetails: React.FC = () => {
         selectedProduct.category.includes(category)
       )
   );
+  const backToProducts = () => {
+    navigate("/products");
+    window.scrollTo(0, 0);
+  }
 
   return (
     <>
+      {/* TODO - Add Back to Products button */}
+      {/* ICON - Add Back to Products button */}
       <div className="bg-gray">
         <section className="flex services-banner products-banner relative py-16 hb-h-350 items-center text-white">
           <div className="relative container mx-auto text-center">
@@ -55,10 +62,27 @@ export const ProductDetails: React.FC = () => {
             </div>
 
             <div className="flex-1 bg-white p-8 rounded-md">
-              <h2 className="text-3xl font-semibold mb-2">
+              <h2 className="flex text-3xl font-semibold mb-2 justify-between items-center">
                 {selectedProduct?.impurityName}
+                <button
+                  title=" Back to Products"
+                  className="bg-gray-100 hover:bg-gray-300 text-gray-800 text-xs font-semibold py-2 pl-2 pr-1 rounded inline-flex items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
               </h2>
-              <div className="flex items-start mb-6 gap-16">
+              <div className="flex flex-col sm:flex-row items-start mb-6 gap-16 product-details">
                 <div className="flex-1 items-center">
                   <ImageLoad
                     key={selectedProduct?.productImage}
@@ -67,7 +91,7 @@ export const ProductDetails: React.FC = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="text-gray-700">
+                  <div className="text-gray-700 hb-details">
                     <div className="flex mb-4">
                       <span className="w-1/3">Molecular Formula:</span>
                       <span className="text-secondary font-semibold">
@@ -111,6 +135,27 @@ export const ProductDetails: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="flex justify-end items-center">
+                {" "}
+                <button type="button" onClick={backToProducts}
+                  title=" Back to Products"
+                  className="cursor-pointer bg-gray-100 hover:bg-gray-300 text-gray-800 text-xs font-semibold py-2 pl-2 pr-1 rounded inline-flex items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Back to Products
+                </button>
               </div>
             </div>
           </div>

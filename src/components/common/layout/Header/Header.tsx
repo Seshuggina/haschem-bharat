@@ -275,7 +275,7 @@ const HeaderNavbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`sm:hidden ${isOpen ? "block" : "hidden"}`}
+          className={`lg:hidden ${isOpen ? "block" : "hidden"}`}
           id="mobile-menu"
         >
           <div className="flex items-center justify-between hb-logo pl-5">

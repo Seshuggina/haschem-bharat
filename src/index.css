@@ -52,8 +52,12 @@ body {
     }
   }
 }
+
 .hover\:bg-orange:hover {
   background-color: #f79a06;
+}
+.border-orange {
+  border-color: #f79a06;
 }
 .hover\:border-orange:hover {
   border-color: #f79a06;

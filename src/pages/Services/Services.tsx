@@ -22,7 +22,7 @@ export const ServiceCard = ({
 }) => (
   <div
     id={id}
-    className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-blue-500 flex flex-col md:flex-row items-center gap-4"
+    className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-orange flex flex-col md:flex-row items-center gap-4"
   >
     <div className="flex-1">
       <h4 className="text-xl font-semibold mb-4">{title}</h4>

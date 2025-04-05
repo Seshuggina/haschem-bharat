@@ -22,7 +22,7 @@ export const ProductDetails: React.FC = () => {
   const backToProducts = () => {
     navigate("/products");
     window.scrollTo(0, 0);
-  }
+  };
 
   return (
     <>
@@ -62,7 +62,7 @@ export const ProductDetails: React.FC = () => {
             </div>
 
             <div className="flex-1 bg-white p-8 rounded-md">
-              <h2 className="flex text-3xl font-semibold mb-2 justify-between items-center">
+              <h2 className="flex text-2xl sm:text-3xl font-semibold mb-4 justify-between items-center">
                 {selectedProduct?.impurityName}
                 <button
                   title=" Back to Products"
@@ -82,63 +82,79 @@ export const ProductDetails: React.FC = () => {
                   </svg>
                 </button>
               </h2>
-              <div className="flex flex-col sm:flex-row items-start mb-6 gap-16 product-details">
-                <div className="flex-1 items-center">
+              <div className="flex flex-col lg:flex-row items-start gap-6 mb-6 product-details items-stretch">
+                {/* Details Section */}
+                <div className="flex-2 xs:order-2">
+                  <div className="text-gray-700 hb-details grid grid-cols-1 gap-x-8 gap-y-4">
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        CAS Number:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                        {selectedProduct?.casNo}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        Molecular Formula:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                        {selectedProduct?.molecularFormula}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        Product Format:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                        TODO
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        Molecular Weight:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                        {selectedProduct?.molecularWeight}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        Product Category:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                        {selectedProduct?.category.join(", ")}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1">
+                      <span className="font-semibold whitespace-nowrap">
+                        Ready Stock:
+                      </span>
+                      <span className="text-secondary font-semibold break-words">
+                      {selectedProduct?.readyStock === 'Yes' ? <span className="text-[#4CAF50]">{selectedProduct.readyStock}</span> : <span className="text-[#F44336]">{selectedProduct?.readyStock || 'Inquire'}"</span>}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="flex-1 flex justify-center items-center xs:order-1">
                   <ImageLoad
                     key={selectedProduct?.productImage}
                     imageName={selectedProduct?.productImage || ""}
                     altTxt={selectedProduct?.impurityName}
                   />
                 </div>
-                <div className="flex-1">
-                  <div className="text-gray-700 hb-details">
-                    <div className="flex mb-4">
-                      <span className="w-1/3">Molecular Formula:</span>
-                      <span className="text-secondary font-semibold">
-                        {selectedProduct?.molecularFormula}
-                      </span>
-                    </div>
-
-                    <div className="flex mb-4">
-                      <span className="w-1/3">CAS Number:</span>
-                      <span className="text-secondary font-semibold">
-                        {selectedProduct?.casNo}
-                      </span>
-                    </div>
-
-                    <div className="flex mb-4">
-                      <span className="w-1/3">Molecular Weight:</span>
-                      <span className="text-secondary font-semibold">
-                        {selectedProduct?.molecularWeight}
-                      </span>
-                    </div>
-
-                    <div className="flex mb-4">
-                      <span className="w-1/3">Smile Code:</span>
-                      <span className="text-secondary font-semibold">
-                        {/* {selectedProduct?.smileCode}  */} TODO
-                      </span>
-                    </div>
-
-                    <div className="flex mb-4">
-                      <span className="w-1/3">Chemical Safety:</span>
-                      <span className="text-secondary font-semibold">
-                        {/* {selectedProduct?.chemicalSafety} */} TODO
-                      </span>
-                    </div>
-
-                    <div className="flex mb-4">
-                      <span className="w-1/3">Synonyms:</span>
-                      <span className="text-secondary font-semibold">
-                        {/* {selectedProduct?.synonyms} // TODO */} TODO
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </div>
+
               <div className="flex justify-end items-center">
                 {" "}
-                <button type="button" onClick={backToProducts}
+                <button
+                  type="button"
+                  onClick={backToProducts}
                   title=" Back to Products"
                   className="cursor-pointer bg-gray-100 hover:bg-gray-300 text-gray-800 text-xs font-semibold py-2 pl-2 pr-1 rounded inline-flex items-center"
                 >

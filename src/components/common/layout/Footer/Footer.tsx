@@ -102,25 +102,18 @@ const Footer = () => {
 
           <div className="flex flex-1 flex-wrap justify-center md:justify-end sm:flex-nowrap space-x-4 sm:w-auto">
             <a
-              href="https://twitter.com/creativetim"
-              target="_blank"
-              className="text-gray-400 hover:text-white"
-            >
-              <i className="fab fa-twitter text-xl"></i>
-            </a>
-            <a
               href="https://www.facebook.com/creativetim"
               target="_blank"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-facebook text-xl"></i>
+              <i className="fab fa-linkedin text-xl"></i>
             </a>
             <a
-              href="https://dribbble.com/creativetim"
+              href="https://api.whatsapp.com/send?phone=8121333007"
               target="_blank"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-instagram text-xl"></i>
+              <i className="fab fa-whatsapp text-xl"></i>
             </a>
           </div>
         </div>

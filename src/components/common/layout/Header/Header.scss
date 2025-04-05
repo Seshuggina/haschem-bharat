@@ -188,9 +188,19 @@
 @media (max-width: 500px) {
   .hb-gbl-search {
     form {
-      width: 75%;
+      width: 90%;
       .typeaheadSearch {
-        width: 70%;
+        width: 76%;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .hb-gbl-search {
+    form {
+      width: 87%;
+      .typeaheadSearch {
+        width: 76%;
       }
     }
   }
@@ -198,9 +208,20 @@
 @media (max-width: 400px) {
   .hb-gbl-search {
     form {
-      width: 62%;
+      width: 86%;
       .typeaheadSearch {
-        width: 60%;
+        width: 64%;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .hb-gbl-search {
+    form {
+      width: 83%;
+      .typeaheadSearch {
+        width: 62%;
       }
     }
   }

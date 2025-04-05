@@ -213,17 +213,17 @@ const HeaderNavbar = () => {
 
                     <div className="small hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
                       {[
-                        "APIImpurities",
-                        "CustomSynthesis",
-                        "CROCDMOservices",
-                        "ChemicalSourcing",
+                        "API Impurities",
+                        "Custom Synthesis",
+                        "CRO CDMO services",
+                        "Chemical Sourcing",
                       ].map((item) => (
                         <Link
                           key={item}
-                          to={`/services#${item.toLowerCase()}`}
+                          to={`/services#${item.replace(/\s+/g, "")}`}
                           className="block px-4 py-2 text-gray-700 hover:text-orange"
                         >
-                          {item.replace(/([A-Z])/g, " $1").trim()}
+                          {item}
                         </Link>
                       ))}
                     </div>

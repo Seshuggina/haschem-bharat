@@ -31,17 +31,11 @@ const SocialNavbar = () => {
       >
         <div className="flex justify-end space-x-4 pr-4 p-1">
           <span className="text-white">On Social: </span>
-          <a href="#" target="_blank" className="text-white hover:text-white">
+          <a href="https://www.linkedin.com/in/haschembharat/" target="_blank" className="text-white hover:text-white">
             <i className="fab fa-linkedin"></i>
           </a>
-          <a href="#" target="_blank" className="text-white hover:text-white">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" target="_blank" className="text-white hover:text-white">
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a href="#" target="_blank" className="text-white hover:text-white">
-            <i className="fab fa-instagram"></i>
+          <a href="https://api.whatsapp.com/send?phone=8121333007" target="_blank" className="text-white hover:text-white">
+            <i className="fab fa-whatsapp"></i>
           </a>
         </div>
       </div>

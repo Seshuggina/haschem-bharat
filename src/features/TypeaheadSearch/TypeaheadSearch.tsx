@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Typeahead, Menu } from "react-bootstrap-typeahead";
+import { Typeahead, Menu, MenuItem } from "react-bootstrap-typeahead";
 import "./TypeaheadSearch.scss";
 import { useNavigate } from "react-router-dom";
 import products from "./../../assets/data/products.json";
@@ -52,6 +52,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
   const clearFilter = () => {
     if (inputRef.current) {
       inputRef.current.clear();
+      setSelected([]); // Clear the selected state
+      setInputText(""); // Clear the input text state
     }
   };
 
@@ -59,7 +61,10 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
     <>
       <Typeahead
         className="typeaheadSearch"
-        onChange={(selected) => onProductChange(selected as ProductModel[])}
+        onChange={(selected) => {
+          onProductChange(selected as ProductModel[]);
+          inputRef.current?.blur();
+        }}
         onInputChange={(text) => handleInputChange(text)}
         options={products}
         placeholder="Enter #CAS No, Name, Category, Molecular Formula"
@@ -72,29 +77,31 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         }
         onMenuToggle={(isOpen) => {
           if (isOpen) {
-            // debugger; // This will trigger the breakpoint in dev tools
+            debugger; // This will trigger the breakpoint in dev tools
             console.log("Dropdown opened");
           }
         }}
         renderMenu={(results, menuProps) => (
           <Menu {...menuProps}>
             {results.map((result: any, index: number) => (
-              <li
+              <MenuItem
                 key={index}
-                className="dropdown-item cursor-pointer"
-                onClick={() => handleProductSelectionChange(result)}
+                option={result}
+                position={index}
+                onClick={() => {
+                  onProductChange([result]);
+                  handleProductSelectionChange(result);
+                  inputRef.current?.blur();
+                }}
               >
-                <strong>{result.impurityName}</strong>
-                {", "}
+                <strong>{result.impurityName}</strong>,{" "}
                 <span>{result.parentAPI}</span>{" "}
-                <small>{`(${result.category})`}</small>
+                <small>({result.category})</small>
                 <br />
-                <span>{result.casNo}</span>
-                {", "}
-                <span>{result.productDetails?.molecularFormula}</span>
-                {", "}
+                <span>{result.casNo}</span>,{" "}
+                <span>{result.productDetails?.molecularFormula}</span>,{" "}
                 <span>{result.productDetails?.synonym}</span>
-              </li>
+              </MenuItem>
             ))}
           </Menu>
         )}

@@ -14,8 +14,9 @@ const Product = ({ product }: { product: ProductModel }) => {
       <p className="flex justify-end p-2">
         <button
           type="button"
-          className="cursor-pointer grayscale opacity-50"
-          disabled
+          className={`cursor-pointer ${
+            product.readyStock === "Yes" ? "text-[#4CAF50]" : "text-[#F44336]"
+          }`}
         >
           <i className="fa fa-cart-plus text-xl"></i>
         </button>
@@ -36,22 +37,28 @@ const Product = ({ product }: { product: ProductModel }) => {
         <h2 className="relative text-l font-semibold text-white bg-gray-900 p-2 rounded-md text-center hb-m-t--35">
           {product.impurityName}
         </h2>
-        <p className="text-sm text-white text-center py-3">
+        <p className="text-md text-white text-center py-3">
           {product.parentAPI}
         </p>
 
         <div className="flex gap-4 mt-2 flex-wrap justify-center">
-          <span className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl">
-            {product.casNo}
-          </span>
-          <span className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl">
-            {product.leadTime}
+          <span
+            className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
+            title="Molecular Formula"
+          >
+            {product.molecularFormula}
           </span>
           <span
-            title="Stock Ready"
             className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
+            title="Molecular Weight"
           >
-            {product.readyStock ? product.readyStock : "No Stock"}
+            {product.molecularWeight}
+          </span>
+          <span
+            className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
+            title="CAS Number"
+          >
+            {product.casNo}
           </span>
         </div>
 

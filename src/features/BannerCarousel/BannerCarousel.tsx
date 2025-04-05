@@ -17,13 +17,13 @@ const CarouselComponent = () => {
       margin={10}
       loop
       autoplay
-      autoplayTimeout={30000000}
+      autoplayTimeout={5000}
       autoplayHoverPause
       responsiveClass
       items={1}
     >
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center justify-between">
-        <div className="flex-1">
+        <div className="flex-2 sm:flex-1">
           <h3>API Impurities/Reference Standards</h3>
           <p className="pb-4">
             Our mission is to deliver premium-grade API impurities and Reference
@@ -44,7 +44,7 @@ const CarouselComponent = () => {
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-1">
+        <div className="flex-2 sm:flex-1">
           <h3>CUSTOM SYNTHESIS</h3>
           <p className="pb-4">
             Our experienced team of Ph.D. chemists specializes in meticulously
@@ -64,7 +64,7 @@ const CarouselComponent = () => {
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-1">
+        <div className="flex-2 sm:flex-1">
           <h3>CRO/CDMO services</h3>
           <p className="pb-4">
             We offer an extensive array of services encompassing drug discovery,
@@ -85,7 +85,7 @@ const CarouselComponent = () => {
         <div className="flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-1">
+        <div className="flex-2 sm:flex-1">
           <h3>Chemical Sourcing</h3>
           <p className="pb-4">
             The HASCHEM sourcing team has diligently cultivated relationships

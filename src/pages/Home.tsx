@@ -3,7 +3,7 @@ import Partners from "../features/Partners/Partners";
 import Product from "../components/common/Product/Product";
 import products from "./../assets/data/products.json";
 import { ProductModel } from "../types/ProductModel";
-// import AutoComplete from "../components/common/AutoComplete/AutoComplete";
+import "./Home.scss";
 
 const Home = () => {
   // const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
@@ -37,7 +37,7 @@ const Home = () => {
             </p>
 
             {/* Products Grid */}
-            <div className="flex flex-wrap gap-8 justify-start mt-8">
+            <div className="flex flex-wrap gap-8 justify-center mt-8">
               {newProducts.map((topProduct: ProductModel) => (
                 <Product key={topProduct.Sno} product={topProduct} />
               ))}

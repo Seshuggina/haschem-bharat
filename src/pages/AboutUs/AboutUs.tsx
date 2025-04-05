@@ -29,7 +29,7 @@ export const AboutUs = () => {
         </div>
       </section>
 
-      <section className="py-16 hb-aboutus-section-1 shadow-lg">
+      <section className="py-16 hb-aboutus-section-1">
         <div className="container mx-auto px-4">
           <p className="pb-8">
             <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
@@ -79,7 +79,7 @@ export const AboutUs = () => {
         </div>
       </section>
 
-      <section className="py-16 hb-aboutus-section-2 shadow-lg">
+      <section className="py-16 hb-aboutus-section-2">
         <div className="container mx-auto px-4">
           <p className="pb-8 text-center">
             <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">

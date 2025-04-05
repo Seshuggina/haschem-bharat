@@ -3,6 +3,7 @@ import products from "./../../assets/data/products.json";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.scss";
 import ImageLoad from "../../components/common/Image/Image";
+import ContactForm from "../../features/ContactForm/ContactForm";
 
 export const ProductDetails: React.FC = () => {
   let { id } = useParams();
@@ -37,7 +38,7 @@ export const ProductDetails: React.FC = () => {
           </div>
         </section>
 
-        <div className="container mx-auto py-8 pb-16 pb-25">
+        <div className="container mx-auto py-8 pb-8">
           <div className="flex flex-wrap gap-8">
             <div className="hidden lg:flex rounded-md flex-col py-8 p-4 bg-white product-list relative">
               <h3 className="font-bold text-xl mb-4 bg-white">
@@ -175,6 +176,9 @@ export const ProductDetails: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="container mx-auto pb-25">
+        <ContactForm />
         </div>
       </div>
     </>

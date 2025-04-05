@@ -1,6 +1,7 @@
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import "./Partners.scss";
 
 import curia from "./../../assets/img/partners/curia.png";
 import drreddy from "./../../assets/img/partners/drreddy.png";
@@ -11,14 +12,28 @@ import nato from "./../../assets/img/partners/leepharma.png";
 const Partners = () => {
   return (
     <OwlCarousel
-      className="owl-theme"
-      margin={100}
-      loop
-      autoplay
-      autoplayTimeout={300000000}
-      autoplayHoverPause
-      responsiveClass
-      items={4}
+      margin={50}
+      loop={true}
+      autoplay={true}
+      autoplayTimeout={2500}
+      autoplayHoverPause={true}
+      mouseDrag={true}
+      touchDrag={true}
+      freeDrag={true}
+      responsive={{
+        100: {
+          items: 1,
+        },
+        500: {
+          items: 2,
+        },
+        991: {
+          items: 3,
+        },
+        1400: {
+          items: 4,
+        },
+      }}
     >
       <div className="items-center flex justify-center">
         <a href="https://curiaglobal.com/" target="_blank" rel="noreferrer">

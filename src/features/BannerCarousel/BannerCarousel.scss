@@ -8,23 +8,24 @@
     background-repeat: no-repeat;
     background-position: left center;
     @media (max-width: 768px) {
-      height: 40vh;
+      height: 65vh;
+    }
+    @media (max-width: 600px) {
+      height: 70vh;
     }
     &:nth-of-type(3) {
-      background-image: url("./../../assets/img/banner/banner_1.jpg");
+      background-image: url("/assets/img/banner/banner_1.jpg");
     }
     &:nth-of-type(4) {
-      background-image: url("./../../assets/img/banner/banner_2.jpg");
+      background-image: url("/assets/img/banner/banner_2.jpg");
     }
     &:nth-of-type(5) {
-      background-image: url("./../../assets/img/banner/banner_3.jpg");
+      background-image: url("/assets/img/banner/banner_3.jpg");
     }
     &:nth-of-type(6) {
-      background-image: url("./../../assets/img/banner/banner_4.jpg");
+      background-image: url("/assets/img/banner/banner_4.jpg");
     }
-    // &:nth-of-type(7) {
-    //   background-image: url("./../../assets/img/banner/banner_2_2.jpg");
-    // }
+
     h3 {
       font-size: 2.8rem;
       color: #101828;

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import FooterBand from "../../FooterBand/FooterBand";
+import logoWhite from "./../../../../assets/img/brand/logo_white.svg";
 
 const Footer = () => {
   return (
@@ -10,11 +11,9 @@ const Footer = () => {
           {/* Logo and Description */}
           <div>
             <div className="mb-4">
-              <img
-                src="https://haschembharat.com/utilities/frontend/images/logo2.png"
-                alt="Haschem Bharat"
-                className="h-12"
-              />
+              <Link to="/">
+                <img src={logoWhite} alt="Haschem Bharat" className="h-12" />
+              </Link>
             </div>
             <p className="text-gray-400 text-sm">
               Our Genesis In 2023, HASCHEM Bharat was born in the heart of

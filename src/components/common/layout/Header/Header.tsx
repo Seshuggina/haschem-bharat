@@ -9,6 +9,8 @@ import "./Header.scss";
 
 const HeaderNavbar = () => {
   const [visible, setVisible] = useState(true);
+  const [isProductsMenu, setIsProductsMenu] = useState(false);
+  const [isServicesMenu, setIsServicesMenu] = useState(false);
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
@@ -292,23 +294,31 @@ const HeaderNavbar = () => {
           </div>
 
           <div className="space-y-1 px-2 pt-2 pb-3">
-            <a
-              href="#home"
-              className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white hover:text-orange"
+            <Link
+              to="/"
+              onClick={() => {
+                setIsOpen(false);
+                setIsProductsMenu(false);
+                setIsServicesMenu(false);
+              }}
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
             >
               Home
-            </a>
+            </Link>
             {/* Dropdown for Products */}
-            <div className="relative group">
+            <div className="relative">
               <button
                 type="button"
                 className={getLinkClass(
                   "/products",
-                  "relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700"
+                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700 ${
+                    isProductsMenu ? "show bg-gray-700" : ""
+                  }`
                 )}
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
+                onClick={() => setIsProductsMenu(!isProductsMenu)}
               >
                 Products
                 <svg
@@ -326,26 +336,38 @@ const HeaderNavbar = () => {
                 </svg>
               </button>
 
-              <div className="hb-dropdown relative hidden group-hover:block bg-white shadow-md mt-0 py-2 z-10">
+              <div
+                className={`hb-dropdown relative group-hover:block bg-white shadow-md mt-0 py-2 z-10 ${
+                  isProductsMenu ? "" : "hidden"
+                }`}
+              >
                 {uniqueCategories.map((category) => (
                   <Link
                     key={category}
                     to="/products"
                     className="block px-4 py-2 text-gray-700 hover:text-orange"
-                    onClick={() => navigateToProducts(category)}
+                    onClick={() => {
+                      navigateToProducts(category);
+                      setIsOpen(false);
+                      setIsProductsMenu(false);
+                      setIsServicesMenu(false);
+                    }}
                   >
                     {category}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="relative group">
+            <div className="relative">
               <button
                 type="button"
                 className={getLinkClass(
                   "/services",
-                  "relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700"
+                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700 ${
+                    isServicesMenu ? "show bg-gray-700" : ""
+                  }`
                 )}
+                onClick={() => setIsServicesMenu(!isServicesMenu)}
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
@@ -366,7 +388,11 @@ const HeaderNavbar = () => {
                 </svg>
               </button>
 
-              <div className="small hb-dropdown hidden group-hover:block bg-white shadow-md mt-0 py-2 w-56 z-10">
+              <div
+                className={`small hb-dropdown relative group-hover:block bg-white shadow-md mt-0 py-2 z-10 ${
+                  isServicesMenu ? "" : "hidden"
+                }`}
+              >
                 {[
                   "APIImpurities",
                   "CustomSynthesis",
@@ -377,25 +403,39 @@ const HeaderNavbar = () => {
                     key={item}
                     to={`/services#${item.toLowerCase()}`}
                     className="block px-4 py-2 text-gray-700 hover:text-orange"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsProductsMenu(false);
+                      setIsServicesMenu(false);
+                    }}
                   >
                     {item.replace(/([A-Z])/g, " $1").trim()}
                   </Link>
                 ))}
               </div>
             </div>
-
-            <a
-              href="#about-us"
+            <Link
+              to="/about-us"
+              onClick={() => {
+                setIsOpen(false);
+                setIsProductsMenu(false);
+                setIsServicesMenu(false);
+              }}
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
             >
               About Us
-            </a>
-            <a
-              href="#contact-us"
+            </Link>
+            <Link
+              to="/contact-us"
+              onClick={() => {
+                setIsOpen(false);
+                setIsProductsMenu(false);
+                setIsServicesMenu(false);
+              }}
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
         {/* End of Mobile Menu */}

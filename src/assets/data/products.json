@@ -28,7 +28,7 @@
     "readyStock": null,
     "parentAPI": "Famotadine",
     "leadTime": "Ready stock",
-    "productStatus": null,
+    "productStatus": "New",
     "category": [
       "Research tools",
       "Pharma/API Drug",
@@ -49,7 +49,7 @@
     "readyStock": null,
     "parentAPI": "Brivatracetam",
     "leadTime": "Ready stock",
-    "productStatus": null,
+    "productStatus": "New",
     "category": [
       "Standards",
       "Pharma/API Drug",
@@ -175,7 +175,7 @@
     "readyStock": null,
     "parentAPI": "Quetiapine",
     "leadTime": "Ready stock",
-    "productStatus": null,
+    "productStatus": "New",
     "category": [
       "Standards",
       "Pharma/API Drug",
@@ -384,7 +384,7 @@
     "readyStock": null,
     "parentAPI": "Dapagliflozin",
     "leadTime": "Ready stock",
-    "productStatus": null,
+    "productStatus": "New",
     "category": [
       "Standards",
       "Chiral Molecules",
@@ -472,7 +472,7 @@
     "readyStock": null,
     "parentAPI": "Dapagliflozin",
     "leadTime": "Ready stock",
-    "productStatus": null,
+    "productStatus": "New",
     "category": [
       "Standards",
       "Chiral Molecules",
@@ -799,7 +799,7 @@
     "productStatus": null,
     "category": [
       "Building Blocks",
-      "Carbohydrates;"
+      "Carbohydrates"
     ],
     "productImage": "1854-25-7.gif",
     "synonym": null,
@@ -997,7 +997,7 @@
     "category": [
       "Standards",
       "Building Blocks",
-      "Carbohydrates;"
+      "Carbohydrates"
     ],
     "productImage": "4134-97-8.gif",
     "synonym": null,
@@ -1038,7 +1038,7 @@
     "category": [
       "Standards",
       "Building Blocks",
-      "Carbohydrates;"
+      "Carbohydrates"
     ],
     "productImage": "252006-38-5.gif",
     "synonym": null,

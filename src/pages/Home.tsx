@@ -27,14 +27,14 @@ const Home = () => {
         <section id="topProductsSection" className="py-12">
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
-            <p className="pb-8 text-center">
+            <h2 className="pb-8 text-center">
               <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
-                OUR PRODUCTS
+                TOP PRODUCTS
               </span>
-            </p>
-            <h2 className="text-3xl font-bold text-center">
-              We Provide Reliable Products
             </h2>
+            <p className="text-3xl text-center">
+            Discover our most popular and highly-rated products, carefully curated for quality and customer satisfaction.
+            </p>
 
             {/* Products Grid */}
             <div className="flex flex-wrap gap-8 justify-start mt-8">

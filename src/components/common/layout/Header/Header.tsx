@@ -84,7 +84,7 @@ const HeaderNavbar = () => {
             <div className="absolute inset-y-0 right-0 z-1 flex items-center sm:hidden toggle-menu">
               <button
                 type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-500 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset toggle-menu"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 bg-gray-700 hover:bg-orange hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset toggle-menu"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
                 onClick={toggleMenu}
@@ -287,7 +287,7 @@ const HeaderNavbar = () => {
             <button
               type="button"
               onClick={toggleMenu}
-              className="rounded-full text-white hover:bg-gray-200 text-5xl cursor-pointer close"
+              className="rounded-full text-white hover:text-orange hover:bg-gray-200 text-5xl cursor-pointer close"
             >
               &times;
             </button>

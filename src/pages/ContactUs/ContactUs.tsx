@@ -39,9 +39,9 @@ const ContactUs = () => {
                   title: "Phone Numbers",
                   text: (
                     <>
-                      <a href="tel:+917032925939">+91 7032925939</a>
+                      <a href="tel:+917032925939">+91 7032925939</a> &nbsp; <small>(or)</small> 
                       <a className="mt-2" href="tel:+918121333007">
-                        +91 8121333007
+                       &nbsp; +91 8121333007
                       </a>
                     </>
                   ),

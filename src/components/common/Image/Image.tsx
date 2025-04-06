@@ -11,7 +11,7 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
 
   // Construct the correct image path for Vite
   const getImagePath = (name: string) => {
-    return `/img/products/${name}`;
+    return `/assets/img/products/${name}`;
   };
 
   const [imgSrc, setImgSrc] = useState<string>(getImagePath(imageName));
@@ -26,11 +26,7 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
 
   return (
     <figure className="p-3 flex justify-center">
-      <img
-        src={imgSrc}
-        alt={altTxt || "Image"}
-        onError={handleError}
-      />
+      <img src={imgSrc} alt={altTxt || "Image"} onError={handleError} />
     </figure>
   );
 };

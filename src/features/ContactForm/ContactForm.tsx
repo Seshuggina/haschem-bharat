@@ -122,7 +122,7 @@ const ContactForm = () => {
             className="p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50"
             role="alert"
           >
-            ✅ Thank You! for Your message, we will contact You shortly.
+            ✅ Thank you for reaching out to us. We will get back to you shortly.
           </div>
         )}
         {showError && (
@@ -130,7 +130,7 @@ const ContactForm = () => {
             className="p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50"
             role="alert"
           >
-            ❌ Error! Something went wrong. Please try again.
+            ❌ Oops! Something seems to have gone wrong. Could you please try again?
           </div>
         )}
         <form role="form" onSubmit={sendEmail}>

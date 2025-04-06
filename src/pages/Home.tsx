@@ -50,8 +50,8 @@ const Home = () => {
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
             <div className="flex items-start gap-4">
-              <div className="flex items-center justify-center w-16 h-16 bg-gray-200 shadow-lg rounded-full">
-                <i className="fa-solid fa-handshake text-secondary text-3xl"></i>
+              <div className="flex items-center justify-center w-42 h-20 bg-gray-200 shadow-lg rounded-full">
+                <i className="fa-solid fa-handshake text-orange text-3xl"></i>
               </div>
               <div>
                 <h2 className="text-3xl font-bold">

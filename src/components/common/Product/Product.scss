@@ -7,3 +7,18 @@
 .hb-p-b--35 {
     padding-bottom:35px;
 }
+.product-stock {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    background-color: #F44336;
+    // image path is public path
+    background-image: url("./../../../../public/assets/img/icons/nostock.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    &.available {
+        background-color: #4CAF50;
+        background-image: url("./../../../../public/assets/img/icons/stock.svg");
+    }
+}

@@ -14,12 +14,10 @@ const Product = ({ product }: { product: ProductModel }) => {
       <p className="flex justify-end p-2">
         <button
           type="button"
-          className={`cursor-pointer ${
-            product.readyStock === "Yes" ? "text-[#4CAF50]" : "text-[#F44336]"
+          className={`product-stock cursor-pointer ${
+            product.readyStock === "Yes" ? "available" : ""
           }`}
-        >
-          <i className="fa fa-cart-plus text-xl"></i>
-        </button>
+        ></button>
       </p>
 
       {/* Image Container */}

@@ -7,11 +7,12 @@ import { CategoryModel } from "../../types/models";
 import { getCategoriesObject } from "../../services/utilities";
 
 export const Products: React.FC = () => {
-  const categoriesList = getCategoriesObject();
-  const [searchText, setSearchText] = useState<string>(""); // Search state
-  const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]); // Filtered products state
-  const [selectedLetters, setSelectedLetters] = useState<string[]>([]); // Selected letters state
-  const [categories, setCategories] = useState<CategoryModel[]>(categoriesList); // Categories state
+  let categoriesList = getCategoriesObject();
+  categoriesList = categoriesList.filter((category) => category.name !== "All");
+  const [searchText, setSearchText] = useState<string>("");
+  const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]);
+  const [selectedLetters, setSelectedLetters] = useState<string[]>([]);
+  const [categories, setCategories] = useState<CategoryModel[]>(categoriesList);
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const [isAccOpen, setIsAccOpen] = useState(true);
@@ -20,33 +21,32 @@ export const Products: React.FC = () => {
     setIsAccOpen((prev) => !prev);
   };
 
-  const searchedTxt = useGlobalStore((state) => state.searchedText); // Get search text from global store
+  const searchedTxt = useGlobalStore((state) => state.searchedText);
   const selectedCategory = useGlobalStore(
     (state) => state.selectedProductsCategory
-  ); // Selected categories from store
-
+  );
   const selectedCategoriesList = useRef<string[]>([]);
 
-  // Synchronize `searchedTxt` from global store with the local `searchText` state
-  useEffect(() => {
-    // Only set searchText if searchedTxt has changed to avoid infinite re-renders
-    if (searchedTxt !== searchText) {
-      setSearchText(searchedTxt); // Update the local state when `searchedTxt` changes
-    }
-  }, [searchedTxt, searchText]); // Added searchText to the dependency array to prevent infinite loop
-
-  // Effect to handle filtering products when selectedCategory or selectedLetters change
   useEffect(() => {
     if (selectedCategory.length > 0) {
       if (selectedCategory.includes("All")) {
-        setSelectedLetters([]); // Reset selected letters when "All" is selected
+        setSelectedLetters([]);
         selectedCategoriesList.current = [];
       } else {
         selectedCategoriesList.current = [...selectedCategory];
       }
     }
+    if (searchedTxt) {
+      setSearchText(searchedTxt);
+    }
+  }, []);
 
-    filterProducts(); // Re-filter products whenever selectedCategory changes
+  useEffect(() => {
+    filterProducts();
+  }, [searchText]);
+
+  useEffect(() => {
+    filterProducts();
   }, [categories]);
 
   useEffect(() => {
@@ -65,19 +65,16 @@ export const Products: React.FC = () => {
       setCategories(updatedCategories); // Update categories state
     }
 
-    filterProducts(); // Re-filter products whenever selectedCategory changes
+    filterProducts();
   }, [selectedCategory]);
 
-  // Effect to filter products when selectedLetters changes
   useEffect(() => {
     filterProducts();
   }, [selectedLetters]);
 
-  // Function to handle filtering of products based on selected categories, letters, and search text
   const filterProducts = () => {
     let filteredProductsList: any[] = products;
 
-    // Filter by categories
     if (selectedCategoriesList.current.length > 0) {
       filteredProductsList = filteredProductsList.filter((obj) =>
         obj.category.some((category: any) =>
@@ -86,7 +83,6 @@ export const Products: React.FC = () => {
       );
     }
 
-    // Filter by selected letters
     if (selectedLetters.length > 0) {
       filteredProductsList = filterObjectsByCharacters(
         filteredProductsList,
@@ -94,7 +90,6 @@ export const Products: React.FC = () => {
       );
     }
 
-    // Filter by search text
     if (searchText) {
       filteredProductsList = filteredProductsList.filter((obj) =>
         JSON.stringify(obj).toLowerCase().includes(searchText.toLowerCase())
@@ -104,7 +99,6 @@ export const Products: React.FC = () => {
     setFilteredProducts(filteredProductsList as ProductModel[]);
   };
 
-  // Helper function to filter products by starting letter of impurityName
   const filterObjectsByCharacters = (
     productsList: ProductModel[],
     selectedCharacters: string[]
@@ -130,28 +124,24 @@ export const Products: React.FC = () => {
     });
   };
 
-  // Function to handle category selection
   const handleCategoriesSelect = (category: CategoryModel) => {
     const updatedCategories = categories.map((c) =>
       c.id === category.id ? { ...c, isSelected: !c.isSelected } : c
     );
-
-    const selectedCat = updatedCategories.filter((c) => c.isSelected);
-    selectedCategoriesList.current = selectedCat.map((c) => c.name);
     setCategories(updatedCategories);
+    selectedCategoriesList.current = updatedCategories
+      .filter((c) => c.isSelected)
+      .map((c) => c.name);
   };
 
-  // Handle search input change
   const handleSearchChange = (value: string) => {
     setSearchText(value);
   };
 
-  // Clear the selection of letters
   const clearSelection = () => {
     setSelectedLetters([]);
   };
 
-  // Clear selected categories
   const clearCategory = () => {
     const updatedCategories = categories.map((category) => {
       category.isSelected = false;

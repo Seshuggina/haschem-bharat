@@ -11,7 +11,7 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
 
   // Construct the correct image path for Vite
   const getImagePath = (name: string) => {
-    return `/src/assets/img/products/${name}`;
+    return `/img/products/${name}`;
   };
 
   const [imgSrc, setImgSrc] = useState<string>(getImagePath(imageName));

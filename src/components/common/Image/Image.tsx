@@ -9,7 +9,7 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
   return (
     <figure className="p-3 flex justify-center">
       <img
-        src={`/assets/img/products/${imageName}`}
+        src={`https://seshuggina.github.io/haschem-bharat/assets/img/products/${imageName}`}
         alt={altTxt || "Product Image"}
       />
     </figure>

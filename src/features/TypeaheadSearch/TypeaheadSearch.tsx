@@ -75,12 +75,12 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         labelKey={(option: any) =>
           `${option.impurityName} ${option.parentAPI} ${option.casNo} ${option.category} ${option.molecularFormula} ${option.synonym}`
         }
-        onMenuToggle={(isOpen) => {
-          if (isOpen) {
-            debugger; // This will trigger the breakpoint in dev tools
-            console.log("Dropdown opened");
-          }
-        }}
+        // onMenuToggle={(isOpen) => {
+        //   if (isOpen) {
+        //     debugger; // This will trigger the breakpoint in dev tools
+        //     console.log("Dropdown opened");
+        //   }
+        // }}
         renderMenu={(results, menuProps) => (
           <Menu {...menuProps}>
             {results.map((result: any, index: number) => (

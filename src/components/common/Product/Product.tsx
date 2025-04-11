@@ -35,28 +35,27 @@ const Product = ({ product }: { product: ProductModel }) => {
         <h2 className="relative text-l font-semibold text-white bg-gray-900 p-2 rounded-md text-center hb-m-t--35">
           {product.impurityName}
         </h2>
-        <p className="text-md text-white text-center py-3">
-          {product.parentAPI}
-        </p>
-
-        <div className="flex gap-4 mt-2 flex-wrap justify-center">
+        <div className="flex gap-4 mt-2 flex-wrap justify-center text-[#123456]">
           <span
             className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
             title="Molecular Formula"
           >
-            {product.molecularFormula}
+            <span className="text-[#2d7da0]">M.F: </span>
+            &nbsp;{product.molecularFormula}
           </span>
           <span
             className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
             title="Molecular Weight"
           >
-            {product.molecularWeight}
+            <span className="text-[#2d7da0]">M.W: </span>
+            &nbsp;{product.molecularWeight}
           </span>
           <span
             className="flex px-3 items-center py-1 text-xs font-semibold bg-white text-gray-600 rounded-xl"
             title="CAS Number"
           >
-            {product.casNo}
+            <span className="text-[#2d7da0]">CAS: </span>
+            &nbsp;{product.casNo}
           </span>
         </div>
 

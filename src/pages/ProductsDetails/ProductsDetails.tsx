@@ -135,7 +135,7 @@ export const ProductDetails: React.FC = () => {
                         Ready Stock:
                       </span>
                       <span className="text-secondary font-semibold break-words">
-                      {selectedProduct?.readyStock === 'Yes' ? <span className="text-[#4CAF50]">{selectedProduct.readyStock}</span> : <span className="text-[#F44336]">{selectedProduct?.readyStock || 'Inquire'}"</span>}
+                      {selectedProduct?.readyStock === 'Yes' ? <span className="text-[#4CAF50]">{selectedProduct.readyStock}</span> : <span className="text-[#F44336]">{selectedProduct?.readyStock || 'Inquire'}</span>}
                       </span>
                     </div>
                   </div>

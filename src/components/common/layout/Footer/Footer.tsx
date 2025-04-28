@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <Link to="/">
-                <img src={logoWhite} alt="Haschem Bharat" className="h-12" />
+                <img src={logoWhite} alt="Haschem Bharat" width={190} />
               </Link>
             </div>
             <p className="text-gray-400 text-sm">
@@ -74,7 +74,8 @@ const Footer = () => {
               </h4>
             </div>
             <p className="text-gray-400 mt-2">
-              #Ameerpet, Hyderabad, TS - 5000032
+              Plot No: 63, H.No: 5-9-285/8, Rajiv Gandhi Nagar, Prashanthi Nagar
+              Industrial Estate, Medchal district Hyderabad Telangana-500072
             </p>
             <a
               target="_blank"

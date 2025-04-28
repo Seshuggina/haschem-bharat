@@ -32,8 +32,8 @@ const Home = () => {
                 TOP PRODUCTS
               </span>
             </h2>
-            <p className="text-3xl text-center">
-            Discover our most popular and highly-rated products, carefully curated for quality and customer satisfaction.
+            <p className="text-2xl text-center">
+            Discover our most popular and highly-rated products, carefully curated for quality and customer satisfaction
             </p>
 
             {/* Products Grid */}

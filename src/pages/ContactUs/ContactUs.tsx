@@ -23,7 +23,7 @@ const ContactUs = () => {
               {[
                 {
                   title: "Our Location",
-                  text: "Ameerpet, Hyderabad, Telangana, India - 5000032",
+                  text: "Plot No: 63, H.No: 5-9-285/8, Rajiv Gandhi Nagar, Prashanthi Nagar Industrial Estate, Medchal district Hyderabad Telangana-500072",
                   icon: <i className="fa-solid fa-location-dot"></i>,
                 },
                 {
@@ -39,9 +39,10 @@ const ContactUs = () => {
                   title: "Phone Numbers",
                   text: (
                     <>
-                      <a href="tel:+917032925939">+91 7032925939</a> &nbsp; <small>(or)</small> 
+                      <a href="tel:+917032925939">+91 7032925939</a> &nbsp;{" "}
+                      <small>(or)</small>
                       <a className="mt-2" href="tel:+918121333007">
-                       &nbsp; +91 8121333007
+                        &nbsp; +91 8121333007
                       </a>
                     </>
                   ),

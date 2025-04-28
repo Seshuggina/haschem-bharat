@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
-import logo from "./../../../../assets/img/brand/haschem_bharat_logo.svg";
+import logo from "./../../../../assets/img/brand/logo_orange.svg";
 import logo_white from "./../../../../assets/img/brand/logo_white.svg";
 import { getCategories } from "../../../../services/utilities";
 import "./Header.scss";
@@ -128,7 +128,7 @@ const HeaderNavbar = () => {
                 to="/"
                 className="text-lg font-bold h-16 flex items-center min-w-[100px]"
               >
-                <img src={logo} alt="Logo" width="113px" />
+                <img src={logo} width="151px" alt="Logo" />
               </Link>
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end navbar-wrapper">

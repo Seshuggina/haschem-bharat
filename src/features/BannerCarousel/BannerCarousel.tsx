@@ -34,7 +34,7 @@ const CarouselComponent = () => {
           <button
             onClick={() => handleNavigation("apiimpurities")}
             data-content="Know More &#10095;"
-            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-white bg-[#f79a06] border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
@@ -54,7 +54,7 @@ const CarouselComponent = () => {
           <button
             onClick={() => handleNavigation("customsynthesis")}
             data-content="Know More &#10095;"
-            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-white bg-[#f79a06] border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
@@ -75,7 +75,7 @@ const CarouselComponent = () => {
           <button
             onClick={() => handleNavigation("crocmoservices")}
             data-content="Know More &#10095;"
-            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-white bg-[#f79a06] border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;
@@ -96,7 +96,7 @@ const CarouselComponent = () => {
           <button
             onClick={() => handleNavigation("chemicalsourcing")}
             data-content="Know More &#10095;"
-            className="hb-btn text-gray-900 py-3 px-8 rounded border text-orange hover:bg-orange border-orange hover:text-white"
+            className="hb-btn text-gray-900 py-3 px-8 rounded border text-white bg-[#f79a06] border-orange hover:text-white"
           >
             <span className="hb-btn-text">
               Know More &nbsp;

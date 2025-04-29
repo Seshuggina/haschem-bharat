@@ -32,6 +32,10 @@ body {
 .hb-bg-primary:hover {
   background-color: rgba(50, 103, 125, 1);
 }
+.hb-bg-primary-hover:hover {
+  background-color: #2d7da0;
+  color: #fff;
+}
 .hover\:bg-primary-500:hover {
   background-color: #59a4b0;
   color: #fff;
@@ -64,4 +68,7 @@ body {
 }
 .hover\:text-white:hover {
   color: #fff;
+}
+.hb-bg-brand-hover:hover {
+  background-color: #f79a06;
 }

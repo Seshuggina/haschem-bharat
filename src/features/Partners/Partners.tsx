@@ -7,7 +7,7 @@ import curia from "./../../assets/img/partners/curia.png";
 import drreddy from "./../../assets/img/partners/drreddy.png";
 import granules from "./../../assets/img/partners/granules.png";
 import leepharma from "./../../assets/img/partners/leepharma.png";
-import nato from "./../../assets/img/partners/leepharma.png";
+import nato from "./../../assets/img/partners/nato.png";
 
 const Partners = () => {
   return (

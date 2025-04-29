@@ -48,3 +48,12 @@
     }
   }
 }
+
+
+.product-card {
+  .hb-btn {
+    &::after {
+      bottom: -8px;
+    }
+  }
+}

@@ -164,8 +164,8 @@ export const Products: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2">
             <button
-              className={`px-3 py-1 border border-primary rounded-sm ${
-                selectedLetters.length === 0 ? "hb-bg-brand text-white" : ""
+              className={`px-3 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm ${
+                selectedLetters.length === 0 ? "hb-bg-brand border-orange hb-bg-brand-hover text-white" : ""
               }`}
               onClick={clearSelection}
             >
@@ -175,9 +175,9 @@ export const Products: React.FC = () => {
             {alphabet.map((letter) => (
               <button
                 key={letter}
-                className={`w-10 py-1 border border-primary rounded-sm text-center ${
+                className={`w-10 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm text-center ${
                   selectedLetters.includes(letter)
-                    ? "hb-bg-brand text-white"
+                    ? "hb-bg-brand border-orange hb-bg-brand-hover text-white"
                     : ""
                 }`}
                 onClick={() =>

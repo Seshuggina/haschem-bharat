@@ -14,16 +14,16 @@
       height: 70vh;
     }
     &:nth-of-type(3) {
-      background-image: url("/assets/img/banner/banner_1.jpg");
-    }
-    &:nth-of-type(4) {
       background-image: url("/assets/img/banner/image_2.jpg");
     }
-    &:nth-of-type(5) {
+    &:nth-of-type(4) {
       background-image: url("/assets/img/banner/image_3.jpg");
     }
-    &:nth-of-type(6) {
+    &:nth-of-type(5) {
       background-image: url("/assets/img/banner/image_4.jpg");
+    }
+    &:nth-of-type(6) {
+      background-image: url("/assets/img/banner/banner_3.jpg");
     }
 
     h3 {

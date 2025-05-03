@@ -108,13 +108,13 @@ const Footer = () => {
             >
               <i className="fab fa-linkedin text-xl"></i>
             </a>
-            <a
+            {/* <a
               href="https://api.whatsapp.com/send?phone=8121333007"
               target="_blank"
               className="text-gray-400 hover:text-white"
             >
               <i className="fab fa-whatsapp text-xl"></i>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

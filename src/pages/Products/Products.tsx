@@ -14,8 +14,8 @@ export const Products: React.FC = () => {
   const [selectedLetters, setSelectedLetters] = useState<string[]>([]);
   const [categories, setCategories] = useState<CategoryModel[]>(categoriesList);
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-
   const [isAccOpen, setIsAccOpen] = useState(true);
+  const [windowWidth, setWindowSize] = useState(null as any);
 
   const toggleAccordion = () => {
     setIsAccOpen((prev) => !prev);
@@ -95,7 +95,6 @@ export const Products: React.FC = () => {
         JSON.stringify(obj).toLowerCase().includes(searchText.toLowerCase())
       );
     }
-
     setFilteredProducts(filteredProductsList as ProductModel[]);
   };
 
@@ -152,6 +151,30 @@ export const Products: React.FC = () => {
     selectedCategoriesList.current = [];
   };
 
+  useEffect(() => {
+    // Handler to update window size
+    function handleResize() {
+      setWindowSize(window.innerWidth);
+    }
+
+    // Set initial window size
+    handleResize();
+
+    // Add event listener on mount
+    window.addEventListener("resize", handleResize);
+
+    // Clean up event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if(windowWidth < 640) {
+      setIsAccOpen(false); // Close accordion on small screens
+    }
+  }, [windowWidth]);
+
+
+
   return (
     <>
       <section className="flex services-banner products-banner relative py-16 h-[250px] items-center text-white">
@@ -165,7 +188,9 @@ export const Products: React.FC = () => {
           <div className="flex flex-wrap gap-2">
             <button
               className={`px-3 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm ${
-                selectedLetters.length === 0 ? "hb-bg-brand border-orange hb-bg-brand-hover text-white" : ""
+                selectedLetters.length === 0
+                  ? "hb-bg-brand border-orange hb-bg-brand-hover text-white"
+                  : ""
               }`}
               onClick={clearSelection}
             >

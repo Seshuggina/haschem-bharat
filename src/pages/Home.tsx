@@ -4,12 +4,19 @@ import Product from "../components/common/Product/Product";
 import products from "./../assets/data/products.json";
 import { ProductModel } from "../types/ProductModel";
 import "./Home.scss";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   // const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
   const newProducts: any[] = products.filter(
     (product) => product.productStatus?.toLowerCase() === "new"
   );
+
+  const navigateToProducts = () => {
+    navigate(`/products`);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -33,7 +40,8 @@ const Home = () => {
               </span>
             </h2>
             <p className="text-2xl text-center">
-            Discover our most popular and highly-rated products, carefully curated for quality and customer satisfaction
+              Discover our most popular and highly-rated products, carefully
+              curated for quality and customer satisfaction
             </p>
 
             {/* Products Grid */}
@@ -41,6 +49,15 @@ const Home = () => {
               {newProducts.map((topProduct: ProductModel) => (
                 <Product key={topProduct.Sno} product={topProduct} />
               ))}
+            </div>
+            <div className="mt-4 flex justify-center">
+              <button
+                data-content="More Products &#10095;"
+                onClick={navigateToProducts}
+                className="hb-btn text-gray-900 py-2 px-4 rounded border text-white bg-[#f79a06] border-orange hover:text-white"
+              >
+                <span className="hb-btn-text">More Products &nbsp;</span>
+              </button>
             </div>
           </div>
         </section>
@@ -50,13 +67,11 @@ const Home = () => {
           <div className="container mx-auto px-6 lg:px-8">
             {/* Header */}
             <div className="flex items-start gap-4">
-              <div className="flex items-center justify-center w-42 h-20 bg-gray-200 shadow-lg rounded-full">
+              <div className="flex items-center justify-center p-5 w-[45px] h-[45px] sm:w-[60px] md:h-[60px] bg-[#2d7da0] shadow-lg rounded-full">
                 <i className="fa-solid fa-handshake text-orange text-3xl"></i>
               </div>
               <div>
-                <h2 className="text-3xl font-bold">
-                  Our Partners
-                </h2>
+                <h2 className="text-3xl font-bold">Our Partners</h2>
                 <p className="text-gray-600">
                   At <strong>HASCHEM BHARAT</strong>, we believe in the power of
                   collaboration and partnership to drive innovation in the

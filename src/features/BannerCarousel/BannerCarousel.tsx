@@ -17,15 +17,15 @@ const CarouselComponent = () => {
       margin={10}
       loop
       autoplay
-      autoplayTimeout={5000}
+      autoplayTimeout={500000}
       autoplayHoverPause
       responsiveClass
       items={1}
     >
-      <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center justify-between">
-        <div className="flex-2 sm:flex-1">
-          <h3>API Impurities/Reference Standards</h3>
-          <p className="pb-4">
+      <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+          <h3 className="text-center md:text-left">API Impurities/Reference Standards</h3>
+          <p className="pb-4 text-center md:text-left">
             Our mission is to deliver premium-grade API impurities and Reference
             standards, setting the benchmark for quality and reliability in the
             industry.
@@ -41,12 +41,12 @@ const CarouselComponent = () => {
             </span>
           </button>
         </div>
-        <div className="flex-1">&nbsp;</div>
+        <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
-      <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-2 sm:flex-1">
-          <h3>CUSTOM SYNTHESIS</h3>
-          <p className="pb-4">
+      <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+          <h3 className="text-center md:text-left">CUSTOM SYNTHESIS</h3>
+          <p className="pb-4 text-center md:text-left">
             Our experienced team of Ph.D. chemists specializes in meticulously
             crafting optimal synthetic pathways for both novel and established
             compounds
@@ -61,12 +61,12 @@ const CarouselComponent = () => {
             </span>
           </button>
         </div>
-        <div className="flex-1">&nbsp;</div>
+        <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
-      <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-2 sm:flex-1">
-          <h3>CRO/CDMO services</h3>
-          <p className="pb-4">
+      <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+          <h3 className="text-center md:text-left">CRO/CDMO services</h3>
+          <p className="pb-4 text-center md:text-left">
             We offer an extensive array of services encompassing drug discovery,
             development, and manufacturing. Our commitment is to deliver
             innovative solutions tailored to meet the diverse needs of our
@@ -82,12 +82,12 @@ const CarouselComponent = () => {
             </span>
           </button>
         </div>
-        <div className="flex-1">&nbsp;</div>
+        <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
-      <div className="container mx-auto px-6 lg:px-8 flex flex-row items-center">
-        <div className="flex-2 sm:flex-1">
-          <h3>Chemical Sourcing</h3>
-          <p className="pb-4">
+      <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+          <h3 className="text-center md:text-left">Chemical Sourcing</h3>
+          <p className="pb-4 text-center md:text-left">
             The HASCHEM sourcing team has diligently cultivated relationships
             over several years with numerous partner organizations renowned for
             their specialized skills and technical prowess across India and
@@ -103,7 +103,7 @@ const CarouselComponent = () => {
             </span>
           </button>
         </div>
-        <div className="flex-1">&nbsp;</div>
+        <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
     </OwlCarousel>
   );

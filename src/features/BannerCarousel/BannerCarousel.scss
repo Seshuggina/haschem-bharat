@@ -37,7 +37,6 @@
         background-image: url("/assets/img/banner/banner_3.jpg");
       }
     }
-   
 
     h3 {
       font-size: 2.8rem;
@@ -123,4 +122,14 @@
 }
 .hb-btn-bg-transition {
   transition: background-color 2s linear;
+}
+
+.banner-text-box {
+  background: white;
+  border: 2px solid #f9efef;
+  border-radius: 8px;
+  padding: 20px;
+  @media screen and (max-width: 768px) {
+    flex: none;
+  }
 }

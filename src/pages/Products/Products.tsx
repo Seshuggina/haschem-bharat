@@ -243,7 +243,7 @@ export const Products: React.FC = () => {
         {/* Filter by Category */}
 
         <div className="container mx-auto pt-2 px-4">
-          <h4
+          <h4 title="Click to Expand/Collapse"
             onClick={toggleAccordion}
             className="text-l font-semibold mb-1 cursor-pointer flex justify-between items-center bg-gray-100 px-3 py-2 rounded-md"
           >

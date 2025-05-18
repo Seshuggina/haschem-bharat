@@ -23,7 +23,7 @@ const CarouselComponent = () => {
       items={1}
     >
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
-        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
           <h3 className="text-center md:text-left">API Impurities/Reference Standards</h3>
           <p className="pb-4 text-center md:text-left">
             Our mission is to deliver premium-grade API impurities and Reference
@@ -44,7 +44,7 @@ const CarouselComponent = () => {
         <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
-        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
           <h3 className="text-center md:text-left">CUSTOM SYNTHESIS</h3>
           <p className="pb-4 text-center md:text-left">
             Our experienced team of Ph.D. chemists specializes in meticulously
@@ -64,7 +64,7 @@ const CarouselComponent = () => {
         <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
-        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
           <h3 className="text-center md:text-left">CRO/CDMO services</h3>
           <p className="pb-4 text-center md:text-left">
             We offer an extensive array of services encompassing drug discovery,
@@ -85,7 +85,7 @@ const CarouselComponent = () => {
         <div className="hidden md:flex md:flex-1">&nbsp;</div>
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
-        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
           <h3 className="text-center md:text-left">Chemical Sourcing</h3>
           <p className="pb-4 text-center md:text-left">
             The HASCHEM sourcing team has diligently cultivated relationships

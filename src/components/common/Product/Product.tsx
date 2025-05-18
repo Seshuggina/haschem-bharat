@@ -11,7 +11,7 @@ const Product = ({ product }: { product: ProductModel }) => {
 
   return (
     <div className="border-t-4 border-[#F79903] max-w-xs rounded-lg outline outline-1 outline-[#F79903] overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300 product-card">
-      <div className="flex justify-between p-2 bg-gray-100">
+      <div className="flex justify-between p-2 gap-5 bg-gray-100">
         <h2 className="relative text-l font-semibold text-black">
           {product.impurityName}
         </h2>

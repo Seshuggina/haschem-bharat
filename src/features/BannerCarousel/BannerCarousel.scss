@@ -8,34 +8,35 @@
     background-repeat: no-repeat;
     background-position: left center;
     &:nth-of-type(3) {
-      background-image: url("/assets/img/banner/image_2.jpg");
+      background-image: url("/assets/img/banner/banner_new_1.jpeg");
     }
     &:nth-of-type(4) {
-      background-image: url("/assets/img/banner/image_3.jpg");
+      background-image: url("/assets/img/banner/banner_new_2.jpeg");
     }
     &:nth-of-type(5) {
-      background-image: url("/assets/img/banner/image_4.jpg");
+      background-image: url("/assets/img/banner/banner_new_3.jpeg");
     }
     &:nth-of-type(6) {
-      background-image: url("/assets/img/banner/banner_3.jpg");
+      background-image: url("/assets/img/banner/banner_new_4.jpeg");
     }
     @media (max-width: 768px) {
       height: 65vh;
     }
     @media (max-width: 600px) {
-      height: 70vh;
-      &:nth-of-type(3) {
-        background-image: url("/assets/img/banner/m_image_2.jpg");
-      }
-      &:nth-of-type(4) {
-        background-image: url("/assets/img/banner/m_image_3.jpg");
-      }
-      &:nth-of-type(5) {
-        background-image: url("/assets/img/banner/m_image_4.jpg");
-      }
-      &:nth-of-type(6) {
-        background-image: url("/assets/img/banner/banner_3.jpg");
-      }
+      height: 75vh;
+      background-position: right center;
+      // &:nth-of-type(3) {
+      //   background-image: url("/assets/img/banner/m_image_2.jpg");
+      // }
+      // &:nth-of-type(4) {
+      //   background-image: url("/assets/img/banner/m_image_3.jpg");
+      // }
+      // &:nth-of-type(5) {
+      //   background-image: url("/assets/img/banner/m_image_4.jpg");
+      // }
+      // &:nth-of-type(6) {
+      //   background-image: url("/assets/img/banner/banner_3.jpg");
+      // }
     }
 
     h3 {
@@ -102,7 +103,7 @@
     .owl-dot {
       span {
         background-color: transparent;
-        border: 1px solid #101828;
+        border: 1px solid #f79a06;
         width: 15px;
         height: 15px;
         &:hover {

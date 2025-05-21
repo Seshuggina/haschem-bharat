@@ -24,7 +24,7 @@ const CarouselComponent = () => {
     >
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
         <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
-          <h3 className="text-center md:text-left">API Impurities/Reference Standards</h3>
+          <h3 className="text-center md:text-left capitalize text-[#2d7da0]">API Impurities/Reference Standards</h3>
           <p className="pb-4 text-center md:text-left">
             Our mission is to deliver premium-grade API impurities and Reference
             standards, setting the benchmark for quality and reliability in the
@@ -45,8 +45,8 @@ const CarouselComponent = () => {
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
         <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
-          <h3 className="text-center md:text-left">CUSTOM SYNTHESIS</h3>
-          <p className="pb-4 text-center md:text-left">
+          <h3 className="text-center md:text-left capitalize text-[#2d7da0]">Custom Synthesis</h3>
+          <p className="pb-4 text-center md:text-left capitalize">
             Our experienced team of Ph.D. chemists specializes in meticulously
             crafting optimal synthetic pathways for both novel and established
             compounds
@@ -65,7 +65,7 @@ const CarouselComponent = () => {
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
         <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
-          <h3 className="text-center md:text-left">CRO/CDMO services</h3>
+          <h3 className="text-center md:text-left capitalize text-[#2d7da0]">CRO/CDMO services</h3>
           <p className="pb-4 text-center md:text-left">
             We offer an extensive array of services encompassing drug discovery,
             development, and manufacturing. Our commitment is to deliver
@@ -86,7 +86,7 @@ const CarouselComponent = () => {
       </div>
       <div className="container mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center md:justify-between justify-center">
         <div className="flex flex-col sm:flex-1 flex-2 items-center md:items-start justify-center md:justify-start banner-text-box">
-          <h3 className="text-center md:text-left">Chemical Sourcing</h3>
+          <h3 className="text-center md:text-left capitalize text-[#2d7da0]">Chemical Sourcing</h3>
           <p className="pb-4 text-center md:text-left">
             The HASCHEM sourcing team has diligently cultivated relationships
             over several years with numerous partner organizations renowned for

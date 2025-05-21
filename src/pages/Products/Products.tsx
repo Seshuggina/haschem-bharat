@@ -177,7 +177,7 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      <section className="flex services-banner products-banner relative py-16 h-[250px] items-center text-white">
+      <section className="flex services-banner products-banner relative py-16 hb-h-350 items-center text-white">
         <div className="relative container mx-auto text-center">
           <h1 className="text-4xl sm:text-6xl font-bold mt-16">Products</h1>
         </div>
@@ -311,7 +311,7 @@ export const Products: React.FC = () => {
       </section>
 
       <div className="container mx-auto px-4 pt-8 pb-30">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
           {filteredProducts.map((product, index) => (
             <Product product={product} key={index} />
           ))}

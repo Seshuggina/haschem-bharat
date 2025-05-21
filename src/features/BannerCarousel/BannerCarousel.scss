@@ -8,16 +8,16 @@
     background-repeat: no-repeat;
     background-position: left center;
     &:nth-of-type(3) {
-      background-image: url("/assets/img/banner/banner_new_1.jpeg");
+      background-image: url("/assets/img/banner/banner_new_5.jpeg");
     }
     &:nth-of-type(4) {
       background-image: url("/assets/img/banner/banner_new_2.jpeg");
     }
     &:nth-of-type(5) {
-      background-image: url("/assets/img/banner/banner_new_3.jpeg");
+      background-image: url("/assets/img/banner/banner_new_1.jpeg");
     }
     &:nth-of-type(6) {
-      background-image: url("/assets/img/banner/banner_new_4.jpeg");
+      background-image: url("/assets/img/banner/banner_new_3.jpeg");
     }
     @media (max-width: 768px) {
       height: 65vh;
@@ -41,7 +41,6 @@
 
     h3 {
       font-size: 2.8rem;
-      color: #101828;
       font-weight: 600;
       transform: translateY(-20px);
       padding-bottom: 5px;

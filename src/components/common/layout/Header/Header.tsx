@@ -149,7 +149,7 @@ const HeaderNavbar = () => {
                       type="button"
                       className={getLinkClass(
                         "/products",
-                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
+                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-[#2d7da0] hover:text-orange px-3 py-2 text-sm font-medium"
                       )}
                       // className="relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
                       id="menu-button"
@@ -177,7 +177,7 @@ const HeaderNavbar = () => {
                         <Link
                           key={category}
                           to="/products"
-                          className="block px-4 py-2 text-gray-700 hover:text-orange"
+                          className="block px-4 py-2 text-[#2d7da0] hover:text-orange"
                           onClick={() => navigateToProducts(category)}
                         >
                           {category}
@@ -191,7 +191,7 @@ const HeaderNavbar = () => {
                       type="button"
                       className={getLinkClass(
                         "/services",
-                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-gray-700 hover:text-orange px-3 py-2 text-sm font-medium"
+                        "relative inline-flex w-full justify-center gap-x-1.5 h-16 flex items-center text-[#2d7da0] hover:text-orange px-3 py-2 text-sm font-medium"
                       )}
                       id="menu-button"
                       aria-expanded="true"
@@ -223,7 +223,7 @@ const HeaderNavbar = () => {
                         <Link
                           key={item}
                           to={`/services#${item.replace(/\s+/g, "")}`}
-                          className="block px-4 py-2 text-gray-700 hover:text-orange"
+                          className="block px-4 py-2 text-[#2d7da0] hover:text-orange"
                         >
                           {item}
                         </Link>
@@ -234,7 +234,7 @@ const HeaderNavbar = () => {
                     to="/about-us"
                     className={getLinkClass(
                       "/about-us",
-                      "text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
+                      "text-[#2d7da0] hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
                     )}
                   >
                     About Us
@@ -243,7 +243,7 @@ const HeaderNavbar = () => {
                     to="/contact-us"
                     className={getLinkClass(
                       "/contact-us",
-                      "text-gray-700 hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
+                      "text-[#2d7da0] hover:text-orange h-16 flex items-center px-3 py-2 text-sm font-medium"
                     )}
                   >
                     Contact Us
@@ -301,7 +301,7 @@ const HeaderNavbar = () => {
                 setIsProductsMenu(false);
                 setIsServicesMenu(false);
               }}
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
+              className="block rounded-md px-3 py-2 text-base font-medium text-[#2d7da0] hover:bg-gray-700 hover:text-orange"
             >
               Home
             </Link>
@@ -311,7 +311,7 @@ const HeaderNavbar = () => {
                 type="button"
                 className={getLinkClass(
                   "/products",
-                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700 ${
+                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-[#2d7da0] hover:text-orange px-3 py-2 hover:bg-gray-700 ${
                     isProductsMenu ? "show bg-gray-700" : ""
                   }`
                 )}
@@ -363,7 +363,7 @@ const HeaderNavbar = () => {
                 type="button"
                 className={getLinkClass(
                   "/services",
-                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-gray-300 hover:text-orange px-3 py-2 hover:bg-gray-700 ${
+                  `relative inline-flex w-full justify-start gap-x-1.5 text-base block font-medium flex items-center text-[#2d7da0] hover:text-orange px-3 py-2 hover:bg-gray-700 ${
                     isServicesMenu ? "show bg-gray-700" : ""
                   }`
                 )}
@@ -421,7 +421,7 @@ const HeaderNavbar = () => {
                 setIsProductsMenu(false);
                 setIsServicesMenu(false);
               }}
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
+              className="block rounded-md px-3 py-2 text-base font-medium text-[#2d7da0] hover:bg-gray-700 hover:text-orange"
             >
               About Us
             </Link>
@@ -432,7 +432,7 @@ const HeaderNavbar = () => {
                 setIsProductsMenu(false);
                 setIsServicesMenu(false);
               }}
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-orange"
+              className="block rounded-md px-3 py-2 text-base font-medium text-[#2d7da0] hover:bg-gray-700 hover:text-orange"
             >
               Contact Us
             </Link>

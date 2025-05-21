@@ -311,7 +311,7 @@ export const Products: React.FC = () => {
       </section>
 
       <div className="container mx-auto px-4 pt-8 pb-30">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+        <div className="flex flex-wrap justify-center gap-8">
           {filteredProducts.map((product, index) => (
             <Product product={product} key={index} />
           ))}

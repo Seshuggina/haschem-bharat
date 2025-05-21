@@ -10,7 +10,7 @@ const Product = ({ product }: { product: ProductModel }) => {
   };
 
   return (
-    <div className="border-t-4 border-[#F79903] max-w-xs rounded-lg outline outline-1 outline-[#F79903] overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300 product-card">
+    <div className="border-t-4 border-[#F79903] w-[320px] rounded-lg outline outline-1 outline-[#F79903] overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300 product-card">
       <div className="flex justify-between p-2 gap-5 bg-gray-100">
         <h2 className="relative text-l font-semibold text-[#2d7da0]">
           {product.impurityName}

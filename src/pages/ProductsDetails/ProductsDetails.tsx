@@ -41,7 +41,7 @@ export const ProductDetails: React.FC = () => {
         <div className="container mx-auto py-8 pb-8">
           <div className="flex flex-wrap gap-8">
             <div className="hidden lg:flex rounded-md flex-col py-8 p-4 bg-white product-list relative">
-              <h3 className="font-bold text-xl mb-4 bg-white">
+              <h3 className="font-bold text-xl mb-4 bg-white text-[#2d7da0]">
                 Related Products
               </h3>
               <ul className="pr-2">
@@ -63,9 +63,9 @@ export const ProductDetails: React.FC = () => {
             </div>
 
             <div className="flex-1 bg-white p-8 rounded-md">
-              <h2 className="flex text-2xl sm:text-3xl font-semibold mb-4 justify-between items-center">
+              <h2 className="flex text-2xl sm:text-3xl font-semibold mb-4 justify-between items-center text-[#2d7da0]">
                 {selectedProduct?.impurityName}
-                <button
+                {/* <button
                   title=" Back to Products"
                   className="bg-gray-100 hover:bg-gray-300 text-gray-800 text-xs font-semibold py-2 pl-2 pr-1 rounded inline-flex items-center"
                 >
@@ -81,7 +81,7 @@ export const ProductDetails: React.FC = () => {
                       clip-rule="evenodd"
                     />
                   </svg>
-                </button>
+                </button> */}
               </h2>
               <div className="flex flex-col lg:flex-row items-start gap-6 mb-6 product-details items-stretch">
                 {/* Details Section */}
@@ -135,7 +135,15 @@ export const ProductDetails: React.FC = () => {
                         Ready Stock:
                       </span>
                       <span className="text-secondary font-semibold break-words">
-                      {selectedProduct?.readyStock === 'Yes' ? <span className="text-[#4CAF50]">{selectedProduct.readyStock}</span> : <span className="text-[#F44336]">{selectedProduct?.readyStock || 'Inquire'}</span>}
+                        {selectedProduct?.readyStock === "Yes" ? (
+                          <span className="text-[#4CAF50]">
+                            {selectedProduct.readyStock}
+                          </span>
+                        ) : (
+                          <span className="text-[#F44336]">
+                            {selectedProduct?.readyStock || "Inquire"}
+                          </span>
+                        )}
                       </span>
                     </div>
                   </div>
@@ -178,7 +186,7 @@ export const ProductDetails: React.FC = () => {
           </div>
         </div>
         <div className="container mx-auto pb-25">
-        <ContactForm />
+          <ContactForm />
         </div>
       </div>
     </>

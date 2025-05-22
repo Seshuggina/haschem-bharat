@@ -38,7 +38,7 @@ export const AboutUs = () => {
           </p>
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold pb-4">
+              <h2 className="text-2xl font-bold pb-4 text-[#2d7da0]">
                 Unveiling HASCHEM Bharat: Where Chemistry Meets Innovation
               </h2>
               <p className="mb-4">
@@ -87,7 +87,7 @@ export const AboutUs = () => {
             </span>
           </p>
           <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-bold pb-4 text-center">
+            <h2 className="text-2xl font-bold pb-4 text-center text-[#2d7da0]">
               Always Ready To Give The Best Services
             </h2>
 
@@ -246,7 +246,7 @@ export const AboutUs = () => {
 
       <section className="pt-16 pb-30 hb-aboutus-section-3">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold pb-4 sm:text-left text-center">
+          <h2 className="text-2xl font-bold pb-4 sm:text-left text-center text-[#2d7da0]">
             Why Work With Us
           </h2>
           <div className="container mx-auto px-4">

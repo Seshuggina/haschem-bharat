@@ -114,7 +114,7 @@ const ContactForm = () => {
             CONTACT INFO
           </span>
         </p>
-        <h2 className="text-xl font-semibold text-center mb-6">
+        <h2 className="text-xl font-semibold text-center mb-6 text-[#2d7da0]">
           Send a Message
         </h2>
         {successMessage && (

@@ -71,7 +71,7 @@ const Home = () => {
                 <i className="fa-solid fa-handshake text-orange text-3xl"></i>
               </div>
               <div>
-                <h2 className="text-3xl font-bold">Our Partners</h2>
+                <h2 className="text-3xl font-bold text-[#2d7da0]">Our Partners</h2>
                 <p className="text-gray-600">
                   At <strong>HASCHEM BHARAT</strong>, we believe in the power of
                   collaboration and partnership to drive innovation in the

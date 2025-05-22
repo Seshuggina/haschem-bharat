@@ -18,7 +18,7 @@ const ContactUs = () => {
                 CONTACT INFO
               </span>
             </p>
-            <h2 className="text-2xl font-bold pb-8">Reach Us Immediately</h2>
+            <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">Reach Us Immediately</h2>
             <div className="flex justify-center items-stretch mt-16 gap-x-8 hb-contact-tile-wrapper">
               {[
                 {

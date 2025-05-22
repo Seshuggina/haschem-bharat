@@ -25,7 +25,7 @@ export const ServiceCard = ({
     className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-orange flex flex-col md:flex-row items-center gap-4"
   >
     <div className="flex-1">
-      <h4 className="text-xl font-semibold mb-4">{title}</h4>
+      <h4 className="text-xl font-semibold mb-4 text-[#2d7da0]">{title}</h4>
 
       {/* Image for small screens */}
       <img

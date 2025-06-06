@@ -108,7 +108,7 @@ export const ProductDetails: React.FC = () => {
                         Product Format:
                       </span>
                       <span className="text-secondary font-semibold break-words">
-                        TODO
+                        Neat
                       </span>
                     </div>
 

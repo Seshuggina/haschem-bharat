@@ -12,7 +12,7 @@ import nato from "./../../assets/img/partners/nato.png";
 const Partners = () => {
   return (
     <OwlCarousel
-      margin={50}
+      margin={20}
       loop={true}
       autoplay={true}
       autoplayTimeout={2500}
@@ -22,51 +22,33 @@ const Partners = () => {
       freeDrag={true}
       responsive={{
         100: {
-          items: 1,
-        },
-        500: {
           items: 2,
         },
-        991: {
+        500: {
           items: 3,
         },
-        1400: {
+        991: {
           items: 4,
+        },
+        1400: {
+          items: 5,
         },
       }}
     >
       <div className="items-center flex justify-center">
-        <a href="https://curiaglobal.com/" target="_blank" rel="noreferrer">
           <img src={curia} alt="Curia Global" />
-        </a>
       </div>
       <div className="items-center flex justify-center">
-        <a href="https://www.drreddys.com/" target="_blank" rel="noreferrer">
           <img src={drreddy} alt="Dr Reddys" />
-        </a>
       </div>
       <div className="items-center flex justify-center">
-        <a
-          href="https://www.granulesindia.com"
-          target="_blank"
-          rel="noreferrer"
-        >
           <img src={granules} alt="Granules India" />
-        </a>
       </div>
       <div className="items-center flex justify-center">
-        <a href="https://www.leepharma.com/" target="_blank" rel="noreferrer">
           <img src={leepharma} alt="Lee Pharma" />
-        </a>
       </div>
       <div className="items-center flex justify-center">
-        <a
-          href="https://www.natcopharma.co.in/"
-          target="_blank"
-          rel="noreferrer"
-        >
           <img src={nato} alt="Natco Pharma" />
-        </a>
       </div>
     </OwlCarousel>
   );

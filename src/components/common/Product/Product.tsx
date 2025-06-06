@@ -69,7 +69,7 @@ const Product = ({ product }: { product: ProductModel }) => {
             onClick={showProductDetails}
             className="hb-btn text-gray-900 py-1 px-4 rounded border text-white bg-[#F79903] border-orange hover:text-white"
           >
-            <span className="hb-btn-text">Explore More &nbsp;</span>
+            <span className="hb-btn-text">Explore</span>
           </button>
         </div>
       </div>

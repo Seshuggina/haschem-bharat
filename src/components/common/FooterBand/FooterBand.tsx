@@ -18,7 +18,7 @@ const FooterBand = () => {
         <div className="flex flex-col md:flex-row items-center p-8 gap-8">
           {/* Left Section */}
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-2xl md:text-lg font-semibold text-white">
+            <h2 className="text-lg sm:text-l font-semibold text-white">
               Expert Scientists Conducting Precise Product Testing
             </h2>
           </div>

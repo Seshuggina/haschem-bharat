@@ -1,5 +1,6 @@
 .home-carousel {
   position: relative;
+  color: white;
   .owl-item {
     padding-top: 125px;
     padding-bottom: 50px;
@@ -40,7 +41,7 @@
     }
 
     h3 {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 600;
       transform: translateY(-20px);
       padding-bottom: 5px;
@@ -49,9 +50,8 @@
       }
     }
     p {
-      font-size: 1.2rem;
-      color: #101828;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 300;
       transform: translateY(-60px);
       opacity: 0;
       @media (max-width: 768px) {
@@ -69,8 +69,6 @@
       }
       p {
         font-size: 1.1rem;
-        color: #101828;
-        font-weight: 500;
         transform: translateY(-60px);
         opacity: 0;
       }
@@ -122,12 +120,20 @@
   transition: background-color 2s linear;
 }
 
-.banner-text-box {
-  background: white;
-  border: 2px solid #f9efef;
-  border-radius: 8px;
-  padding: 20px;
-  @media screen and (max-width: 768px) {
-    flex: none;
+@media (max-width: 768px) {
+  .banner-text-box {
+    background: white;
+    border: 2px solid #f9efef;
+    border-radius: 8px;
+    padding: 20px;
+    @media screen and (max-width: 768px) {
+      flex: none;
+    }
+    h3 {
+      color: #2d7da0;
+    }
+    p {
+      color: black;
+    }
   }
 }

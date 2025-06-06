@@ -15,12 +15,12 @@ const Product = ({ product }: { product: ProductModel }) => {
         <h2 className="relative text-l font-semibold text-[#2d7da0]">
           {product.impurityName}
         </h2>
-        <button
+        {/* <button
           type="button"
           className={`product-stock cursor-pointer ${
             product.readyStock === "Yes" ? "available" : ""
           }`}
-        ></button>
+        ></button> */}
       </div>
 
       {/* Image Container */}

@@ -102,7 +102,7 @@ const Footer = () => {
 
           <div className="flex flex-1 flex-wrap justify-center md:justify-end sm:flex-nowrap space-x-4 sm:w-auto">
             <a
-              href="https://www.facebook.com/creativetim"
+              href="https://www.linkedin.com/in/haschembharat/"
               target="_blank"
               className="text-gray-400 hover:text-white"
             >

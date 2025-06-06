@@ -15,12 +15,12 @@ const Product = ({ product }: { product: ProductModel }) => {
         <h2 className="relative text-l font-semibold text-[#2d7da0]">
           {product.impurityName}
         </h2>
-        <button
+        {/* <button
           type="button"
           className={`product-stock cursor-pointer ${
             product.readyStock === "Yes" ? "available" : ""
           }`}
-        ></button>
+        ></button> */}
       </div>
 
       {/* Image Container */}
@@ -69,7 +69,7 @@ const Product = ({ product }: { product: ProductModel }) => {
             onClick={showProductDetails}
             className="hb-btn text-gray-900 py-1 px-4 rounded border text-white bg-[#F79903] border-orange hover:text-white"
           >
-            <span className="hb-btn-text">Explore More &nbsp;</span>
+            <span className="hb-btn-text">Explore</span>
           </button>
         </div>
       </div>

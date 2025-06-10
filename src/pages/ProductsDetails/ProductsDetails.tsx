@@ -63,27 +63,16 @@ export const ProductDetails: React.FC = () => {
             </div>
 
             <div className="flex-1 bg-white p-8 rounded-md">
-              <h2 className="flex text-2xl sm:text-3xl font-semibold mb-4 justify-between items-center text-[#2d7da0]">
+              <h2
+                className="flex text-2xl sm:text-3xl font-semibold mb-4 justify-between items-center text-[#2d7da0]"
+                id="product-title"
+              >
                 {selectedProduct?.impurityName}
-                {/* <button
-                  title=" Back to Products"
-                  className="bg-gray-100 hover:bg-gray-300 text-gray-800 text-xs font-semibold py-2 pl-2 pr-1 rounded inline-flex items-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </button> */}
               </h2>
-              <div className="flex flex-col lg:flex-row items-start gap-6 mb-6 product-details items-stretch">
+              <div
+                className="flex flex-col lg:flex-row items-start gap-6 mb-6 product-details items-stretch"
+                aria-labelledby="product-title"
+              >
                 {/* Details Section */}
                 <div className="flex-2 xs:order-2">
                   <div className="text-gray-700 hb-details grid grid-cols-1 gap-x-8 gap-y-4">

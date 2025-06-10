@@ -43,9 +43,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      console.log("Typed text:", inputText);
       onSubmit(inputText);
-      // Perform any action you want with the input text here
     }
   };
 
@@ -70,19 +68,17 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         placeholder="Enter #CAS No, Name, Category, Molecular Formula"
         selected={selected}
         ref={inputRef}
-        id="typeahead"
+        id="product-search"
         filterBy={["impurityName"]}
         labelKey={(option: any) =>
           `${option.impurityName} ${option.parentAPI} ${option.casNo} ${option.category} ${option.molecularFormula} ${option.synonym}`
         }
-        // onMenuToggle={(isOpen) => {
-        //   if (isOpen) {
-        //     debugger; // This will trigger the breakpoint in dev tools
-        //     console.log("Dropdown opened");
-        //   }
-        // }}
+        aria-label="Search for products"
+        aria-expanded={false}
+        aria-owns="typeahead-menu"
+        aria-haspopup="listbox"
         renderMenu={(results, menuProps) => (
-          <Menu {...menuProps}>
+          <Menu {...menuProps} id="typeahead-menu" role="listbox">
             {results.map((result: any, index: number) => (
               <MenuItem
                 key={index}
@@ -93,6 +89,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
                   handleProductSelectionChange(result);
                   inputRef.current?.blur();
                 }}
+                role="option"
+                aria-selected={selected.includes(result)}
               >
                 <strong>{result.impurityName}</strong>,{" "}
                 <span>{result.parentAPI}</span>{" "}
@@ -112,6 +110,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         type="button"
         onClick={() => clearFilter()}
         className="w-8 rounded-full text-black hover:bg-gray-200 link text-2xl"
+        aria-label="Clear search"
       >
         &times;
       </button>

@@ -5,17 +5,19 @@ import Footer from "./components/common/layout/Footer/Footer";
 
 function App() {
   return (
-    <>
-      {/* <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <h1 className="text-4xl font-bold text-blue-500">
-          Tailwind is Working! 🎉
-        </h1>
-      </div> */}
-      {/* <SocialNavbar /> */}
+    <div className="app">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white"
+      >
+        Skip to main content
+      </a>
       <HeaderNavbar />
-      <AppRoutes />
+      <main id="main-content">
+        <AppRoutes />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

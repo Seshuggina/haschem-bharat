@@ -168,12 +168,10 @@ export const Products: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if(windowWidth < 640) {
+    if (windowWidth < 640) {
       setIsAccOpen(false); // Close accordion on small screens
     }
   }, [windowWidth]);
-
-
 
   return (
     <>
@@ -183,7 +181,10 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      <section className="pt-8 pb-8 hb-products-section-1 shadow-lg">
+      <section
+        className="pt-8 pb-8 hb-products-section-1 shadow-lg"
+        aria-label="Product filters"
+      >
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2">
             <button
@@ -200,10 +201,8 @@ export const Products: React.FC = () => {
             {alphabet.map((letter) => (
               <button
                 key={letter}
-                className={`w-10 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm text-center ${
-                  selectedLetters.includes(letter)
-                    ? "hb-bg-brand border-orange hb-bg-brand-hover text-white"
-                    : ""
+                className={`w-10 py-1 border border-primary rounded-sm text-center ${
+                  selectedLetters.includes(letter) ? "hb-bg-brand text-white" : ""
                 }`}
                 onClick={() =>
                   setSelectedLetters((prev) =>
@@ -212,6 +211,8 @@ export const Products: React.FC = () => {
                       : [...prev, letter]
                   )
                 }
+                aria-label={`Filter by letter ${letter}`}
+                aria-pressed={selectedLetters.includes(letter)}
               >
                 {letter}
               </button>
@@ -224,6 +225,7 @@ export const Products: React.FC = () => {
                 placeholder="Search Products"
                 value={searchText}
                 onChange={(e) => handleSearchChange(e.target.value)}
+                aria-label="Search products by text"
               />
 
               <button
@@ -234,6 +236,7 @@ export const Products: React.FC = () => {
                 }`}
                 disabled={!searchText}
                 onClick={() => handleSearchChange("")}
+                aria-label="Clear search text"
               >
                 Clear
               </button>
@@ -243,7 +246,8 @@ export const Products: React.FC = () => {
         {/* Filter by Category */}
 
         <div className="container mx-auto pt-2 px-4">
-          <h4 title="Click to Expand/Collapse"
+          <h4
+            title="Click to Expand/Collapse"
             onClick={toggleAccordion}
             className="text-l font-semibold mb-1 cursor-pointer flex justify-between items-center bg-gray-100 px-3 py-2 rounded-md"
           >

@@ -133,7 +133,11 @@ const ContactForm = () => {
             ❌ Oops! Something seems to have gone wrong. Could you please try again?
           </div>
         )}
-        <form role="form" onSubmit={sendEmail}>
+        <form
+          onSubmit={sendEmail}
+          className="w-full max-w-lg mx-auto"
+          aria-label="Contact form"
+        >
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <aside>
               <input

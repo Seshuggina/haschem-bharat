@@ -5,6 +5,7 @@ import products from "./../assets/data/products.json";
 import { ProductModel } from "../types/ProductModel";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
+import FooterBand from "../components/common/FooterBand/FooterBand";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const Home = () => {
                 <Product key={topProduct.Sno} product={topProduct} />
               ))}
             </div>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <button
                 data-content="More Products &#10095;"
                 onClick={navigateToProducts}
@@ -59,6 +60,12 @@ const Home = () => {
                 <span className="hb-btn-text">More Products &nbsp;</span>
               </button>
             </div>
+          </div>
+        </section>
+
+        <section id="ourPartners" className="pt-16 pb-16">
+          <div className="container mx-auto px-6 lg:px-8">
+            <FooterBand></FooterBand>
           </div>
         </section>
 
@@ -71,7 +78,9 @@ const Home = () => {
                 <i className="fa-solid fa-handshake text-orange text-3xl"></i>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#2d7da0]">Our Partners</h2>
+                <h2 className="text-3xl font-bold text-[#2d7da0]">
+                  Our Partners
+                </h2>
                 <p className="text-gray-600">
                   At <strong>HASCHEM BHARAT</strong>, we believe in the power of
                   collaboration and partnership to drive innovation in the

@@ -31,11 +31,6 @@ export const AboutUs = () => {
 
       <section className="py-16 hb-aboutus-section-1">
         <div className="container mx-auto px-4">
-          <p className="pb-8">
-            <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
-              CHEMOVATE
-            </span>
-          </p>
           <div className="flex flex-col md:flex-row items-center gap-4">
             <div className="flex-1">
               <h2 className="text-2xl font-bold pb-4 text-[#2d7da0]">
@@ -81,14 +76,9 @@ export const AboutUs = () => {
 
       <section className="py-16 hb-aboutus-section-2">
         <div className="container mx-auto px-4">
-          <p className="pb-8 text-center">
-            <span className="inline-flex items-center rounded-full bg-yellow-50 px-5 py-2 text-sm font-medium text-orange ring-1 ring-yellow-600/20 ring-inset">
-              CHEMOVATE
-            </span>
-          </p>
           <div className="flex flex-col gap-6">
             <h2 className="text-2xl font-bold pb-4 text-center text-[#2d7da0]">
-              Always Ready To Give The Best Services
+              Your Trusted Partner for Top-Quality Services
             </h2>
 
             {/* Tabs Section */}

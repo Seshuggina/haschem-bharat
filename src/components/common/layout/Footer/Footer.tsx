@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import FooterBand from "../../FooterBand/FooterBand";
 import logoWhite from "./../../../../assets/img/brand/logo_white.svg";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
-    <footer className="bg-gray-900 text-white pt-20 pb-4">
+    <footer className={`bg-gray-900 text-white pb-4${!isHome ? ' pt-20' : ''}`}> 
       <div className="container mx-auto px-6">
-        <FooterBand></FooterBand>
+        {/* Hide FooterBand on the home (landing) page */}
+        {!isHome && <FooterBand />}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
           {/* Logo and Description */}
           <div>

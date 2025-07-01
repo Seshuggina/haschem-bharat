@@ -8,10 +8,10 @@
     "leadTime": "Ready stock",
     "productStatus": "New",
     "category": [
-      "Standards",
+      "API Standards",
       "Nitrosamines",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1246819-22-6.png",
     "synonym": "NA",
@@ -32,7 +32,7 @@
     "category": [
       "Research tools",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "76824-16-3.png",
     "synonym": null,
@@ -51,9 +51,9 @@
     "leadTime": "Ready stock",
     "productStatus": "New",
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1942054-60-5.gif",
     "synonym": null,
@@ -74,7 +74,7 @@
     "category": [
       "Building blocks",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "63095-51-2.gif",
     "synonym": null,
@@ -93,9 +93,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "39075-78-0.gif",
     "synonym": null,
@@ -116,7 +116,7 @@
     "category": [
       "Research tools",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "844639-07-2.gif",
     "synonym": null,
@@ -135,9 +135,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "945668-94-0.gif",
     "synonym": null,
@@ -156,9 +156,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1011758-03-4.gif",
     "synonym": null,
@@ -177,9 +177,9 @@
     "leadTime": "Ready stock",
     "productStatus": "New",
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1371638-05-9.gif",
     "synonym": null,
@@ -198,9 +198,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1346605-15-9.gif",
     "synonym": null,
@@ -219,10 +219,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "120202-69-9.gif",
     "synonym": null,
@@ -241,9 +241,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "884330-12-5.gif",
     "synonym": null,
@@ -262,9 +262,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "915124-86-6.gif",
     "synonym": null,
@@ -344,9 +344,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "100643-71-8.gif",
     "synonym": null,
@@ -365,9 +365,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "38092-89-6.gif",
     "synonym": null,
@@ -386,10 +386,10 @@
     "leadTime": "Ready stock",
     "productStatus": "New",
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1469910-70-0.gif",
     "synonym": null,
@@ -408,10 +408,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1807632-95-6.gif",
     "synonym": null,
@@ -430,10 +430,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1204222-85-4.gif",
     "synonym": null,
@@ -452,10 +452,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "864070-37-1.gif",
     "synonym": null,
@@ -474,10 +474,10 @@
     "leadTime": "Ready stock",
     "productStatus": "New",
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "960404-86-8.gif",
     "synonym": null,
@@ -496,10 +496,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2040305-05-1.gif",
     "synonym": null,
@@ -518,9 +518,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1204222-85-4.gif",
     "synonym": null,
@@ -539,11 +539,11 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Enzyme Activators and Inhibitors",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "864070-43-9.gif",
     "synonym": null,
@@ -562,11 +562,11 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Enzyme Activators and Inhibitors",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1620758-32-8.gif",
     "synonym": null,
@@ -585,11 +585,11 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Enzyme Activators and Inhibitors",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1279691-36-9.gif",
     "synonym": null,
@@ -608,9 +608,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "93413-62-8.gif",
     "synonym": null,
@@ -629,10 +629,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Nirosamines",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": null,
     "synonym": null,
@@ -651,9 +651,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "117811-20-8.gif",
     "synonym": null,
@@ -672,9 +672,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "169253-13-8.gif",
     "synonym": null,
@@ -693,9 +693,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2102675-42-1.gif",
     "synonym": null,
@@ -714,9 +714,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2102675-40-9.gif",
     "synonym": null,
@@ -735,9 +735,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "952518-97-7.gif",
     "synonym": null,
@@ -756,9 +756,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "941685-27-4.gif",
     "synonym": null,
@@ -777,9 +777,9 @@
     "leadTime": "Ready Stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "117796-50-6.gif",
     "synonym": null,
@@ -818,7 +818,7 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Building Blocks",
       "Carbohydrates"
     ],
@@ -839,7 +839,7 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Lipids/Fatty Acids",
       "Glycerol Derivatives"
     ],
@@ -860,10 +860,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "53007-06-0.gif",
@@ -883,10 +883,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "485-35-8.gif",
@@ -906,10 +906,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "486-86-2.gif",
@@ -930,9 +930,9 @@
     "productStatus": null,
     "category": [
       "Building Blocks",
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "6743-09-5.gif",
     "synonym": null,
@@ -951,9 +951,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nitrosamines "
     ],
     "productImage": "2925447-38-5.gif",
@@ -973,9 +973,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Antibiotics"
     ],
     "productImage": "78480-14-5.gif",
@@ -995,7 +995,7 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Building Blocks",
       "Carbohydrates"
     ],
@@ -1036,7 +1036,7 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Building Blocks",
       "Carbohydrates"
     ],
@@ -1057,10 +1057,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "180272-28-0.gif",
     "synonym": null,
@@ -1079,10 +1079,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2606144-44-7.gif",
     "synonym": null,
@@ -1101,10 +1101,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2606144-45-8.gif",
     "synonym": null,
@@ -1123,9 +1123,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "5752-25-0.gif",
     "synonym": null,
@@ -1144,9 +1144,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "6779-87-9.gif",
     "synonym": null,
@@ -1165,9 +1165,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "304-95-0.gif",
     "synonym": null,
@@ -1186,9 +1186,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "2236-60-4.gif",
     "synonym": null,
@@ -1207,9 +1207,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "62933-57-7.gif",
     "synonym": null,
@@ -1228,9 +1228,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "67587-24-0.gif",
     "synonym": null,
@@ -1249,9 +1249,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "191546-96-0.gif",
     "synonym": null,
@@ -1270,10 +1270,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "41639-83-2.gif",
     "synonym": null,
@@ -1292,10 +1292,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "145773-22-4.gif",
     "synonym": null,
@@ -1335,10 +1335,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "63547-25-1.gif",
@@ -1358,10 +1358,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "63547-24-0.gif",
@@ -1381,10 +1381,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "63547-22-8.gif",
@@ -1404,11 +1404,11 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Enzyme Activators and Inhibitors",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Amphetamines"
     ],
     "productImage": "93413-90-2.gif",
@@ -1428,10 +1428,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Neurochemicals",
       "Pharma/API Drug",
-      "Impurities/Metabolites",
+      "Impurity Standards",
       "Nicotin Derivatives and Metabolites"
     ],
     "productImage": "68524-30-1.gif",
@@ -1451,9 +1451,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "429658-95-7.gif",
     "synonym": null,
@@ -1472,9 +1472,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "108731-95-9.gif",
     "synonym": null,
@@ -1493,9 +1493,9 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1309040-96-7.gif",
     "synonym": null,
@@ -1534,7 +1534,7 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Food"
     ],
     "productImage": "10396-80-2.gif",
@@ -1554,10 +1554,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "823817-58-9.gif",
     "synonym": null,
@@ -1576,10 +1576,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "486460-31-5.gif",
     "synonym": null,
@@ -1598,10 +1598,10 @@
     "leadTime": "Ready stock",
     "productStatus": null,
     "category": [
-      "Standards",
+      "API Standards",
       "Chiral Molecules",
       "Pharma/API Drug",
-      "Impurities/Metabolites"
+      "Impurity Standards"
     ],
     "productImage": "1345822-86-7.gif",
     "synonym": null,

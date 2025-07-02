@@ -13,9 +13,17 @@ const HeaderNavbar = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const uniqueCategories = getCategories();
-  // Push 'All' category to the beginning of the
-  uniqueCategories.unshift("All");
+
+  // Show only these categories in the Products menu
+  const productMenuCategories = [
+    "All",
+    "API Standards",
+    "Nitrosamines",
+    "Carbohydrates",
+    "Impurity Standards",
+    "Research tools",
+    "Environmental Contaminants"
+  ];
 
   const updateSearchText = useGlobalStore(
     (state: any) => state.updateSearchText
@@ -170,7 +178,7 @@ const HeaderNavbar = () => {
                     </button>
 
                     <div className="hb-dropdown absolute hidden group-hover:block bg-white shadow-md mt-0 py-2 z-10">
-                      {uniqueCategories.map((category) => (
+                      {productMenuCategories.map((category) => (
                         <Link
                           key={category}
                           to="/products"
@@ -338,7 +346,7 @@ const HeaderNavbar = () => {
                   isProductsMenu ? "" : "hidden"
                 }`}
               >
-                {uniqueCategories.map((category) => (
+                {productMenuCategories.map((category) => (
                   <Link
                     key={category}
                     to="/products"

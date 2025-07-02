@@ -35,6 +35,7 @@ export const Products: React.FC = () => {
       } else {
         selectedCategoriesList.current = [...selectedCategory];
       }
+      setIsAccOpen(true); // Open accordion if categories are selected
     }
     if (searchedTxt) {
       setSearchText(searchedTxt);
@@ -168,7 +169,7 @@ export const Products: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (windowWidth < 640) {
+    if (windowWidth && windowWidth < 640) {
       setIsAccOpen(false); // Close accordion on small screens
     }
   }, [windowWidth]);
@@ -245,11 +246,11 @@ export const Products: React.FC = () => {
         </div>
         {/* Filter by Category */}
 
-        <div className="container mx-auto pt-2 px-4">
+        <div className="container mx-auto mt-4 px-4">
           <h4
             title="Click to Expand/Collapse"
             onClick={toggleAccordion}
-            className="text-l font-semibold mb-1 cursor-pointer flex justify-between items-center bg-gray-100 px-3 py-2 rounded-md"
+            className={`text-l font-semibold rounded-tl-md rounded-tr-md  text-[#2d7da0] cursor-pointer flex justify-between items-center bg-gray-100 px-3 py-2 ${isAccOpen ? "" : "rounded-md"}`}
           >
             Filter By Category:
             <span className="text-gray-600">
@@ -261,8 +262,8 @@ export const Products: React.FC = () => {
             </span>
           </h4>
           <div
-            className={`overflow-hidden transition-all duration-300 ${
-              isAccOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            className={`overflow-hidden transition-all pt-2 px-2 rounded-bl-md rounded-br-md border-1 border-gray-100 duration-300 ${
+              isAccOpen ? "max-h-screen opacity-100 border-1 border-gray-100" : "max-h-0 opacity-0"
             }`}
           >
             <div className="flex flex-wrap gap-2">

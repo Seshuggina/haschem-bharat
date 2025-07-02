@@ -4,7 +4,7 @@ import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import logo from "./../../../../assets/img/brand/logo_orange.svg";
 import logo_white from "./../../../../assets/img/brand/logo_white.svg";
-import { getCategories } from "../../../../services/utilities";
+// import { getCategories } from "../../../../services/utilities";
 import "./Header.scss";
 
 const HeaderNavbar = () => {

@@ -37,20 +37,24 @@ export const AboutUs = () => {
                 Unveiling HASCHEM Bharat: Where Chemistry Meets Innovation
               </h2>
               <p className="mb-4">
-                <strong>HASCHEM Bharat</strong> Labs operates out of Vancouver,
-                Canada, and is helmed by distinguished professionals delivering
-                premium reference standards, research chemicals, and
-                unparalleled services.
+                At <strong>Haschem</strong>, we specialize in delivering highest quality API impurities and reference standards, ensuring
+unparalleled accuracy in both qualitative and quantitative analyses. Our extensive catalog of high-quality
+impurity reference materials includes intermediates, by-products, and degradation products, all designed
+to support the development of safer and more effective pharmaceuticals.
               </p>
               <h5 className="text-xl font-semibold">
-                Our key product portfolio includes:
+                Our comprehensive product portfolio includes:
               </h5>
               <ul className="list-disc pl-5 mb-4">
                 <li>API Standards</li>
                 <li>Impurity Standards</li>
                 <li>Metabolites</li>
                 <li>Nitrosamines</li>
+                <li>Building Blocks</li>
+                <li>Custom Synthesis</li>
               </ul>
+              <p className="mb-4">At HASCHEM, we value long-term partnerships, working closely with our clients to address their unique
+challenges and requirements. Together, we develop customized solutions to drive your success.</p>
               <img
                 src={aboutText}
                 alt="About Us"
@@ -196,26 +200,27 @@ export const AboutUs = () => {
                   <h2 className="text-2xl font-bold pb-4">Innovation</h2>
                   <p className="mb-4">Generate related content.</p>
                   <div className="mb-4">
-                    <p>
+                    <p className="mb-2">
                       At HASCHEM Bharat Labs, innovation is the driving force
                       behind our scientific advancements. We are dedicated to:
                     </p>
-                    🚀
-                    <strong>Cutting-Edge Research</strong> - Continuously
+                    <ul className="pl-5 mb-4">
+                      <li className="mb-2">🚀 <strong>Cutting-Edge Research</strong> - Continuously
                     exploring new methodologies and technologies to enhance
-                    pharmaceutical standards.
-                    <br />
-                    <strong>🔬 Advanced Solutions</strong> - Developing
+                    pharmaceutical standards.</li>
+                      <li className="mb-2"><strong>🔬 Advanced Solutions</strong> - Developing
                     high-quality API standards, impurity standards, metabolites,
-                    and nitrosamines to support global research. <br />
-                    💡 <strong>Future-Ready Approach</strong> - Investing in
+                    and nitrosamines to support global research.</li>
+                      <li className="mb-2">💡 <strong>Future-Ready Approach</strong> - Investing in
                     next-generation scientific discoveries to shape the future
-                    of healthcare and medicine. <br />
-                    🤝 <strong>Collaborative Excellence</strong> - Partnering
+                    of healthcare and medicine.</li>
+                      <li className="mb-2">🤝 <strong>Collaborative Excellence</strong> - Partnering
                     with industry leaders to foster groundbreaking advancements
                     in pharmaceutical sciences. Through innovation, we redefine
                     possibilities and set new benchmarks in chemical and
-                    pharmaceutical research.
+                    pharmaceutical research.</li>
+                    </ul>
+                    
                   </div>
                   <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
                     Get In Touch

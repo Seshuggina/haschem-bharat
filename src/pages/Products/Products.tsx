@@ -11,7 +11,7 @@ export const Products: React.FC = () => {
   categoriesList = categoriesList.filter((category) => category.name !== "All");
   const [searchText, setSearchText] = useState<string>("");
   const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]);
-  const [selectedLetters, setSelectedLetters] = useState<string[]>([]);
+  const [selectedLetter, setSelectedLetter] = useState<string>("");
   const [categories, setCategories] = useState<CategoryModel[]>(categoriesList);
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const [isAccOpen, setIsAccOpen] = useState(true);
@@ -30,7 +30,7 @@ export const Products: React.FC = () => {
   useEffect(() => {
     if (selectedCategory.length > 0) {
       if (selectedCategory.includes("All")) {
-        setSelectedLetters([]);
+        setSelectedLetter("");
         selectedCategoriesList.current = [];
       } else {
         selectedCategoriesList.current = [...selectedCategory];
@@ -53,7 +53,7 @@ export const Products: React.FC = () => {
   useEffect(() => {
     if (selectedCategory.length > 0) {
       if (selectedCategory.includes("All")) {
-        setSelectedLetters([]); // Reset selected letters when "All" is selected
+        setSelectedLetter(""); // Reset selected letter when "All" is selected
         selectedCategoriesList.current = [];
       } else {
         selectedCategoriesList.current = [...selectedCategory];
@@ -71,7 +71,7 @@ export const Products: React.FC = () => {
 
   useEffect(() => {
     filterProducts();
-  }, [selectedLetters]);
+  }, [selectedLetter]);
 
   const filterProducts = () => {
     let filteredProductsList: any[] = products;
@@ -84,10 +84,10 @@ export const Products: React.FC = () => {
       );
     }
 
-    if (selectedLetters.length > 0) {
+    if (selectedLetter) {
       filteredProductsList = filterObjectsByCharacters(
         filteredProductsList,
-        selectedLetters
+        [selectedLetter]
       );
     }
 
@@ -113,13 +113,11 @@ export const Products: React.FC = () => {
         .split("")
         .find((char) => /^[a-zA-Z]$/.test(char));
       const normalizedFirstChar = firstAlphabeticChar?.toLowerCase();
-      const normalizedCharacters = selectedCharacters.map((char) =>
-        char.toLowerCase()
-      );
+      const normalizedCharacter = selectedCharacters[0]?.toLowerCase();
 
       return (
         normalizedFirstChar &&
-        normalizedCharacters.includes(normalizedFirstChar)
+        normalizedCharacter === normalizedFirstChar
       );
     });
   };
@@ -139,7 +137,7 @@ export const Products: React.FC = () => {
   };
 
   const clearSelection = () => {
-    setSelectedLetters([]);
+    setSelectedLetter("");
   };
 
   const clearCategory = () => {
@@ -188,36 +186,37 @@ export const Products: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2">
-            <button
-              className={`px-3 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm ${
-                selectedLetters.length === 0
-                  ? "hb-bg-brand border-orange hb-bg-brand-hover text-white"
-                  : ""
-              }`}
-              onClick={clearSelection}
-            >
-              All
-            </button>
-
-            {alphabet.map((letter) => (
+            <div className="flex flex-wrap gap-2">
               <button
-                key={letter}
-                className={`w-10 py-1 border border-primary rounded-sm text-center ${
-                  selectedLetters.includes(letter) ? "hb-bg-brand text-white" : ""
+                className={`px-3 py-1 border hb-border-primary hb-bg-primary-hover rounded-sm ${
+                  !selectedLetter
+                    ? "hb-bg-brand border-orange hb-bg-brand-hover text-white"
+                    : ""
                 }`}
-                onClick={() =>
-                  setSelectedLetters((prev) =>
-                    prev.includes(letter)
-                      ? prev.filter((l) => l !== letter)
-                      : [...prev, letter]
-                  )
-                }
-                aria-label={`Filter by letter ${letter}`}
-                aria-pressed={selectedLetters.includes(letter)}
+                onClick={() => setSelectedLetter("")}
+                aria-pressed={!selectedLetter}
               >
-                {letter}
+                All
               </button>
-            ))}
+
+              {alphabet.map((letter) => (
+                <button
+                  key={letter}
+                  className={`w-10 py-1 border border-primary rounded-sm text-center ${
+                    selectedLetter === letter ? "hb-bg-brand text-white" : ""
+                  }`}
+                  onClick={() =>
+                    setSelectedLetter(
+                      selectedLetter === letter ? "" : letter
+                    )
+                  }
+                  aria-label={`Filter by letter ${letter}`}
+                  aria-pressed={selectedLetter === letter}
+                >
+                  {letter}
+                </button>
+              ))}
+            </div>
 
             <div className="flex items-center gap-2 w-full sm:w-auto">
               <input

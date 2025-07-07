@@ -4,7 +4,6 @@ import useGlobalStore from "../../../../store/globals";
 import { TypeaheadSearch } from "../../../../features/TypeaheadSearch/TypeaheadSearch";
 import logo from "./../../../../assets/img/brand/logo_orange.svg";
 import logo_white from "./../../../../assets/img/brand/logo_white.svg";
-// import { getCategories } from "../../../../services/utilities";
 import "./Header.scss";
 
 const HeaderNavbar = () => {
@@ -59,20 +58,6 @@ const HeaderNavbar = () => {
     navigate("/products");
   };
 
-  // useEffect(() => {
-  //   let lastScrollY = window.scrollY;
-  //   const handleScroll = () => {
-  //     if (window.scrollY > lastScrollY) {
-  //       setVisible(false); // Hide on scroll up
-  //     } else {
-  //       setVisible(true); // Show on scroll down
-  //     }
-  //     lastScrollY = window.scrollY;
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -84,7 +69,7 @@ const HeaderNavbar = () => {
       <nav
         className={`fixed left-0 w-full text-white z-50 transition-transform duration-100`}
       >
-        <div className="haschem-navbar mx-auto lg:container px-2 sm:px-3 lg:px-8">
+        <div className="haschem-navbar px-2 sm:px-3 lg:px-8">
           <div className="fixed w-full relative flex items-center justify-between whitespace-nowrap">
             <div className="absolute inset-y-0 right-0 z-1 flex items-center sm:hidden toggle-menu">
               <button

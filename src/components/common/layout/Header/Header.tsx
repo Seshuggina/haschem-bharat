@@ -21,7 +21,7 @@ const HeaderNavbar = () => {
     "Carbohydrates",
     "Impurity Standards",
     "Research tools",
-    "Environmental Contaminants"
+    "Environmental Contaminants",
   ];
 
   const updateSearchText = useGlobalStore(
@@ -261,6 +261,22 @@ const HeaderNavbar = () => {
                   <i className="fa fa-search" />
                 </button>
               </form>
+            </div>
+            <div className="flex justify-end ml-5 p-1 hideSocialOnMobile">
+              <a
+                href="https://www.linkedin.com/in/haschembharat/"
+                target="_blank"
+                className="text-[42px] text-[#0077B5] hover:text-[#0077B5]"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              {/* <a
+                href="https://api.whatsapp.com/send?phone=8121333007"
+                target="_blank"
+                className="text-3xl text-[#2d7da0] hover:text-[#2d7da0]"
+              >
+                <i className="fab fa-whatsapp"></i>
+              </a> */}
             </div>
           </div>
         </div>

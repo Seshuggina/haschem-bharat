@@ -59,6 +59,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
     <>
       <Typeahead
         className="typeaheadSearch"
+        minLength={3}
         onChange={(selected) => {
           onProductChange(selected as ProductModel[]);
           inputRef.current?.blur();

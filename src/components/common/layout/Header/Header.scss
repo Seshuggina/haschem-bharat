@@ -168,14 +168,11 @@
     }
   }
 }
-// @media (max-width: 1024px) {
-//   .toggle-menu {
-//     display: flex;
-//   }
-//   .navbar-wrapper {
-//     display: none;
-//   }
-// }
+@media (max-width: 900px) {
+  .hideSocialOnMobile {
+    display: none;
+  }
+}
 @media (max-width: 640px) {
   .hb-gbl-search {
     width: 100%;

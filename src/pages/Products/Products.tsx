@@ -136,10 +136,6 @@ export const Products: React.FC = () => {
     setSearchText(value);
   };
 
-  const clearSelection = () => {
-    setSelectedLetter("");
-  };
-
   const clearCategory = () => {
     const updatedCategories = categories.map((category) => {
       category.isSelected = false;

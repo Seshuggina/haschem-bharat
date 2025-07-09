@@ -11,17 +11,36 @@ interface TypeaheadSearchProps {
   onInputChange: (text: string) => void;
 }
 
-export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
-  const { onSubmit, onInputChange } = props;
+export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
+  onSubmit,
+  onInputChange,
+}) => {
   const [selected, setSelected] = useState<ProductModel[]>([]);
-  // const [options, setOptions] = useState<ProductModel[]>(
-  //   products as Array<ProductModel>
-  // );
-  // console.log("options", options);
-
-  const inputRef = useRef<any>(null);
   const [inputText, setInputText] = useState("");
+  const inputRef = useRef<any>(null);
   const navigate = useNavigate();
+
+  const escapeRegExp = (str: string) => {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  };
+
+  const highlightMatch = (text: string, query: string) => {
+    if (!text || !query) return text;
+
+    const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
+    console.log(`Highlighting matches for query: ${query} in text: ${text}`);
+    const parts = text.split(regex);
+
+    return parts.map((part, i) =>
+      part.toLowerCase() === query.toLowerCase() ? (
+        <mark key={i} className="bg-yellow-300 font-semibold">
+          {part}
+        </mark>
+      ) : (
+        <span key={i}>{part}</span>
+      )
+    );
+  };
 
   const handleProductSelectionChange = (selectedOption: ProductModel) => {
     if (selectedOption) {
@@ -30,15 +49,16 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
   };
 
   const onProductChange = (selected: ProductModel[]) => {
-    setSelected(selected); // Always update state
+    setSelected(selected);
     if (selected.length > 0) {
       handleProductSelectionChange(selected[0]);
     }
   };
 
   const handleInputChange = (text: any) => {
-    setInputText(text);
-    onInputChange(text);
+    const searchedText = text.target.value ?? "";
+    setInputText(searchedText);
+    onInputChange(searchedText);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -50,8 +70,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
   const clearFilter = () => {
     if (inputRef.current) {
       inputRef.current.clear();
-      setSelected([]); // Clear the selected state
-      setInputText(""); // Clear the input text state
+      setSelected([]);
+      setInputText("");
     }
   };
 
@@ -70,7 +90,15 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
         selected={selected}
         ref={inputRef}
         id="product-search"
-        filterBy={["impurityName"]}
+        // Todo - Earlier search was only impurity Name. Now added for any text
+        filterBy={[
+          "impurityName",
+          "parentAPI",
+          "casNo",
+          "category",
+          "molecularFormula",
+          "synonym",
+        ]}
         labelKey={(option: any) =>
           `${option.impurityName} ${option.parentAPI} ${option.casNo} ${option.category} ${option.molecularFormula} ${option.synonym}`
         }
@@ -93,13 +121,44 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
                 role="option"
                 aria-selected={selected.includes(result)}
               >
-                <strong>{result.impurityName}</strong>,{" "}
-                <span>{result.parentAPI}</span>{" "}
-                <small>({result.category})</small>
-                <br />
-                <span>{result.casNo}</span>,{" "}
-                <span>{result.productDetails?.molecularFormula}</span>,{" "}
-                <span>{result.productDetails?.synonym}</span>
+                <div>
+                  <div>
+                    <strong>
+                      {highlightMatch(result.impurityName ?? "", inputText)}
+                    </strong>
+                    ,{" "}
+                    <span>
+                      {highlightMatch(result.parentAPI ?? "", inputText)}
+                    </span>{" "}
+                    <small>
+                      ({Array.isArray(result.category)
+                        ? result.category.map((cat: string, i: number) => (
+                            <span key={i}>
+                              {i > 0 && ', '}
+                              {highlightMatch(cat ?? '', inputText)}
+                            </span>
+                          ))
+                        : highlightMatch(result.category ?? '', inputText)})
+                    </small>
+                  </div>
+                  <div>
+                    <span>{highlightMatch(result.casNo ?? "", inputText)}</span>
+                    ,{" "}
+                    <span>
+                      {highlightMatch(
+                        result.productDetails?.molecularFormula ?? "",
+                        inputText
+                      )}
+                    </span>
+                    ,{" "}
+                    <span>
+                      {highlightMatch(
+                        result.productDetails?.synonym ?? "",
+                        inputText
+                      )}
+                    </span>
+                  </div>
+                </div>
               </MenuItem>
             ))}
           </Menu>
@@ -109,7 +168,7 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = (props) => {
 
       <button
         type="button"
-        onClick={() => clearFilter()}
+        onClick={clearFilter}
         className="w-8 rounded-full text-black hover:bg-gray-200 link text-2xl"
         aria-label="Clear search"
       >

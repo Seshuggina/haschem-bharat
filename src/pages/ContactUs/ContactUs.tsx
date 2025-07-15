@@ -18,12 +18,14 @@ const ContactUs = () => {
                 CONTACT INFO
               </span>
             </p>
-            <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">Reach Us Immediately</h2>
+            <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">
+              Reach Us Immediately
+            </h2>
             <div className="flex justify-center items-stretch mt-16 gap-x-8 hb-contact-tile-wrapper">
               {[
                 {
                   title: "Our Location",
-                  text: "Plot No: 63, H.No: 5-9-285/8, Rajiv Gandhi Nagar, Prashanthi Nagar Industrial Estate, Medchal district Hyderabad Telangana-500072",
+                  text: "Haschem Bharat, H.No: 5-5-35/224/3, Plot No: 67 Shakthipuram Industrial Road, Prashanthi Nagar, Kukatpally, Hyderabad-500072",
                   icon: <i className="fa-solid fa-location-dot"></i>,
                 },
                 {
@@ -79,11 +81,11 @@ const ContactUs = () => {
       <section className="pt-16 pb-25 contactus-section-3">
         {/* <div className="container mx-auto px-4"> */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.881254474824!2d78.38439269999999!3d17.513181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91ff87d2ff8b%3A0x5d24e1360d47efff!2sRamesh%20Towers!5e0!3m2!1sen!2sin!4v1741797893002!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3805.5351282008232!2d78.4230865082455!3d17.481950414540513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1752595614524!5m2!1sen!2sin"
           width="100%"
           height="450"
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         {/* </div> */}
       </section>

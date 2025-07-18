@@ -19,7 +19,7 @@ const ContactUs = () => {
               </span>
             </p>
             <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">
-              Reach Us Immediately
+              Reach Us
             </h2>
             <div className="flex justify-center items-stretch mt-16 gap-x-8 hb-contact-tile-wrapper">
               {[

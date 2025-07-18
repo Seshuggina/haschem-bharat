@@ -9,7 +9,16 @@ export const getCategories = () => {
 };
 
 export const getCategoriesObject = () => {
-  const uniqueCategories = getCategories();
+  // const uniqueCategories = getCategories();
+  const uniqueCategories = [
+    "All",
+    "API Standards",
+    "Nitrosamines",
+    "Carbohydrates",
+    "Impurity Standards",
+    "Research tools",
+    "Environmental Contaminants",
+  ];
   uniqueCategories.unshift("All");
   const uniqueCategoriesObj = uniqueCategories.map((item, index) => ({
     id: index + 1,

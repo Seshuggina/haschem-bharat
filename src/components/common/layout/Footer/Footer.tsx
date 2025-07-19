@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterBand from "../../FooterBand/FooterBand";
 import logoWhite from "./../../../../assets/img/brand/logo_white.svg";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const navigateToContactUs = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
   return (
     <footer className={`bg-gray-900 text-white pb-4${!isHome ? ' pt-20' : ''}`}> 
       <div className="container mx-auto px-6">
@@ -23,12 +28,12 @@ const Footer = () => {
               Our Genesis In 2023, HASCHEM Bharat was born in the heart of
               Hyderabad, a city renowned for its pharmaceutical prowess.
             </p>
-            <a
-              href="/contact-us"
+            <button
+              onClick={navigateToContactUs}
               className="inline-block mt-4 text-primary font-semibold hover:underline"
             >
               Contact Us →
-            </a>
+            </button>
           </div>
 
           {/* Quick Links */}
@@ -83,7 +88,7 @@ const Footer = () => {
             </p>
             <a
               target="_blank"
-              href="https://www.google.com/maps/dir//Ramesh+Towers+3-82,+Nizampet+Rd+near+Karur+Vysya+Bank+Hyderabad-Nizampet,+Nizampet+Hyderabad,+Telangana+500090/@17.513181,78.3843927,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb91ff87d2ff8b:0x5d24e1360d47efff!2m2!1d78.3843927!2d17.513181?entry=ttu&g_ep=EgoyMDI1MDMzMC4wIKXMDSoASAFQAw%3D%3D"
+              href="https://www.google.com/maps/dir//17.4828835,78.4259491/@17.4828835,78.4233742,17z/data=!4m8!1m5!3m4!2zMTfCsDI4JzU4LjQiTiA3OMKwMjUnMzMuNCJF!8m2!3d17.4828835!4d78.4259491!4m1!3e9?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
               className="inline-block mt-4 text-primary font-semibold hover:underline"
             >
               Get Directions →

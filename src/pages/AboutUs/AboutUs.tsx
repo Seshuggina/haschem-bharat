@@ -9,8 +9,10 @@ import aboutText from "./../../assets/img/aboutUs/aboutText.jpg";
 import achievement from "./../../assets/img/aboutUs/icons/achievement.png";
 import awareness from "./../../assets/img/aboutUs/icons/awareness.png";
 import customerService from "./../../assets/img/aboutUs/icons/awareness.png";
+import { useNavigate } from "react-router-dom";
 
 export const AboutUs = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<
     "values" | "integrity" | "innovation"
   >("values");
@@ -20,6 +22,15 @@ export const AboutUs = () => {
     "integrity",
     "innovation",
   ];
+
+  const navigateToServices = () => {
+    navigate("/services");
+    window.scrollTo(0, 0);
+  };
+  const navigateToContactUs = () => {
+    navigate("/contact-us");
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -37,10 +48,13 @@ export const AboutUs = () => {
                 Unveiling HASCHEM Bharat: Where Chemistry Meets Innovation
               </h2>
               <p className="mb-4">
-                At <strong>Haschem</strong>, we specialize in delivering highest quality API impurities and reference standards, ensuring
-unparalleled accuracy in both qualitative and quantitative analyses. Our extensive catalog of high-quality
-impurity reference materials includes intermediates, by-products, and degradation products, all designed
-to support the development of safer and more effective pharmaceuticals.
+                At <strong>Haschem</strong>, we specialize in delivering highest
+                quality API impurities and reference standards, ensuring
+                unparalleled accuracy in both qualitative and quantitative
+                analyses. Our extensive catalog of high-quality impurity
+                reference materials includes intermediates, by-products, and
+                degradation products, all designed to support the development of
+                safer and more effective pharmaceuticals.
               </p>
               <h5 className="text-xl font-semibold">
                 Our comprehensive product portfolio includes:
@@ -53,14 +67,19 @@ to support the development of safer and more effective pharmaceuticals.
                 <li>Building Blocks</li>
                 <li>Custom Synthesis</li>
               </ul>
-              <p className="mb-4">At HASCHEM, we value long-term partnerships, working closely with our clients to address their unique
-challenges and requirements. Together, we develop customized solutions to drive your success.</p>
+              <p className="mb-4">
+                At HASCHEM, we value long-term partnerships, working closely
+                with our clients to address their unique challenges and
+                requirements. Together, we develop customized solutions to drive
+                your success.
+              </p>
               <img
                 src={aboutText}
                 alt="About Us"
                 className="rounded-lg w-full h-auto mb-4 block lg:hidden"
               />
               <button
+                onClick={navigateToServices}
                 data-content="See Services"
                 className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
               >
@@ -128,6 +147,7 @@ challenges and requirements. Together, we develop customized solutions to drive 
                     className="rounded-lg w-full h-auto mb-4 block lg:hidden"
                   />
                   <button
+                    onClick={navigateToContactUs}
                     data-content="Contact"
                     className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
                   >
@@ -180,7 +200,10 @@ challenges and requirements. Together, we develop customized solutions to drive 
                       community.
                     </p>
                   </p>
-                  <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
+                  <button
+                    onClick={navigateToContactUs}
+                    className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+                  >
                     Get In Touch
                   </button>
                 </div>
@@ -205,24 +228,35 @@ challenges and requirements. Together, we develop customized solutions to drive 
                       behind our scientific advancements. We are dedicated to:
                     </p>
                     <ul className="pl-5 mb-4">
-                      <li className="mb-2">🚀 <strong>Cutting-Edge Research</strong> - Continuously
-                    exploring new methodologies and technologies to enhance
-                    pharmaceutical standards.</li>
-                      <li className="mb-2"><strong>🔬 Advanced Solutions</strong> - Developing
-                    high-quality API standards, impurity standards, metabolites,
-                    and nitrosamines to support global research.</li>
-                      <li className="mb-2">💡 <strong>Future-Ready Approach</strong> - Investing in
-                    next-generation scientific discoveries to shape the future
-                    of healthcare and medicine.</li>
-                      <li className="mb-2">🤝 <strong>Collaborative Excellence</strong> - Partnering
-                    with industry leaders to foster groundbreaking advancements
-                    in pharmaceutical sciences. Through innovation, we redefine
-                    possibilities and set new benchmarks in chemical and
-                    pharmaceutical research.</li>
+                      <li className="mb-2">
+                        🚀 <strong>Cutting-Edge Research</strong> - Continuously
+                        exploring new methodologies and technologies to enhance
+                        pharmaceutical standards.
+                      </li>
+                      <li className="mb-2">
+                        <strong>🔬 Advanced Solutions</strong> - Developing
+                        high-quality API standards, impurity standards,
+                        metabolites, and nitrosamines to support global
+                        research.
+                      </li>
+                      <li className="mb-2">
+                        💡 <strong>Future-Ready Approach</strong> - Investing in
+                        next-generation scientific discoveries to shape the
+                        future of healthcare and medicine.
+                      </li>
+                      <li className="mb-2">
+                        🤝 <strong>Collaborative Excellence</strong> -
+                        Partnering with industry leaders to foster
+                        groundbreaking advancements in pharmaceutical sciences.
+                        Through innovation, we redefine possibilities and set
+                        new benchmarks in chemical and pharmaceutical research.
+                      </li>
                     </ul>
-                    
                   </div>
-                  <button className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700">
+                  <button
+                    onClick={navigateToContactUs}
+                    className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+                  >
                     Get In Touch
                   </button>
                 </div>

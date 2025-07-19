@@ -34,7 +34,7 @@ const SocialNavbar = () => {
           <a href="https://www.linkedin.com/in/haschembharat/" target="_blank" className="text-white hover:text-white">
             <i className="fab fa-linkedin"></i>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=8121333007" target="_blank" className="text-white hover:text-white">
+          <a href="https://api.whatsapp.com/send?phone=7032925939" target="_blank" className="text-white hover:text-white">
             <i className="fab fa-whatsapp"></i>
           </a>
         </div>

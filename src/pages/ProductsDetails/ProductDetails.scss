@@ -15,10 +15,10 @@
 
 @media (min-width: 1400px) {
   // cols rows should be 2
-  .hb-details {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
+  // .hb-details {
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-template-rows: repeat(2, 1fr);
+  // }
 }
 @media (max-width: 1024px) {
   .product-details {

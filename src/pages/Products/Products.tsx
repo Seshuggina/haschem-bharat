@@ -74,7 +74,7 @@ export const Products: React.FC = () => {
   }, [selectedLetter]);
 
   const filterProducts = () => {
-    let filteredProductsList: any[] = products;
+    let filteredProductsList: ProductModel[] = products as ProductModel[];
 
     if (selectedCategoriesList.current.length > 0) {
       filteredProductsList = filteredProductsList.filter((obj) =>
@@ -96,7 +96,8 @@ export const Products: React.FC = () => {
         JSON.stringify(obj).toLowerCase().includes(searchText.toLowerCase())
       );
     }
-    setFilteredProducts(filteredProductsList as ProductModel[]);
+
+    setFilteredProducts(filteredProductsList);
   };
 
   const filterObjectsByCharacters = (

@@ -1,6 +1,6 @@
 import React from "react";
 import products from "./../../assets/data/products.json";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.scss";
 import ImageLoad from "../../components/common/Image/Image";
 import ContactForm from "../../features/ContactForm/ContactForm";
@@ -12,14 +12,14 @@ export const ProductDetails: React.FC = () => {
     (product) => product.Sno?.toString() === id
   );
 
-  const relatedProducts = products.filter(
-    (product) =>
-      selectedProduct &&
-      product.Sno !== selectedProduct.Sno && // Exclude the current product
-      product.category.some((category) =>
-        selectedProduct.category.includes(category)
-      )
-  );
+  // const relatedProducts = products.filter(
+  //   (product) =>
+  //     selectedProduct &&
+  //     product.Sno !== selectedProduct.Sno && // Exclude the current product
+  //     product.category.some((category) =>
+  //       selectedProduct.category.includes(category)
+  //     )
+  // );
   const backToProducts = () => {
     navigate("/products");
     window.scrollTo(0, 0);

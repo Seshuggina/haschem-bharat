@@ -40,7 +40,7 @@ export const ProductDetails: React.FC = () => {
 
         <div className="container mx-auto py-8 pb-8">
           <div className="flex flex-wrap gap-8">
-            <div className="hidden lg:flex rounded-md flex-col py-8 p-4 bg-white product-list relative">
+            {/* <div className="hidden lg:flex rounded-md flex-col py-8 p-4 bg-white product-list relative">
               <h3 className="font-bold text-xl mb-4 bg-white text-[#2d7da0]">
                 Related Products
               </h3>
@@ -60,7 +60,7 @@ export const ProductDetails: React.FC = () => {
                   <h6 className="mb-2">2,2,6-Trimethyl Cyclohexanone</h6>
                 )}
               </ul>
-            </div>
+            </div> */}
 
             <div className="flex-1 bg-white p-8 rounded-md">
               <h2

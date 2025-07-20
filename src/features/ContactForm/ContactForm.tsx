@@ -122,7 +122,8 @@ const ContactForm = () => {
             className="p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50"
             role="alert"
           >
-            ✅ Thank you for reaching out to us. We will get back to you shortly.
+            ✅ Thank you for reaching out to us. We will get back to you
+            shortly.
           </div>
         )}
         {showError && (
@@ -130,7 +131,8 @@ const ContactForm = () => {
             className="p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50"
             role="alert"
           >
-            ❌ Oops! Something seems to have gone wrong. Could you please try again?
+            ❌ Oops! Something seems to have gone wrong. Could you please try
+            again?
           </div>
         )}
         <form
@@ -207,9 +209,10 @@ const ContactForm = () => {
           <div className="flex justify-center items-center">
             <button
               type="submit"
-              className="hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+              data-content="Send"
+              className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
             >
-              SEND
+              <span className="hb-btn-text">Send</span>
             </button>
           </div>
         </form>

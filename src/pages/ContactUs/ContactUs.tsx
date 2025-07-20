@@ -18,9 +18,7 @@ const ContactUs = () => {
                 CONTACT INFO
               </span>
             </p>
-            <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">
-              Reach Us
-            </h2>
+            <h2 className="text-2xl font-bold pb-8 text-[#2d7da0]">Reach Us</h2>
             <div className="flex justify-center items-stretch mt-16 gap-x-8 hb-contact-tile-wrapper">
               {[
                 {
@@ -81,11 +79,11 @@ const ContactUs = () => {
       <section className="pt-16 pb-25 contactus-section-3">
         {/* <div className="container mx-auto px-4"> */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3805.5351282008232!2d78.4230865082455!3d17.481950414540513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1752595614524!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1902.7566536267848!2d78.42465629585885!3d17.48299350725327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91b2786dc96d%3A0x319f27bd5bddf7ae!2sMythri%20Nagar%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1753013862216!5m2!1sen!2sin"
           width="100%"
           height="450"
           loading="lazy"
-           referrerPolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         {/* </div> */}
       </section>

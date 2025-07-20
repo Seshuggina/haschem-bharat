@@ -12,7 +12,7 @@ const Footer = () => {
     window.scrollTo(0, 0);
   };
   return (
-    <footer className={`bg-gray-900 text-white pb-4${!isHome ? ' pt-20' : ''}`}> 
+    <footer className={`bg-gray-900 text-white pb-4${!isHome ? " pt-20" : ""}`}>
       <div className="container mx-auto px-6">
         {/* Hide FooterBand on the home (landing) page */}
         {!isHome && <FooterBand />}
@@ -77,14 +77,18 @@ const Footer = () => {
             <div className="flex items-center mt-4">
               <i className="fas fa-phone text-primary mr-3"></i>
               <h4>
-                <a href="tel:+917816003510" className="hover:text-white">
-                  +91 7816 00 3510
+                <a href="tel:+917032925939" className="hover:text-white">
+                  +91 7032925939
+                </a>{" "}
+                /
+                <a href="tel:+918121333007" className="hover:text-white">
+                  +91 8121333007
                 </a>
               </h4>
             </div>
             <p className="text-gray-400 mt-2">
-              Plot No: 63, H.No: 5-9-285/8, Rajiv Gandhi Nagar, Prashanthi Nagar
-              Industrial Estate, Medchal district Hyderabad Telangana-500072
+              Haschem Bharat, H.No: 5-5-35/224/3, Plot No: 67 Shakthipuram
+              Industrial Road, Prashanthi Nagar, Kukatpally, Hyderabad-500072
             </p>
             <a
               target="_blank"

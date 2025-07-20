@@ -75,7 +75,7 @@ export const AboutUs = () => {
               </p>
               <img
                 src={aboutText}
-                alt="About Us"
+                alt="Haschem Bharat About Us Banner"
                 className="rounded-lg w-full h-auto mb-4 block lg:hidden"
               />
               <button
@@ -89,7 +89,7 @@ export const AboutUs = () => {
             <div className="flex-1 text-white text-center lg:block hidden">
               <img
                 src={aboutText}
-                alt="About Us"
+                alt="Haschem Bharat About Us Banner"
                 className="rounded-lg w-full h-auto"
               />
             </div>
@@ -143,7 +143,7 @@ export const AboutUs = () => {
                   </p>
                   <img
                     src={mission}
-                    alt="Mission"
+                    alt="Haschem Bharat Mission Banner"
                     className="rounded-lg w-full h-auto mb-4 block lg:hidden"
                   />
                   <button
@@ -157,7 +157,7 @@ export const AboutUs = () => {
                 <div className="flex-1 text-center lg:block hidden">
                   <img
                     src={mission}
-                    alt="Mission"
+                    alt="Haschem Bharat Mission Banner"
                     className="rounded-lg w-full h-auto"
                   />
                 </div>
@@ -210,7 +210,7 @@ export const AboutUs = () => {
                 <div className="flex-1">
                   <img
                     src={vision}
-                    alt="Impurities"
+                    alt="Haschem Bharat Vision Banner"
                     className="rounded-lg w-full h-auto"
                   />
                 </div>

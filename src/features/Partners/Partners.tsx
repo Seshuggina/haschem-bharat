@@ -48,52 +48,52 @@ const Partners = () => {
       }}
     >
       <div className="items-center flex justify-center">
-          <img src={curia} alt="Curia Global" />
+          <img src={curia} alt="Curia Global Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={drreddy} alt="Dr Reddys" />
+          <img src={drreddy} alt="Dr Reddys Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={granules} alt="Granules India" />
+          <img src={granules} alt="Granules India Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={leepharma} alt="Lee Pharma" />
+          <img src={leepharma} alt="Lee Pharma Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={nato} alt="Natco Pharma" />
+          <img src={nato} alt="Natco Pharma Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={aragen} alt="Aragen Life Sciences Ltd" />
+          <img src={aragen} alt="Aragen Life Sciences Ltd Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={csir} alt="Central Institute of Medicinal and Aromatic Plants" />
+          <img src={csir} alt="Central Institute of Medicinal and Aromatic Plants Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={enveda} alt="Enveda" />
+          <img src={enveda} alt="Enveda Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={honour} alt="Honour Lab Limited" />
+          <img src={honour} alt="Honour Lab Limited Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={laurus} alt="Laurus labs" />
+          <img src={laurus} alt="Laurus labs Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={msn} alt="MSN Laboratories" />
+          <img src={msn} alt="MSN Laboratories Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={neuland} alt="Neuland Labs" />
+          <img src={neuland} alt="Neuland Labs Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={nuwill} alt="Nuwill" />
+          <img src={nuwill} alt="Nuwill Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={seasons} alt="Seasons" />
+          <img src={seasons} alt="Seasons Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={ssv} alt="SSV" />
+          <img src={ssv} alt="SSV Logo" />
       </div>
       <div className="items-center flex justify-center">
-          <img src={vasudha} alt="Vasudha" />
+          <img src={vasudha} alt="Vasudha Logo" />
       </div>
     </OwlCarousel>
   );

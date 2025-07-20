@@ -31,7 +31,7 @@ export const ServiceCard = ({
       <img
         className="w-full h-auto rounded mb-4 block lg:hidden"
         src={img}
-        alt={title}
+        alt={`Service: ${title}`}
       />
 
       <p className="text-gray-700">{description}</p>
@@ -52,7 +52,7 @@ export const ServiceCard = ({
 
     {/* Image for large screens */}
     <div className="flex-1 text-white text-center lg:block hidden">
-      <img className="w-full h-auto rounded mb-4" src={img} alt={title} />
+      <img className="w-full h-auto rounded mb-4" src={img} alt={`Service: ${title}`} />
     </div>
   </div>
 );

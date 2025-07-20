@@ -118,7 +118,7 @@ const HeaderNavbar = () => {
                 to="/"
                 className="text-lg font-bold h-18 flex items-center min-w-[100px]"
               >
-                <img src={logo} width="151px" alt="Logo" />
+                <img src={logo} width="151px" alt="Haschem Bharat Logo" />
               </Link>
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end navbar-wrapper">

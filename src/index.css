@@ -12,6 +12,12 @@ body {
 }
 .hb-h-350 {
   height: 350px;
+   @media screen and (max-width: 1200px) {
+    height: 250px;
+  }
+   @media screen and (max-width: 900px) {
+    height: 250px;
+  }
   @media screen and (max-width: 500px) {
     height: 250px;
   }

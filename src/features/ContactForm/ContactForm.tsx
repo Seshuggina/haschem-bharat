@@ -78,7 +78,7 @@ const ContactForm = () => {
     if (validateForm(trimmedData)) {
       emailjs
         .send(
-          "service_uknh1qg",
+          "service_a51ozik",
           "template_hp51jrs",
           trimmedData,
           "5lTz9Hy5ZT1a9GGw4"

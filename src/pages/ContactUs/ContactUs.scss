@@ -9,9 +9,9 @@
 }
 
 .contactus-banner {
-  background: url("/assets/img/banner/banner_new.jpeg") no-repeat bottom
+  background: url("/assets/img/banner/banner_new.webp") no-repeat bottom
     center/100%;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 991px) {
     background-position: center;
     background-size: cover;
   }

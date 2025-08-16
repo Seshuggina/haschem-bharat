@@ -6,7 +6,7 @@ const ContactUs = () => {
     <>
       <section className="flex contactus-banner relative py-16 hb-h-350 items-center text-white">
         <div className="relative container mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold mt-16">Contact Us</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold pt-16">Contact Us</h1>
         </div>
       </section>
 

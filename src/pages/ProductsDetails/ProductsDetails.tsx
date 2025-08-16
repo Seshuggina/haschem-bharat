@@ -32,7 +32,7 @@ export const ProductDetails: React.FC = () => {
       <div className="bg-gray">
         <section className="flex services-banner products-banner relative py-16 hb-h-350 items-center text-white">
           <div className="relative container mx-auto text-center">
-            <h1 className="text-4xl sm:text-6xl font-bold mt-16">
+            <h1 className="text-4xl sm:text-6xl font-bold pt-16">
               Product Details
             </h1>
           </div>

@@ -173,7 +173,7 @@ export const Products: React.FC = () => {
     <>
       <section className="flex services-banner products-banner relative py-16 hb-h-350 items-center text-white">
         <div className="relative container mx-auto text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold mt-16">Products</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold pt-16">Products</h1>
         </div>
       </section>
 

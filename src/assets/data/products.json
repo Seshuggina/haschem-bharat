@@ -621,28 +621,6 @@
     "productImageLarge": null
   },
   {
-    "Sno": 30,
-    "impurityName": "N-Nitroso Desmethyl Desvenlafaxine",
-    "casNo": "NA",
-    "readyStock": null,
-    "parentAPI": "Venlafaxine",
-    "leadTime": "Ready stock",
-    "productStatus": null,
-    "category": [
-      "API Standards",
-      "Nirosamines",
-      "Pharma/API Drug",
-      "Impurity Standards"
-    ],
-    "productImage": null,
-    "synonym": null,
-    "molecularFormula": "C15H22N2O3",
-    "molecularWeight": 278.35,
-    "catlogNumber": null,
-    "desc": null,
-    "productImageLarge": null
-  },
-  {
     "Sno": 31,
     "impurityName": "Desloratadine Dehydro Impurity",
     "casNo": "117811-20-8",
@@ -1455,7 +1433,7 @@
       "Pharma/API Drug",
       "Impurity Standards"
     ],
-    "productImage": "429658-95-7.gif",
+    "productImage": "429658-95-7.png",
     "synonym": null,
     "molecularFormula": "C27H29N7O3",
     "molecularWeight": 499.56,
@@ -1537,7 +1515,7 @@
       "API Standards",
       "Food"
     ],
-    "productImage": "10396-80-2.gif",
+    "productImage": "10396-80-2.png",
     "synonym": null,
     "molecularFormula": "C15H24O2",
     "molecularWeight": 236.36,
@@ -1559,7 +1537,7 @@
       "Pharma/API Drug",
       "Impurity Standards"
     ],
-    "productImage": "823817-58-9.gif",
+    "productImage": "823817-58-9.png",
     "synonym": null,
     "molecularFormula": "C16H18F6N5O5P",
     "molecularWeight": 505.31,
@@ -1581,7 +1559,7 @@
       "Pharma/API Drug",
       "Impurity Standards"
     ],
-    "productImage": "486460-31-5.gif",
+    "productImage": "486460-31-5.png",
     "synonym": null,
     "molecularFormula": "C16H16F5N5O",
     "molecularWeight": 389.32,
@@ -1603,7 +1581,7 @@
       "Pharma/API Drug",
       "Impurity Standards"
     ],
-    "productImage": "1345822-86-7.gif",
+    "productImage": "1345822-86-7.png",
     "synonym": null,
     "molecularFormula": "C16H19F5N5O5P",
     "molecularWeight": 487.32,

@@ -14,6 +14,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [successMessage, setSuccessMessage] = useState(""); // Success message state
   const [showError, setShowError] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e: any) => {
     setShowError(false);
@@ -76,6 +77,7 @@ const ContactForm = () => {
     e.preventDefault();
     const trimmedData = trimFormData(); // Trim the input values
     if (validateForm(trimmedData)) {
+      setIsSending(true);
       emailjs
         .send(
           "service_a51ozik",
@@ -97,12 +99,20 @@ const ContactForm = () => {
             setTimeout(() => {
               setSuccessMessage(""); // Clear success message after 5 seconds
             }, 5000);
+            setIsSending(false);
           },
           (error) => {
             setShowError(true);
-            console.error("Email sending failed:", error.text);
+            console.error("Email sending failed:", error?.text || error);
+            setIsSending(false);
           }
-        );
+        )
+        .catch((err) => {
+          // Safety fallback
+          console.error("Unexpected email error:", err);
+          setShowError(true);
+          setIsSending(false);
+        });
     }
   };
 
@@ -210,9 +220,11 @@ const ContactForm = () => {
             <button
               type="submit"
               data-content="Send"
-              className="hb-btn hb-bg-brand text-white py-3 px-8 rounded hover:bg-blue-700"
+              className={`hb-btn hb-bg-brand text-white py-3 px-8 rounded ${isSending ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+              disabled={isSending}
+              aria-busy={isSending}
             >
-              <span className="hb-btn-text">Send</span>
+              <span className="hb-btn-text">{isSending ? 'Sending...' : 'Send'}</span>
             </button>
           </div>
         </form>

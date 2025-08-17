@@ -7,14 +7,17 @@ interface ImageLoadProps {
 
 const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
   const handleError = (event: React.SyntheticEvent<HTMLImageElement>) => {
-    event.currentTarget.src =
-      "https://seshuggina.github.io/haschem-bharat/not_found.png";
+    // Prevent an infinite loop if the fallback also fails
+    const fallback = "/not_found.png";
+    if (!event.currentTarget.src.endsWith(fallback)) {
+      event.currentTarget.src = fallback;
+    }
   };
 
   return (
     <figure className="p-3 flex justify-center">
       <img
-        src={`https://seshuggina.github.io/haschem-bharat/assets/img/products/${imageName}`}
+        src={imageName ? `/assets/img/products/${imageName}` : "/not_found.png"}
         alt={altTxt || "Product Image"}
         onError={handleError}
       />

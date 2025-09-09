@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
-import products from "./../../assets/data/products.json";
 import useGlobalStore from "./../../store/globals";
 import Product from "../../components/common/Product/Product";
 import { ProductModel } from "../../types/ProductModel";
 import { CategoryModel } from "../../types/models";
 import { getCategoriesObject } from "../../services/utilities";
+import { useProductsContext } from '../../context/ProductsContext';
 
 export const Products: React.FC = () => {
-  let categoriesList = getCategoriesObject();
+  const { products } = useProductsContext();
+  let categoriesList = getCategoriesObject(products);
   categoriesList = categoriesList.filter((category) => category.name !== "All");
   const [searchText, setSearchText] = useState<string>("");
   const [filteredProducts, setFilteredProducts] = useState<ProductModel[]>([]);
@@ -42,6 +43,18 @@ export const Products: React.FC = () => {
     }
   }, []);
 
+  // If products are loaded asynchronously, initialize categories and
+  // the filtered products list when products change so the page shows
+  // results when navigated to from the menu.
+  useEffect(() => {
+    const initCategories = getCategoriesObject(products).filter(
+      (category) => category.name !== 'All'
+    );
+    setCategories(initCategories);
+    // show all products initially when products arrive
+    setFilteredProducts((products || []) as ProductModel[]);
+  }, [products]);
+
   useEffect(() => {
     filterProducts();
   }, [searchText]);
@@ -74,7 +87,7 @@ export const Products: React.FC = () => {
   }, [selectedLetter]);
 
   const filterProducts = () => {
-    let filteredProductsList: ProductModel[] = products as ProductModel[];
+  let filteredProductsList: ProductModel[] = (products || []) as ProductModel[];
 
     if (selectedCategoriesList.current.length > 0) {
       filteredProductsList = filteredProductsList.filter((obj) =>

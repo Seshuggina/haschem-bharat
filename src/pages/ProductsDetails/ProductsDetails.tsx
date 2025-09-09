@@ -1,5 +1,5 @@
 import React from "react";
-import products from "./../../assets/data/products.json";
+import { useProductsContext } from '../../context/ProductsContext';
 import {useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.scss";
 import ImageLoad from "../../components/common/Image/Image";
@@ -8,7 +8,8 @@ import ContactForm from "../../features/ContactForm/ContactForm";
 export const ProductDetails: React.FC = () => {
   let { id } = useParams();
   const navigate = useNavigate();
-  const selectedProduct = products?.find(
+  const { products } = useProductsContext();
+  const selectedProduct = (products || []).find(
     (product) => product.Sno?.toString() === id
   );
 

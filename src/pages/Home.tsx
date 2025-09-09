@@ -1,7 +1,7 @@
 import CarouselComponent from "../features/BannerCarousel/BannerCarousel";
 import Partners from "../features/Partners/Partners";
 import Product from "../components/common/Product/Product";
-import products from "./../assets/data/products.json";
+import { useProductsContext } from "../context/ProductsContext";
 import { ProductModel } from "../types/ProductModel";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,8 @@ import FooterBand from "../components/common/FooterBand/FooterBand";
 const Home = () => {
   const navigate = useNavigate();
   // const thumbnailsColors = ["primary", "danger", "info", "success", "warning"];
-  const newProducts: any[] = products.filter(
+  const { products } = useProductsContext();
+  const newProducts: any[] = (products || []).filter(
     (product) => product.productStatus?.toLowerCase() === "new"
   );
 

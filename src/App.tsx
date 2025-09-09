@@ -1,6 +1,7 @@
 import AppRoutes from "./routes";
 import HeaderNavbar from "./components/common/layout/Header/Header";
 import Footer from "./components/common/layout/Footer/Footer";
+import RoutePersister from "./components/common/RoutePersister";
 // import SocialNavbar from "./components/common/layout/socialNav/SocialNavbar";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       </a>
       <HeaderNavbar />
       <main id="main-content">
+        <RoutePersister />
         <AppRoutes />
       </main>
       <Footer />

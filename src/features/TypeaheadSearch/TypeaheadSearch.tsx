@@ -1,10 +1,15 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Typeahead, Menu, MenuItem } from "react-bootstrap-typeahead";
 import "./TypeaheadSearch.scss";
 import { useNavigate } from "react-router-dom";
-import products from "./../../assets/data/products.json";
+// products.json is loaded from public/assets at runtime so it can be
+// updated without rebuilding the bundle. Keep the file at
+// public/assets/data/products.json and it will be available at
+// `${import.meta.env.BASE_URL}assets/data/products.json`.
 import { ProductModel } from "../../types/ProductModel";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+import { useProductsContext } from '../../context/ProductsContext';
+import { useDebounce } from '../../hooks/useDebounce';
 
 interface TypeaheadSearchProps {
   onSubmit: (text: string) => void;
@@ -16,9 +21,24 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
   onInputChange,
 }) => {
   const [selected, setSelected] = useState<ProductModel[]>([]);
+  const { products, isLoading } = useProductsContext();
   const [inputText, setInputText] = useState("");
   const inputRef = useRef<any>(null);
   const navigate = useNavigate();
+
+  const debouncedInput = useDebounce(inputText, 300);
+
+  // Notify parent only after debounced input changes
+  useState(() => {
+    // no-op placeholder to satisfy hooks ordering - actual notify below
+    return undefined as unknown as void;
+  });
+
+  // inform parent after debounce
+  // note: don't call onInputChange on first render unless inputText set
+  useEffect(() => {
+    onInputChange(debouncedInput);
+  }, [debouncedInput]);
 
   const escapeRegExp = (str: string) => {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -77,7 +97,8 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
 
   return (
     <>
-      <Typeahead
+  <div className="typeahead-search-container">
+  <Typeahead
         className="typeaheadSearch"
         minLength={3}
         onChange={(selected) => {
@@ -85,8 +106,9 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
           inputRef.current?.blur();
         }}
         onInputChange={(text) => handleInputChange(text)}
-        options={products}
-        placeholder="Enter #CAS No, Name, Category, Molecular Formula"
+  options={products}
+  isLoading={isLoading}
+  placeholder={isLoading ? 'Loading products...' : 'Enter #CAS No, Name, Category, Molecular Formula'}
         selected={selected}
         ref={inputRef}
         id="product-search"
@@ -165,7 +187,10 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
         )}
         onKeyDown={handleKeyDown}
       />
-
+      {isLoading && (
+        <span className="typeahead-loader" aria-hidden="true"></span>
+      )}
+      </div>
       <button
         type="button"
         onClick={clearFilter}

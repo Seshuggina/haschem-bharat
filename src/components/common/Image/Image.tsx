@@ -6,10 +6,22 @@ interface ImageLoadProps {
 }
 
 const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
+  const base = import.meta.env.BASE_URL || '/';
+
+  const resolveSrc = (name?: string) => {
+    // Use document.baseURI to build an absolute URL so nested routes don't
+    // make the browser request a relative path under the current route.
+    if (!name) return new URL(`${base}not_found.png`, document.baseURI).href;
+    // full URLs
+    if (/^(https?:)?\/\//.test(name)) return name;
+    // absolute paths (start with '/')
+    if (name.startsWith('/')) return new URL(name, document.baseURI).href;
+    return new URL(`${base}assets/img/products/${name}`, document.baseURI).href;
+  };
+
   const handleError = (event: React.SyntheticEvent<HTMLImageElement>) => {
-    // Prevent an infinite loop if the fallback also fails
-    const fallback = "/not_found.png";
-    if (!event.currentTarget.src.endsWith(fallback)) {
+    const fallback = new URL(`${base}not_found.png`, document.baseURI).href;
+    if (event.currentTarget.src !== fallback) {
       event.currentTarget.src = fallback;
     }
   };
@@ -17,7 +29,7 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
   return (
     <figure className="p-3 flex justify-center">
       <img
-        src={imageName ? `/assets/img/products/${imageName}` : "/not_found.png"}
+        src={resolveSrc(imageName)}
         alt={altTxt || "Product Image"}
         onError={handleError}
       />

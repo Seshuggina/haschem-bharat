@@ -32,6 +32,14 @@ export const AboutUs = () => {
     window.scrollTo(0, 0);
   };
 
+  // Public path to the ISO certificate PDF. Place the PDF at
+  // `public/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf` so it will be
+  // available at runtime relative to the Vite base URL.
+  const isoPdfUrl = new URL(
+    `${import.meta.env.BASE_URL || '/'}assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
+    document.baseURI
+  ).href;
+
   return (
     <>
       <section className="flex aboutus-banner relative py-16 hb-h-350 items-center text-white">
@@ -334,6 +342,27 @@ export const AboutUs = () => {
                 </div>
               ))}
             </OwlCarousel>
+          </div>
+        </div>
+      </section>
+      {/* ISO Certificate */}
+      <section className="pt-16 pb-30 hb-aboutus-section-iso">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold pb-4 sm:text-left text-center text-[#2d7da0]">
+            ISO 17034 Certificate
+          </h2>
+
+         
+
+          <div className="text-center">
+            <a
+              href={isoPdfUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hb-btn hb-bg-brand text-white py-2 px-4 rounded"
+            >
+              Download ISO 17034 Certificate (PDF)
+            </a>
           </div>
         </div>
       </section>

@@ -7,6 +7,12 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isoPdfUrl = new URL(
+    `${
+      import.meta.env.BASE_URL || "/"
+    }assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
+    document.baseURI
+  ).href;
   const navigateToContactUs = () => {
     navigate("/contact-us");
     window.scrollTo(0, 0);
@@ -28,6 +34,17 @@ const Footer = () => {
               Our Genesis In 2023, HASCHEM Bharat was born in the heart of
               Hyderabad, a city renowned for its pharmaceutical prowess.
             </p>
+            <div className="text-xs font-semibold mt-4 mt-1">
+              ISO 17034 Certified &nbsp;| &nbsp;
+              <a
+                href={isoPdfUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-gray-400 hover:underline hover:text-white"
+              >
+                View Certificate
+              </a>
+            </div>
             <button
               onClick={navigateToContactUs}
               className="inline-block mt-4 text-primary font-semibold hover:underline"
@@ -104,7 +121,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row lg:justify-between gap-8 border-t border-gray-700 mt-8 pt-3 text-sm text-gray-500">
           <div className="text-center md:text-left flex-1 justify-center md:justify-end">
             © {new Date().getFullYear()}{" "}
-            <a
+             <a
               href="https://haschembharat.com/"
               className="text-primary hover:underline"
             >

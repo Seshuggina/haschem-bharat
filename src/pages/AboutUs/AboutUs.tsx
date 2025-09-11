@@ -346,7 +346,7 @@ export const AboutUs = () => {
         </div>
       </section>
       {/* ISO Certificate */}
-      <section className="pt-16 pb-30 hb-aboutus-section-iso">
+      {/* <section className="pt-16 pb-30 hb-aboutus-section-iso">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold pb-4 sm:text-left text-center text-[#2d7da0]">
             ISO 17034 Certificate
@@ -365,7 +365,7 @@ export const AboutUs = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

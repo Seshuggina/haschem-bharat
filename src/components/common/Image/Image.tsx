@@ -7,6 +7,8 @@ interface ImageLoadProps {
 
 const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
   const base = import.meta.env.BASE_URL || '/';
+  // Live site product images base (user requested)
+  const liveProductsBase = 'https://www.haschembharat.com/assets/img/products/';
 
   const resolveSrc = (name?: string) => {
     // Use document.baseURI to build an absolute URL so nested routes don't
@@ -16,7 +18,16 @@ const ImageLoad: React.FC<ImageLoadProps> = ({ imageName, altTxt }) => {
     if (/^(https?:)?\/\//.test(name)) return name;
     // absolute paths (start with '/')
     if (name.startsWith('/')) return new URL(name, document.baseURI).href;
-    return new URL(`${base}assets/img/products/${name}`, document.baseURI).href;
+    // already contains assets path or starts with './assets' - treat as relative to base
+    if (name.startsWith('assets/') || name.startsWith('./assets/') || name.includes('assets/img')) {
+      // strip leading './' if present
+      const cleaned = name.replace(/^\.\//, '');
+      return new URL(cleaned, document.baseURI).href;
+    }
+
+    // For plain filenames (e.g. '1234.png') use the live site product images base
+    // so deployed pages always load images from the canonical host.
+    return `${liveProductsBase}${name}`;
   };
 
   const handleError = (event: React.SyntheticEvent<HTMLImageElement>) => {

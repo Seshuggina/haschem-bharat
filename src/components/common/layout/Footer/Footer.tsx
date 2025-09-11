@@ -7,12 +7,12 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isoPdfUrl = new URL(
-    `${
-      import.meta.env.BASE_URL || "/"
-    }assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
-    document.baseURI
-  ).href;
+  // const isoPdfUrl = new URL(
+  //   `${
+  //     import.meta.env.BASE_URL || "/"
+  //   }assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
+  //   document.baseURI
+  // ).href;
   const navigateToContactUs = () => {
     navigate("/contact-us");
     window.scrollTo(0, 0);
@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="text-xs font-semibold mt-4 mt-1">
               ISO 17034 Certified &nbsp;| &nbsp;
               <a
-                href={isoPdfUrl}
+                href='https://www.haschembharat.com/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf'
                 target="_blank"
                 rel="noreferrer noopener"
                 className="text-gray-400 hover:underline hover:text-white"

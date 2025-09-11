@@ -35,10 +35,10 @@ export const AboutUs = () => {
   // Public path to the ISO certificate PDF. Place the PDF at
   // `public/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf` so it will be
   // available at runtime relative to the Vite base URL.
-  const isoPdfUrl = new URL(
-    `${import.meta.env.BASE_URL || '/'}assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
-    document.baseURI
-  ).href;
+  // const isoPdfUrl = new URL(
+  //   `${import.meta.env.BASE_URL || '/'}assets/docs/ISO-17034-HASCHEM-BHARAT.pdf`,
+  //   document.baseURI
+  // ).href;
 
   return (
     <>

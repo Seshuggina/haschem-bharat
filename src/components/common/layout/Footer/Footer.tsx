@@ -3,6 +3,7 @@ import FooterBand from "../../FooterBand/FooterBand";
 import logoWhite from "./../../../../assets/img/brand/logo_white.svg";
 import { useLocation } from "react-router-dom";
 
+
 const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,14 +37,17 @@ const Footer = () => {
             </p>
             <div className="text-xs font-semibold mt-4 mt-1">
               ISO 17034 Certified &nbsp;| &nbsp;
-              <a
-                href='https://www.haschembharat.com/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf'
+              {/* <a
+                href="https://www.haschembharat.com/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="text-gray-400 hover:underline hover:text-white"
               >
                 View Certificate
-              </a>
+              </a> */}
+              <Link to="/about-us#isoCertificate" className="hover:text-white">
+                View Certificate
+              </Link>
             </div>
             <button
               onClick={navigateToContactUs}
@@ -121,7 +125,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row lg:justify-between gap-8 border-t border-gray-700 mt-8 pt-3 text-sm text-gray-500">
           <div className="text-center md:text-left flex-1 justify-center md:justify-end">
             © {new Date().getFullYear()}{" "}
-             <a
+            <a
               href="https://haschembharat.com/"
               className="text-primary hover:underline"
             >

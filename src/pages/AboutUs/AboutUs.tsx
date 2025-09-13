@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AboutUs.scss";
 import OwlCarousel from "react-owl-carousel";
 
@@ -9,10 +9,12 @@ import aboutText from "./../../assets/img/aboutUs/aboutText.jpg";
 import achievement from "./../../assets/img/aboutUs/icons/achievement.png";
 import awareness from "./../../assets/img/aboutUs/icons/awareness.png";
 import customerService from "./../../assets/img/aboutUs/icons/awareness.png";
-import { useNavigate } from "react-router-dom";
+import isoCertificate from "./../../assets/img/iso-17034-haschem-bharat.jpg";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AboutUs = () => {
   const navigate = useNavigate();
+  const { hash } = useLocation();
   const [activeTab, setActiveTab] = useState<
     "values" | "integrity" | "innovation"
   >("values");
@@ -22,6 +24,15 @@ export const AboutUs = () => {
     "integrity",
     "innovation",
   ];
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
 
   const navigateToServices = () => {
     navigate("/services");
@@ -346,26 +357,25 @@ export const AboutUs = () => {
         </div>
       </section>
       {/* ISO Certificate */}
-      {/* <section className="pt-16 pb-30 hb-aboutus-section-iso">
+      <section
+        id="isoCertificate"
+        className="pt-16 pb-30 hb-aboutus-section-iso"
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold pb-4 sm:text-left text-center text-[#2d7da0]">
             ISO 17034 Certificate
           </h2>
 
-         
-
-          <div className="text-center">
-            <a
-              href={isoPdfUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hb-btn hb-bg-brand text-white py-2 px-4 rounded"
-            >
-              Download ISO 17034 Certificate (PDF)
-            </a>
+          <div className="text-center border-5 border-[#F79903] rounded-lg">
+            <img
+              className="w-full h-auto rounded block"
+              src={isoCertificate}
+              loading="lazy"
+              alt={`ISO 17034 Certified - HASCHEM Bharat`}
+            />
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

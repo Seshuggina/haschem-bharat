@@ -25,7 +25,7 @@ export const ServiceCard = ({
     className="bg-white shadow-lg rounded-lg p-6 border-t-4 border-orange flex flex-col md:flex-row items-center gap-4"
   >
     <div className="flex-1">
-      <h4 className="text-xl font-semibold mb-4 text-[#2d7da0]">{title}</h4>
+      <h2 className="text-xl font-semibold mb-4 text-[#2d7da0]">{title}</h2>
 
       {/* Image for small screens */}
       <img
@@ -38,9 +38,9 @@ export const ServiceCard = ({
 
       {list.length > 0 && (
         <>
-          <h5 className="text-lg font-semibold mt-4">
+          <h3 className="text-lg font-semibold mt-4">
             Our key product portfolio includes:
-          </h5>
+          </h3>
           <ul className="list-disc pl-5 text-gray-700">
             {list.map((item, index) => (
               <li key={index}>{item}</li>

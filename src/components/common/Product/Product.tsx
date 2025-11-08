@@ -67,8 +67,20 @@ const showGlobalImageModal = (src: string, alt: string) => {
 
 const Product = ({ product }: { product: ProductModel }) => {
   const navigate = useNavigate();
+
+  const slugify = (str = "") =>
+    (str || "")
+      .normalize?.("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .replace(/-{2,}/g, "-");
+  
   const showProductDetails = () => {
-    navigate(`/products-details/${product.Sno}`);
+    const slug = slugify(product.impurityName);
+    navigate(`/products/${encodeURIComponent(slug)}`);
   };
 
   const handleImageClick = (e: React.MouseEvent) => {
@@ -82,9 +94,9 @@ const Product = ({ product }: { product: ProductModel }) => {
   return (
     <div className="border-t-4 border-[#F79903] w-[320px] rounded-lg outline outline-1 outline-[#F79903] overflow-hidden shadow-lg bg-white transform hover:scale-105 transition-all duration-300 product-card">
       <div className="flex justify-between p-2 gap-5 bg-gray-100">
-        <h2 className="relative text-l font-semibold text-[#2d7da0]">
+        <h3 className="relative text-l font-semibold text-[#2d7da0]">
           {product.impurityName}
-        </h2>
+        </h3>
         {/* <button
           type="button"
           className={`product-stock cursor-pointer ${
@@ -109,10 +121,10 @@ const Product = ({ product }: { product: ProductModel }) => {
 
       {/* Product Details */}
       <div className="p-4 h-full">
-        <h2 className="relative text-l font-semibold text-white bg-[#2d7da0] py-1 px-2 rounded-md text-center hb-m-t--35 card-title-band">
+        <h3 className="relative text-l font-semibold text-white bg-[#2d7da0] py-1 px-2 rounded-md text-center hb-m-t--35 card-title-band">
           <span className="text-[#f9f9f9]">CAS: </span>
           &nbsp;{product.casNo}
-        </h2>
+        </h3>
         <div className="flex gap-4 mt-2 flex-wrap justify-center">
           <span
             className="flex px-3 items-center py-1 text-xs font-semibold border-1 border-[#2d7da0] rounded-xl"

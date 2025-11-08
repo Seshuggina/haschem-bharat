@@ -62,9 +62,20 @@ export const TypeaheadSearch: React.FC<TypeaheadSearchProps> = ({
     );
   };
 
+  const slugify = (str = "") =>
+    (str || "")
+      .normalize?.("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .replace(/-{2,}/g, "-");
+
   const handleProductSelectionChange = (selectedOption: ProductModel) => {
     if (selectedOption) {
-      navigate(`products-details/${selectedOption.Sno}`);
+      const slug = slugify(selectedOption.impurityName);
+      navigate(`/products/${encodeURIComponent(slug)}`);
     }
   };
 

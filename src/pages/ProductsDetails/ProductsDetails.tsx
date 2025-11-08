@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProductsContext } from '../../context/ProductsContext';
 import {useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.scss";
@@ -6,12 +6,24 @@ import ImageLoad from "../../components/common/Image/Image";
 import ContactForm from "../../features/ContactForm/ContactForm";
 
 export const ProductDetails: React.FC = () => {
-  let { id } = useParams();
+  let { prodName } = useParams();
   const navigate = useNavigate();
   const { products } = useProductsContext();
-  const selectedProduct = (products || []).find(
-    (product) => product.Sno?.toString() === id
-  );
+
+  const slugify = (str = "") =>
+    (str || "")
+      .normalize?.("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .replace(/-{2,}/g, "-");
+
+  const selectedProduct = (products || []).find((product) => {
+    const slug = slugify(product.impurityName || "");
+    return slug && slug === decodeURIComponent(prodName || "");
+  });
 
   // const relatedProducts = products.filter(
   //   (product) =>
@@ -25,6 +37,55 @@ export const ProductDetails: React.FC = () => {
     navigate("/products");
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    const prevTitle = document.title;
+
+    const setMeta = (selectorAttr: string, attrName: string, value?: string | null) => {
+      if (value == null) return null;
+      let el = document.querySelector<HTMLMetaElement>(`meta[${selectorAttr}]`);
+      if (!el) {
+        el = document.createElement("meta");
+        const [attr, val] = selectorAttr.split("=");
+        el.setAttribute(attr, val.replace(/^"|"$/g, ""));
+        document.head.appendChild(el);
+        // mark created so cleanup can remove it
+        el.setAttribute("data-created-by", "products-details");
+      }
+      el.setAttribute(attrName, value);
+      return el;
+    };
+
+    const title = selectedProduct
+      ? `${selectedProduct.impurityName} | Haschem Bharat`
+      : "Product Details | Haschem Bharat";
+
+    const description = selectedProduct
+      ? `CAS: ${selectedProduct.casNo || "N/A"}. Formula: ${selectedProduct.molecularFormula || "N/A"}.`
+      : "Product details from Haschem Bharat.";
+
+    document.title = title;
+    const created = [
+      setMeta('name="description"', "content", description),
+      setMeta('property="og:title"', "content", title),
+      setMeta('property="og:description"', "content", description),
+      setMeta('name="twitter:card"', "content", "summary_large_image"),
+      selectedProduct?.productImage
+        ? setMeta('property="og:image"', "content", selectedProduct.productImage)
+        : null,
+    ];
+
+    return () => {
+      // restore previous title
+      document.title = prevTitle;
+      // remove meta tags we created
+      created.forEach((el) => {
+        if (!el) return;
+        if (el.getAttribute("data-created-by") === "products-details") el.remove();
+      });
+    };
+  }, [selectedProduct]);
+
 
   return (
     <>

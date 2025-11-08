@@ -25,6 +25,7 @@ const Home = () => {
       <main>
         {/* Hero Section */}
         <section className="relative w-full pb-0 home-carousel">
+          <h1 className="sr-only">Welcome to Haschem Bharat - Pharmaceutical & Chemical Products</h1>
           {/* <div className="container mx-auto px-6 lg:px-8"> */}
           <CarouselComponent />
           {/* </div> */}

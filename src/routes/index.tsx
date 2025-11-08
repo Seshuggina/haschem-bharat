@@ -21,6 +21,11 @@ const AppRoutes = () => {
         <Route path="/services" element={<Services />} />
 
         <Route path="/products" element={<Products />} />
+
+        {/* new prettier URL */}
+        <Route path="/products/:prodName" element={<ProductDetails />} />
+
+        {/* legacy/compatibility route (optional) */}
         <Route path="/products-details/:id" element={<ProductDetails />} />
         {/* <Route path="/career" element={<Career />} /> */}
 

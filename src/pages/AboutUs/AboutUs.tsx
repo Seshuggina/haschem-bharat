@@ -80,7 +80,7 @@ export const AboutUs = () => {
               </h5>
               <ul className="list-disc pl-5 mb-4">
                 <li>API Standards</li>
-                <li>Impurity Standards</li>
+                <li>Reference Standards</li>
                 <li>Metabolites</li>
                 <li>Nitrosamines</li>
                 <li>Building Blocks</li>

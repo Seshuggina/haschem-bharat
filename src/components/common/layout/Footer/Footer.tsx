@@ -35,7 +35,7 @@ const Footer = () => {
               Our Genesis In 2023, HASCHEM Bharat was born in the heart of
               Hyderabad, a city renowned for its pharmaceutical prowess.
             </p>
-            <div className="text-xs font-semibold mt-4 mt-1">
+            <div className="text-s font-semibold mt-4 mt-1 text-[#f79a06]">
               ISO 17034 Certified &nbsp;| &nbsp;
               {/* <a
                 href="https://www.haschembharat.com/assets/docs/ISO-17034-HASCHEM-BHARAT.pdf"

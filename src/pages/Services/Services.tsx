@@ -96,7 +96,7 @@ export const Services = () => {
         "Haschem specializes in high-quality products tailored for innovative research endeavors, covering pharmaceutical and medicinal research, forensic science, and environmental analysis.",
     },
     {
-      id: "crocmoservices",
+      id: "crocdmoservices",
       title: "CRO/CDMO Services",
       img: croservices,
       description:

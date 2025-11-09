@@ -63,9 +63,13 @@ export const Services = () => {
   useEffect(() => {
     const hash = location.hash;
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        const headerEl = document.querySelector('.hb-header') || document.querySelector('header');
+        const headerOffset = headerEl ? (headerEl as HTMLElement).getBoundingClientRect().height : 80;
+        const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset - 8;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     }
   }, [location]);

@@ -212,7 +212,7 @@ const HeaderNavbar = () => {
                       ].map((item) => (
                         <Link
                           key={item}
-                          to={`/services#${item.replace(/\s+/g, "")}`}
+                          to={`/services#${item.replace(/\s+/g, "").toLowerCase()}`}
                           className="block px-4 py-2 text-[#2d7da0] hover:text-orange"
                         >
                           {item}
@@ -400,14 +400,14 @@ const HeaderNavbar = () => {
                 }`}
               >
                 {[
-                  "APIImpurities",
-                  "CustomSynthesis",
-                  "CROCDMOservices",
-                  "ChemicalSourcing",
+                  "API Impurities",
+                  "Custom Synthesis",
+                  "CRO CDMO services",
+                  "Chemical Sourcing",
                 ].map((item) => (
                   <Link
                     key={item}
-                    to={`/services#${item.toLowerCase()}`}
+                    to={`/services#${item.replace(/\s+/g, "").toLowerCase()}`}
                     className="block px-4 py-2 text-gray-700 hover:text-orange"
                     onClick={() => {
                       setIsOpen(false);
@@ -415,7 +415,7 @@ const HeaderNavbar = () => {
                       setIsServicesMenu(false);
                     }}
                   >
-                    {item.replace(/([A-Z])/g, " $1").trim()}
+                    {item}
                   </Link>
                 ))}
               </div>
